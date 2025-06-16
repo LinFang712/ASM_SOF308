@@ -7,7 +7,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><router-link class="nav-link" to="/">Home</router-link></li>
           <li class="nav-item"><a class="nav-link" href="#">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Style test</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Changelog</a></li>
@@ -17,8 +17,16 @@
         <form class="d-flex me-2">
           <input class="form-control me-2" type="search" placeholder="Tìm kiếm" />
         </form>
-        <button class="btn btn-dark">THAM GIA</button>
+        <button class="btn btn-dark" @click="goRegister">THAM GIA</button>
       </div>
     </div>
   </nav>
 </template>
+
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+function goRegister() {
+  router.push('/register')
+}
+</script>

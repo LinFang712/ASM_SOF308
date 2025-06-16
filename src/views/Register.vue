@@ -11,21 +11,23 @@
             <!-- Register Form -->
             <div class="flex-fill me-3" style="max-width: 350px;">
               <div class="mb-4 fw-bold fs-5">Create an account</div>
-              <form>
+              <form @submit.prevent="handleRegister">
                 <div class="mb-3">
                   <label class="form-label">Email</label>
-                  <input type="email" class="form-control" placeholder="Value" />
+                  <input v-model="email" type="email" class="form-control" placeholder="Value" required />
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Full Name</label>
-                  <input type="text" class="form-control" placeholder="Value" />
+                  <input v-model="name" type="text" class="form-control" placeholder="Value" required />
                 </div>
                 <div class="mb-4">
                   <label class="form-label">Password</label>
-                  <input type="password" class="form-control" placeholder="Value" />
+                  <input v-model="password" type="password" class="form-control" placeholder="Value" required />
                 </div>
                 <button type="submit" class="btn btn-dark w-100">Register</button>
-              </form>
+                <div v-if="error" class="text-danger mt-2">{{ error }}</div>
+                <div v-if="success" class="text-success mt-2">{{ success }}</div>
+              </form> 
             </div>
             <!-- Image -->
             <div class="flex-fill ms-3 d-flex align-items-center justify-content-center">
@@ -47,6 +49,40 @@
   import { ref } from 'vue';
   import axios from 'axios';
   import Navbar from '../components/Navbar.vue';
+
+  const email = ref('');
+  const name = ref('');
+  const password = ref('');
+  const error = ref('');
+  const success = ref('');
+
+  const handleRegister = async () => {
+    error.value = '';
+    success.value = '';
+    if (!email.value || !name.value || !password.value) {
+      error.value = 'Please fill all fields';
+      return;
+    }
+    try {
+      // Check if email already exists
+      const res = await axios.get('http://localhost:3001/accounts', { params: { email: email.value } });
+      if (res.data.length > 0) {
+        error.value = 'Email already registered';
+        return;
+      }
+      await axios.post('http://localhost:3001/accounts', {
+        email: email.value,
+        name: name.value,
+        password: password.value
+      });
+      success.value = 'Registration successful!';
+      email.value = '';
+      name.value = '';
+      password.value = '';
+    } catch (e) {
+      error.value = 'Registration failed. Please try again.';
+    }
+  };
 </script>
 
 <style>

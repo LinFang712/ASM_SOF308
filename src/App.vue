@@ -8,6 +8,6 @@
 
 <template>
   <div>
-    <Register />
+    <Home />
   </div>
 </template>
