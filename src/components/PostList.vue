@@ -4,7 +4,7 @@ import axios from 'axios';
 const posts = ref([]);
 const fetchPosts = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/posts');
+        const response = await axios.get('http://localhost:3001/posts');
         posts.value = response.data;
     } catch (error) {
         console.error('Lỗi khi lấy dữ liệu:', error);
@@ -15,7 +15,7 @@ const content = ref('');
 const addPost = async () => {
     if (!title.value || !content.value) return;
     try {
-        await axios.post('http://localhost:3000/posts', {
+        await axios.post('http://localhost:3001/posts', {
             title: title.value,
             content: content.value
         });
@@ -27,7 +27,7 @@ const addPost = async () => {
 };
 const updatePost = async (id) => {
     try {
-        await axios.put(`http://localhost:3000/posts/${id}`, {
+        await axios.put(`http://localhost:3001/posts/${id}`, {
             title: 'Tiêu đề mới',
             content: 'Nội dung mới'
         });
@@ -37,7 +37,7 @@ const updatePost = async (id) => {
 };
 const deletePost = async (id) => {
     try {
-        await axios.delete(`http://localhost:3000/posts/${id}`);
+        await axios.delete(`http://localhost:3001/posts/${id}`);
     } catch (error) {
         console.error('Lỗi khi xóa:', error);
     }
