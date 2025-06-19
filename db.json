@@ -1,97 +1,122 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "tittle": "Một ngày sống chậm và không mạng xã hội",
       "about": "Tôi dành trọn một ngày không chạm vào điện thoại hay máy tính. Không Facebook, không TikTok, không email. Tôi đã học được gì từ sự im lặng này?",
       "content": "Thức dậy mà không nhìn vào màn hình điện thoại là một cảm giác kỳ lạ. Buổi sáng ấy, tôi chỉ nghe tiếng chim hót, cảm nhận ánh nắng len qua cửa sổ và pha một ly cà phê thật chậm. Không còn lướt tin tức hay xem story người khác, tôi dành thời gian đọc sách và đi bộ quanh công viên gần nhà. Tôi nhận ra mình thường xuyên bị cuốn theo dòng chảy online đến mức quên mất thế giới thật quanh mình. Một ngày sống chậm khiến tôi hiểu ra: kết nối thật sự không phải lúc nào cũng qua màn hình.",
-      "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2QudL_VL8ATl-COwaFQhJ4vUBwYJivELaxCpWZhs6kM7s0x1hm_wA8XQNexZoZJE-pNk&usqp=CAU"
+      "banner": "https://images.unsplash.com/photo-1515169067865-5387ec356754"
     },
     {
-      "id": 2,
+      "id": "2",
       "tittle": "Cơn mưa bất ngờ và ly trà nóng ở Đà Lạt",
       "about": "Một buổi chiều mưa bất chợt ở Đà Lạt khiến tôi trú tạm trong một quán cà phê nhỏ. Không ngờ đó lại là khoảnh khắc tôi nhớ mãi.",
       "content": "Mưa rơi đột ngột khi tôi đang lang thang quanh Hồ Xuân Hương. Tôi vội trú vào một quán nhỏ, nơi chỉ có vài bộ bàn ghế gỗ và tiếng nhạc Trịnh vang khẽ. Chủ quán mỉm cười đưa tôi ly trà nóng và tôi ngồi nhìn mưa tí tách ngoài hiên. Không ồn ào, không vội vã. Trong không gian tĩnh lặng ấy, tôi nghĩ về những điều đã qua, về bản thân, về ước mơ bỏ quên lâu rồi. Đôi khi, chỉ một buổi chiều mưa cũng đủ để khiến người ta thay đổi cách nhìn cuộc sống.",
       "banner": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
     },
     {
-      "id": 3,
+      "id": "3",
       "tittle": "Tôi và cuốn nhật ký đầu tiên",
       "about": "Tôi không phải người giỏi bộc lộ cảm xúc, nhưng từ ngày viết nhật ký, tôi bắt đầu hiểu mình hơn.",
       "content": "Trang đầu tiên của cuốn sổ cũ là vài dòng lủng củng, rối rắm. Tôi không biết viết gì, chỉ ghi lại ngày hôm đó tệ như thế nào. Nhưng rồi ngày qua ngày, những dòng chữ bắt đầu có hình, có cảm xúc. Tôi viết khi vui, khi buồn, khi mệt mỏi và cả khi chẳng biết phải cảm thấy gì. Viết nhật ký không giúp tôi 'hết buồn', nhưng nó giúp tôi nhìn thẳng vào cảm xúc của mình. Nhờ nó, tôi học được cách lắng nghe và chấp nhận chính mình một cách tử tế hơn.",
-      "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQnYXqe25zVTdEnhBCFNgRZSE6nLtpCSrIaA&s"
+      "banner": "https://images.unsplash.com/photo-1527256652891-d3b5a6e50a47"
     },
     {
-      "id": 4,
+      "id": "4",
       "tittle": "Thất bại đầu đời và cái tôi học được",
       "about": "Tôi từng rất tự tin vào kỹ năng của mình cho đến khi gặp phải một thất bại mà tôi không ngờ tới. Đó là một bước ngoặt quan trọng.",
       "content": "Dự án nhóm trong năm nhất đại học là cơ hội để tôi thể hiện bản thân. Tôi giành phần lãnh đạo, tự làm nhiều thứ và không lắng nghe người khác. Kết quả: nhóm bị đánh giá thấp, điểm thấp, và mọi người không hài lòng. Ban đầu tôi giận họ. Nhưng sau khi ngồi lại, đọc các góp ý, tôi nhận ra mình quá kiêu ngạo, thiếu tinh thần đồng đội. Thất bại đó giúp tôi trưởng thành hơn rất nhiều – không chỉ trong học tập mà cả trong cách sống.",
       "banner": "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d"
     },
     {
-      "id": 5,
+      "id": "5",
       "tittle": "Chuyến xe buýt và một ông cụ kể chuyện",
       "about": "Tôi từng nghĩ đi xe buýt về quê là khoảng thời gian vô nghĩa. Cho đến khi tôi ngồi cạnh một người đàn ông với đôi bàn tay gầy gò và ánh mắt từng trải.",
       "content": "Ông cụ bắt chuyện nhẹ nhàng, kể tôi nghe thời ông còn trẻ phải đi bộ cả chục cây số chỉ để học chữ. Ông không có điện thoại, không biết đến Internet, nhưng lại có một trí nhớ tuyệt vời và trái tim tràn đầy hy vọng. Tôi ngồi nghe suốt chuyến đi, cảm giác như mình đang được học một bài học lớn về sự kiên trì và biết ơn. Khi xuống xe, ông bắt tay tôi, nói 'cố gắng học, đừng bỏ giữa chừng'. Câu nói ấy đến nay vẫn khiến tôi xúc động.",
       "banner": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c"
     },
     {
-      "id": 6,
+      "id": "6",
       "tittle": "Sáng sớm và ly cà phê đầu ngày",
       "about": "Tôi từng ghét việc dậy sớm. Nhưng rồi, một buổi sáng tình cờ thay đổi mọi thứ.",
       "content": "Tôi tỉnh dậy lúc 5h sáng vì mất ngủ. Không biết làm gì, tôi pha một ly cà phê và ra ban công ngồi nhìn trời còn mờ sương. Thành phố lúc đó yên tĩnh đến lạ. Không còi xe, không tiếng người, chỉ có tiếng chim. Lần đầu tiên tôi cảm thấy mình 'sống chậm'. Tôi bắt đầu thích dậy sớm từ hôm đó. Những buổi sáng ấy giúp tôi có thêm thời gian đọc, viết, và hít thở sâu. Chúng mang lại cho tôi năng lượng tích cực suốt cả ngày.",
       "banner": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
     },
     {
-      "id": 7,
+      "id": "7",
       "tittle": "Cuốn sách đã khiến tôi khóc",
       "about": "Tôi từng nghĩ sách chỉ để học và giải trí. Nhưng rồi một cuốn sách đã khiến tôi nhìn lại cả tuổi trẻ của mình.",
       "content": "Tôi đọc 'Tuổi trẻ đáng giá bao nhiêu' trong một đêm khó ngủ. Từng dòng chữ như chạm vào nỗi lo lắng và sự bối rối của chính tôi. Nó không cho tôi lời giải, nhưng nó khiến tôi dám đặt câu hỏi: tôi đang sống cho ai? Điều gì làm tôi thật sự vui? Khi gấp sách lại, tôi thấy nước mắt mình rơi lúc nào không hay. Một cuốn sách tốt không cần quá nhiều triết lý – chỉ cần nói đúng vào nỗi lòng người đọc.",
       "banner": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570"
     },
     {
-      "id": 8,
+      "id": "8",
       "tittle": "Đi du lịch một mình có gì vui?",
       "about": "Lần đầu tôi tự đi xa mà không có bạn bè hay người thân. Tôi tưởng sẽ cô đơn lắm, ai ngờ lại học được rất nhiều điều.",
       "content": "Tôi chọn Huế cho chuyến đi một mình đầu tiên. Ban đầu lạ lẫm, hơi sợ, nhất là buổi tối. Nhưng khi bắt đầu khám phá, tôi thấy tự do đến kỳ lạ. Tôi chọn nơi ăn, nơi ở, giờ giấc và hành trình riêng mình thích. Tôi nói chuyện với người lạ, ngắm hoàng hôn bên sông Hương một mình và cảm nhận rõ sự yên bình. Sau chuyến đi ấy, tôi không còn sợ ở một mình. Tôi biết mình có thể tự lo cho bản thân và thấy mạnh mẽ hơn rất nhiều.",
       "banner": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb"
     },
     {
-      "id": 9,
+      "id": "9",
       "tittle": "Học cách nói 'không' để sống thật hơn",
       "about": "Tôi từng luôn cố làm người khác vui, dù chính mình mệt mỏi. Nhưng mọi chuyện đã khác khi tôi học được cách đặt ra giới hạn.",
       "content": "Trước đây, tôi rất ngại từ chối. Ai rủ đi đâu, nhờ làm gì, tôi cũng gật đầu vì sợ người ta nghĩ xấu. Nhưng dần dà, tôi nhận ra mình kiệt sức. Tôi tham gia những buổi hẹn không muốn đi, nhận những công việc mình không vui vẻ làm. Cho đến một ngày, tôi thử nói 'không'. Ban đầu thấy tội lỗi, nhưng rồi tôi thấy nhẹ lòng. Tôi học được rằng, đặt ra ranh giới là điều cần thiết – không phải ích kỷ, mà là tôn trọng bản thân.",
       "banner": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
     },
     {
-      "id": 10,
+      "id": "10",
       "tittle": "Tôi và thói quen đọc sách mỗi tối",
       "about": "Không phải ai cũng là mọt sách, nhưng đọc trước khi ngủ đã thay đổi tâm trạng và giấc ngủ của tôi rất nhiều.",
       "content": "Tôi bắt đầu đọc vài trang sách trước khi đi ngủ thay vì lướt điện thoại. Điều kỳ diệu là chỉ vài tuần sau, tôi thấy ngủ ngon hơn, ít mơ và ít lo lắng linh tinh. Những cuốn sách nhẹ nhàng giúp tâm trí tôi dịu lại. Đôi khi chỉ cần một đoạn hay, một câu trích dẫn cũng đủ để tôi suy ngẫm cả ngày hôm sau. Đọc sách không cần nhiều, chỉ cần đều đặn và thành thật với cảm xúc khi đọc.",
       "banner": "https://images.unsplash.com/photo-1532012197267-da84d127e765"
     }
   ],
-  "accounts": [
+  "users": [
     {
-      "id": 1,
-      "name": "user1",
-      "password": "password1",
-      "email": "abc@gmail.com"
+      "id": "1",
+      "username": "admin",
+      "password": "123456",
+      "email": "admin@gmail.com",
+      "name": "Admin User",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "john",
+      "password": "john123",
+      "email": "john@example.com",
+      "name": "John Doe",
+      "role": "user"
+    },
+    {
+      "id": "4c20",
+      "email": "lan@gmail.com",
+      "name": "Lân",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "8eae",
+      "email": "lan@fpt.com",
+      "fullName": "Hoàng Lân",
+      "password": "0123456",
+      "gender": "Male",
+      "dob": "2025-06-01",
+      "role": "user"
     }
   ],
   "carousel": [
     {
-      "id": 1,
+      "id": "1",
       "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
       "title": "Khám phá thế giới qua những chuyến đi",
       "description": "Mỗi chuyến đi là một hành trình khám phá bản thân và thế giới xung quanh."
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
       "title": "Sống chậm lại để cảm nhận cuộc sống",
       "description": "Đôi khi, chỉ cần dừng lại và hít thở sâu để thấy cuộc sống thật đẹp."
     }
   ]
 }
-

@@ -1,24 +1,21 @@
 <template>
-  <div class="bg-white min-vh-100">
-    <Navbar />
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-      <div class="row w-100 justify-content-center">
-        <div class="col-lg-6">
-          <div class="bg-white rounded shadow-sm p-4">
-            <div class="mb-4 fw-bold fs-5">Sign in to your account</div>
-            <form @submit.prevent="handleLogin">
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input v-model="email" type="email" class="form-control" placeholder="Enter email" required />
-              </div>
-              <div class="mb-4">
-                <label class="form-label">Password</label>
-                <input v-model="password" type="password" class="form-control" placeholder="Enter password" required />
-              </div>
-              <button type="submit" class="btn btn-dark w-100">Login</button>
-              <div v-if="error" class="text-danger mt-2">{{ error }}</div>
-            </form>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h5 class="mb-4 fw-bold">Đăng nhập</h5>
+        <form @submit.prevent="login">
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" v-model="email" class="form-control" required />
           </div>
+          <div class="mb-3">
+            <label class="form-label">Mật khẩu</label>
+            <input type="password" v-model="password" class="form-control" required />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+        </form>
+        <div v-if="errorMessage" class="mt-3 alert alert-danger p-2">
+          {{ errorMessage }}
         </div>
       </div>
     </div>
@@ -26,32 +23,43 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
-import axios from 'axios';
-import Navbar from '../components/Navbar.vue';
+import { ref } from 'vue'
+import axios from 'axios'
 
-const email = ref('');
-const password = ref('');
-const error = ref('');
+const email = ref('')
+const password = ref('')
+const errorMessage = ref('')
 
-const handleLogin = async () => {
-  error.value = '';
+const login = async () => {
   try {
-    const res = await axios.get('http://localhost:3001/accounts', {
-      params: { email: email.value, password: password.value }
-    });
+    const res = await axios.get('http://localhost:3001/users', {
+      params: {
+        email: email.value,
+        password: password.value
+      }
+    })
+
     if (res.data.length > 0) {
-      // Login success, you can store user info or redirect here
-      alert('Login successful!');
+      const rawUser = res.data[0]
+
+      const loggedInUser = {
+        fullName: rawUser.name || rawUser.fullName || 'Người dùng',
+        email: rawUser.email,
+        gender: (rawUser.gender || 'other').toLowerCase(),
+        dob: rawUser.dob || '01-01-2000',
+        role: rawUser.role || 'user'
+      }
+
+      localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser))
+      alert('Đăng nhập thành công!')
+      errorMessage.value = ''
+      window.dispatchEvent(new Event('user-logged-in'))
     } else {
-      error.value = 'Invalid email or password';
+      errorMessage.value = 'Email hoặc mật khẩu không đúng.'
     }
-  } catch (e) {
-    error.value = 'Login failed. Please try again.';
+  } catch (error) {
+    errorMessage.value = 'Lỗi khi đăng nhập.'
+    console.error(error)
   }
-};
+}
 </script>
-
-<style>
-
-</style>

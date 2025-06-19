@@ -1,55 +1,37 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import Home from '../views/Home.vue'
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
+import Profile from '../views/Profile.vue'
+import About from '../views/About.vue'
+import Blog from '../views/Blog.vue'
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: () => import('../views/Home.vue')
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/Login.vue')
-  },
-  {
-    path: '/register',
-    name: 'register',
-    component: () => import('../views/Register.vue')
-  },
-  {
-    path: '/profile',
-    name: 'profile',
-    component: () => import('../views/Profile.vue')
-  },
-  // Add About page
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/About.vue')
-  },
-  // Add Blog page
-  {
-    path: '/blog',
-    name: 'blog',
-    component: () => import('../views/Blog.vue')
-  },
-  // Add Search Results page
-  {
-    path: '/search',
-    name: 'search',
-    component: () => import('../views/Search.vue')
-  },
-  // 404 Not Found
-  {
-    path: '/:pathMatch(.*)*',
-    name: 'notfound',
-    component: () => import('../views/NotFound.vue')
-  }
+  { path: '/', component: Home },
+  { path: '/login', component: Login },
+  { path: '/register', component: Register },
+  { path: '/profile', component: Profile, meta: { requiresAuth: true } },
+  { path: '/about', component: About },
+  { path: '/blog', component: Blog },
 ]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes
+})
+
+// Bảo vệ route nếu chưa đăng nhập
+router.beforeEach((to, from, next) => {
+  const storedUser = localStorage.getItem('loggedInUser')
+  const user = storedUser ? JSON.parse(storedUser) : null
+
+  if (to.meta.requiresAuth && !user) {
+    next('/login')
+  } else if (to.meta.requiresAdmin && user?.role !== 'admin') {
+    alert('Bạn không có quyền truy cập trang này!')
+    next('/') // hoặc quay lại trang chủ
+  } else {
+    next()
+  }
 })
 
 export default router

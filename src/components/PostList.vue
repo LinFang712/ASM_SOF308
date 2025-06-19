@@ -16,11 +16,12 @@ const addPost = async () => {
     if (!title.value || !content.value) return;
     try {
         await axios.post('http://localhost:3001/posts', {
-            title: title.value,
+            tittle: title.value, // Fix: use "tittle" to match db.json
             content: content.value
         });
         title.value = '';
         content.value = '';
+        fetchPosts(); // Refresh list
     } catch (error) {
         console.error('Lỗi khi thêm bài viết:', error);
     }
@@ -28,9 +29,10 @@ const addPost = async () => {
 const updatePost = async (id) => {
     try {
         await axios.put(`http://localhost:3001/posts/${id}`, {
-            title: 'Tiêu đề mới',
+            tittle: 'Tiêu đề mới', // Fix: use "tittle"
             content: 'Nội dung mới'
         });
+        fetchPosts(); // Refresh list
     } catch (error) {
         console.error('Lỗi khi cập nhật:', error);
     }
@@ -38,6 +40,7 @@ const updatePost = async (id) => {
 const deletePost = async (id) => {
     try {
         await axios.delete(`http://localhost:3001/posts/${id}`);
+        fetchPosts(); // Refresh list
     } catch (error) {
         console.error('Lỗi khi xóa:', error);
     }
@@ -49,7 +52,7 @@ onMounted(fetchPosts);
         <h2>Danh sách bài viết</h2>
         <ul> 
             <li v-for="post in posts" :key="post.id">
-                {{ post.title }} - {{ post.content }}
+                {{ post.tittle }} - {{ post.content }}
             </li>
         </ul>
     </div>
