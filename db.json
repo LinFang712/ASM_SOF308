@@ -1,122 +1,349 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "tittle": "Một ngày sống chậm và không mạng xã hội",
-      "about": "Tôi dành trọn một ngày không chạm vào điện thoại hay máy tính. Không Facebook, không TikTok, không email. Tôi đã học được gì từ sự im lặng này?",
-      "content": "Thức dậy mà không nhìn vào màn hình điện thoại là một cảm giác kỳ lạ. Buổi sáng ấy, tôi chỉ nghe tiếng chim hót, cảm nhận ánh nắng len qua cửa sổ và pha một ly cà phê thật chậm. Không còn lướt tin tức hay xem story người khác, tôi dành thời gian đọc sách và đi bộ quanh công viên gần nhà. Tôi nhận ra mình thường xuyên bị cuốn theo dòng chảy online đến mức quên mất thế giới thật quanh mình. Một ngày sống chậm khiến tôi hiểu ra: kết nối thật sự không phải lúc nào cũng qua màn hình.",
-      "banner": "https://images.unsplash.com/photo-1515169067865-5387ec356754"
-    },
-    {
-      "id": "2",
-      "tittle": "Cơn mưa bất ngờ và ly trà nóng ở Đà Lạt",
-      "about": "Một buổi chiều mưa bất chợt ở Đà Lạt khiến tôi trú tạm trong một quán cà phê nhỏ. Không ngờ đó lại là khoảnh khắc tôi nhớ mãi.",
-      "content": "Mưa rơi đột ngột khi tôi đang lang thang quanh Hồ Xuân Hương. Tôi vội trú vào một quán nhỏ, nơi chỉ có vài bộ bàn ghế gỗ và tiếng nhạc Trịnh vang khẽ. Chủ quán mỉm cười đưa tôi ly trà nóng và tôi ngồi nhìn mưa tí tách ngoài hiên. Không ồn ào, không vội vã. Trong không gian tĩnh lặng ấy, tôi nghĩ về những điều đã qua, về bản thân, về ước mơ bỏ quên lâu rồi. Đôi khi, chỉ một buổi chiều mưa cũng đủ để khiến người ta thay đổi cách nhìn cuộc sống.",
-      "banner": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
-    },
-    {
-      "id": "3",
-      "tittle": "Tôi và cuốn nhật ký đầu tiên",
-      "about": "Tôi không phải người giỏi bộc lộ cảm xúc, nhưng từ ngày viết nhật ký, tôi bắt đầu hiểu mình hơn.",
-      "content": "Trang đầu tiên của cuốn sổ cũ là vài dòng lủng củng, rối rắm. Tôi không biết viết gì, chỉ ghi lại ngày hôm đó tệ như thế nào. Nhưng rồi ngày qua ngày, những dòng chữ bắt đầu có hình, có cảm xúc. Tôi viết khi vui, khi buồn, khi mệt mỏi và cả khi chẳng biết phải cảm thấy gì. Viết nhật ký không giúp tôi 'hết buồn', nhưng nó giúp tôi nhìn thẳng vào cảm xúc của mình. Nhờ nó, tôi học được cách lắng nghe và chấp nhận chính mình một cách tử tế hơn.",
-      "banner": "https://images.unsplash.com/photo-1527256652891-d3b5a6e50a47"
-    },
-    {
-      "id": "4",
-      "tittle": "Thất bại đầu đời và cái tôi học được",
-      "about": "Tôi từng rất tự tin vào kỹ năng của mình cho đến khi gặp phải một thất bại mà tôi không ngờ tới. Đó là một bước ngoặt quan trọng.",
-      "content": "Dự án nhóm trong năm nhất đại học là cơ hội để tôi thể hiện bản thân. Tôi giành phần lãnh đạo, tự làm nhiều thứ và không lắng nghe người khác. Kết quả: nhóm bị đánh giá thấp, điểm thấp, và mọi người không hài lòng. Ban đầu tôi giận họ. Nhưng sau khi ngồi lại, đọc các góp ý, tôi nhận ra mình quá kiêu ngạo, thiếu tinh thần đồng đội. Thất bại đó giúp tôi trưởng thành hơn rất nhiều – không chỉ trong học tập mà cả trong cách sống.",
-      "banner": "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d"
-    },
-    {
-      "id": "5",
-      "tittle": "Chuyến xe buýt và một ông cụ kể chuyện",
-      "about": "Tôi từng nghĩ đi xe buýt về quê là khoảng thời gian vô nghĩa. Cho đến khi tôi ngồi cạnh một người đàn ông với đôi bàn tay gầy gò và ánh mắt từng trải.",
-      "content": "Ông cụ bắt chuyện nhẹ nhàng, kể tôi nghe thời ông còn trẻ phải đi bộ cả chục cây số chỉ để học chữ. Ông không có điện thoại, không biết đến Internet, nhưng lại có một trí nhớ tuyệt vời và trái tim tràn đầy hy vọng. Tôi ngồi nghe suốt chuyến đi, cảm giác như mình đang được học một bài học lớn về sự kiên trì và biết ơn. Khi xuống xe, ông bắt tay tôi, nói 'cố gắng học, đừng bỏ giữa chừng'. Câu nói ấy đến nay vẫn khiến tôi xúc động.",
-      "banner": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c"
-    },
-    {
-      "id": "6",
-      "tittle": "Sáng sớm và ly cà phê đầu ngày",
-      "about": "Tôi từng ghét việc dậy sớm. Nhưng rồi, một buổi sáng tình cờ thay đổi mọi thứ.",
-      "content": "Tôi tỉnh dậy lúc 5h sáng vì mất ngủ. Không biết làm gì, tôi pha một ly cà phê và ra ban công ngồi nhìn trời còn mờ sương. Thành phố lúc đó yên tĩnh đến lạ. Không còi xe, không tiếng người, chỉ có tiếng chim. Lần đầu tiên tôi cảm thấy mình 'sống chậm'. Tôi bắt đầu thích dậy sớm từ hôm đó. Những buổi sáng ấy giúp tôi có thêm thời gian đọc, viết, và hít thở sâu. Chúng mang lại cho tôi năng lượng tích cực suốt cả ngày.",
-      "banner": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
-    },
-    {
-      "id": "7",
-      "tittle": "Cuốn sách đã khiến tôi khóc",
-      "about": "Tôi từng nghĩ sách chỉ để học và giải trí. Nhưng rồi một cuốn sách đã khiến tôi nhìn lại cả tuổi trẻ của mình.",
-      "content": "Tôi đọc 'Tuổi trẻ đáng giá bao nhiêu' trong một đêm khó ngủ. Từng dòng chữ như chạm vào nỗi lo lắng và sự bối rối của chính tôi. Nó không cho tôi lời giải, nhưng nó khiến tôi dám đặt câu hỏi: tôi đang sống cho ai? Điều gì làm tôi thật sự vui? Khi gấp sách lại, tôi thấy nước mắt mình rơi lúc nào không hay. Một cuốn sách tốt không cần quá nhiều triết lý – chỉ cần nói đúng vào nỗi lòng người đọc.",
-      "banner": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570"
-    },
-    {
-      "id": "8",
-      "tittle": "Đi du lịch một mình có gì vui?",
-      "about": "Lần đầu tôi tự đi xa mà không có bạn bè hay người thân. Tôi tưởng sẽ cô đơn lắm, ai ngờ lại học được rất nhiều điều.",
-      "content": "Tôi chọn Huế cho chuyến đi một mình đầu tiên. Ban đầu lạ lẫm, hơi sợ, nhất là buổi tối. Nhưng khi bắt đầu khám phá, tôi thấy tự do đến kỳ lạ. Tôi chọn nơi ăn, nơi ở, giờ giấc và hành trình riêng mình thích. Tôi nói chuyện với người lạ, ngắm hoàng hôn bên sông Hương một mình và cảm nhận rõ sự yên bình. Sau chuyến đi ấy, tôi không còn sợ ở một mình. Tôi biết mình có thể tự lo cho bản thân và thấy mạnh mẽ hơn rất nhiều.",
-      "banner": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb"
-    },
-    {
-      "id": "9",
-      "tittle": "Học cách nói 'không' để sống thật hơn",
-      "about": "Tôi từng luôn cố làm người khác vui, dù chính mình mệt mỏi. Nhưng mọi chuyện đã khác khi tôi học được cách đặt ra giới hạn.",
-      "content": "Trước đây, tôi rất ngại từ chối. Ai rủ đi đâu, nhờ làm gì, tôi cũng gật đầu vì sợ người ta nghĩ xấu. Nhưng dần dà, tôi nhận ra mình kiệt sức. Tôi tham gia những buổi hẹn không muốn đi, nhận những công việc mình không vui vẻ làm. Cho đến một ngày, tôi thử nói 'không'. Ban đầu thấy tội lỗi, nhưng rồi tôi thấy nhẹ lòng. Tôi học được rằng, đặt ra ranh giới là điều cần thiết – không phải ích kỷ, mà là tôn trọng bản thân.",
-      "banner": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
-    },
-    {
-      "id": "10",
-      "tittle": "Tôi và thói quen đọc sách mỗi tối",
-      "about": "Không phải ai cũng là mọt sách, nhưng đọc trước khi ngủ đã thay đổi tâm trạng và giấc ngủ của tôi rất nhiều.",
-      "content": "Tôi bắt đầu đọc vài trang sách trước khi đi ngủ thay vì lướt điện thoại. Điều kỳ diệu là chỉ vài tuần sau, tôi thấy ngủ ngon hơn, ít mơ và ít lo lắng linh tinh. Những cuốn sách nhẹ nhàng giúp tâm trí tôi dịu lại. Đôi khi chỉ cần một đoạn hay, một câu trích dẫn cũng đủ để tôi suy ngẫm cả ngày hôm sau. Đọc sách không cần nhiều, chỉ cần đều đặn và thành thật với cảm xúc khi đọc.",
-      "banner": "https://images.unsplash.com/photo-1532012197267-da84d127e765"
-    }
-  ],
   "users": [
     {
-      "id": "1",
-      "username": "admin",
-      "password": "123456",
-      "email": "admin@gmail.com",
-      "name": "Admin User",
-      "role": "admin"
+      "_id": "user_101",
+      "username": "catmin",
+      "email": "admin@purrfectposts.com",
+      "passwordHash": "$2b$12$l5nQ4A4zL8tH.3jO9bB7sO6tE.G/mN3wX/uYI.jK5lZ/oP6qR9pIe",
+      "profile": {
+        "displayName": "The Catmin",
+        "avatarUrl": "https://i.pravatar.cc/150?u=user_101",
+        "bio": "Chief administrator and cat enthusiast at Purrfect Posts. Ensuring everything runs smoothly, one cat nap at a time.",
+        "socialLinks": {
+          "twitter": "https://twitter.com/catmin_pp",
+          "instagram": "https://instagram.com/catmin_pp"
+        }
+      },
+      "role": "admin",
+      "createdAt": "2024-01-15T09:30:00Z"
     },
     {
-      "id": "2",
-      "username": "john",
-      "password": "john123",
-      "email": "john@example.com",
-      "name": "John Doe",
-      "role": "user"
+      "_id": "user_201",
+      "username": "anya_the_author",
+      "email": "anya.v@purrfectposts.com",
+      "passwordHash": "$2b$12$k8sP7aB3zL9tH.1jO9bB7sO6tE.G/mN3wX/uYI.jK5lZ/oP6qR9pIe",
+      "profile": {
+        "displayName": "Anya Volkov",
+        "avatarUrl": "https://i.pravatar.cc/150?u=user_201",
+        "bio": "Veterinary technician and lifelong cat lover. I write about feline health and behavior to help owners give their pets the best life.",
+        "socialLinks": {
+          "instagram": "https://instagram.com/anyavolkov_cats"
+        }
+      },
+      "role": "author",
+      "createdAt": "2024-02-20T11:00:00Z"
     },
     {
-      "id": "4c20",
-      "email": "lan@gmail.com",
-      "name": "Lân",
-      "password": "123456",
-      "role": "user"
+      "_id": "user_202",
+      "username": "liam_writes",
+      "email": "liam.g@purrfectposts.com",
+      "passwordHash": "$2b$12$mN3wX/uYI.jK5lZ/oP6qR9pIek8sP7aB3zL9tH.1jO9bB7sO6tE.G/",
+      "profile": {
+        "displayName": "Liam Gallagher",
+        "avatarUrl": "https://i.pravatar.cc/150?u=user_202",
+        "bio": "Professional cat groomer and photographer. I share tips on keeping your cat looking fabulous and capture their cutest moments.",
+        "socialLinks": {
+          "twitter": "https://twitter.com/liamg_cats"
+        }
+      },
+      "role": "author",
+      "createdAt": "2024-03-10T14:20:00Z"
     },
     {
-      "id": "8eae",
-      "email": "lan@fpt.com",
-      "fullName": "Hoàng Lân",
-      "password": "0123456",
-      "gender": "Male",
-      "dob": "2025-06-01",
-      "role": "user"
+      "_id": "user_301",
+      "username": "sam_jones",
+      "email": "sam.jones@email.com",
+      "passwordHash": "$2b$12$oP6qR9pIe/uYI.jK5lZk8sP7aB3zL9tH.1jO9bB7sO6tE.G/mN3wX",
+      "profile": {
+        "displayName": "Sam J.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=user_301",
+        "bio": "Just a regular person who really, really loves cats. Here for the cute pictures and health tips!",
+        "socialLinks": {}
+      },
+      "role": "member",
+      "createdAt": "2024-05-01T18:45:00Z"
+    },
+    {
+      "_id": "user_302",
+      "username": "chloe_catlady",
+      "email": "chloe.c@email.com",
+      "passwordHash": "$2b$12$jK5lZ/oP6qR9pIek8sP7aB3zL9tH.1jO9bB7sO6tE.G/mN3wX/uYI.",
+      "profile": {
+        "displayName": "Chloe",
+        "avatarUrl": "https://i.pravatar.cc/150?u=user_302",
+        "bio": "Proud owner of three rescue cats. Always looking to learn more about my furry family members.",
+        "socialLinks": {
+          "instagram": "https://instagram.com/chloes_cat_crew"
+        }
+      },
+      "role": "member",
+      "createdAt": "2024-06-12T20:00:00Z"
     }
   ],
-  "carousel": [
+  "posts": [
     {
-      "id": "1",
-      "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
-      "title": "Khám phá thế giới qua những chuyến đi",
-      "description": "Mỗi chuyến đi là một hành trình khám phá bản thân và thế giới xung quanh."
+      "_id": "post_abc001",
+      "authorId": "user_201",
+      "title": "Decoding Your Cat's Body Language: A Beginner's Guide",
+      "slug": "decoding-your-cats-body-language-a-beginners-guide",
+      "excerpt": "Is that tail twitch a sign of affection or annoyance? We break down the subtle cues of feline communication to help you better understand your furry friend.",
+      "content": "## Understanding the Tail\n\nThe tail is one of the most expressive parts of a cat. Here's a quick guide:\n\n- **Tail high:** Confident and happy.\n- **Tail low or tucked:** Fearful or insecure.\n- **Tail twitching:** Excitement or anxiety.\n- **Tail puffed up:** Scared or angry, trying to look bigger.\n\n## The Eyes and Ears\n\nPay attention to the eyes and ears as well:\n\n- **Slow Blinks:** A sign of trust and affection. It's often called a 'cat kiss'.\n- **Dilated Pupils:** Can mean excitement, fear, or low light.\n- **Ears Forward:** Alert and interested.\n- **Ears Flat:** Angry or scared.",
+      "featuredImage": {
+        "url": "https://placekitten.com/800/400",
+        "altText": "A curious cat with its ears forward looking directly at the camera."
+      },
+      "status": "published",
+      "tags": ["behavior", "communication", "first-time owner"],
+      "category": "Cat Behavior",
+      "stats": {
+        "likes": 125,
+        "views": 2430
+      },
+      "comments": [
+        {
+          "_id": "comment_01",
+          "authorId": "user_301",
+          "content": "This is so helpful! I never knew the slow blink was a cat kiss!",
+          "createdAt": "2025-04-16T14:05:10Z"
+        },
+        {
+          "_id": "comment_02",
+          "authorId": "user_302",
+          "content": "Great article. My cat's tail is always puffed up when the vacuum cleaner is on. This makes so much sense now.",
+          "createdAt": "2025-04-17T09:22:00Z"
+        }
+      ],
+      "publishedAt": "2025-04-15T10:00:00Z"
     },
     {
-      "id": "2",
-      "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
-      "title": "Sống chậm lại để cảm nhận cuộc sống",
-      "description": "Đôi khi, chỉ cần dừng lại và hít thở sâu để thấy cuộc sống thật đẹp."
+      "_id": "post_def002",
+      "authorId": "user_202",
+      "title": "The Ultimate Guide to Brushing Your Long-Haired Cat",
+      "slug": "the-ultimate-guide-to-brushing-your-long-haired-cat",
+      "excerpt": "Tangled fur and mats can be a nightmare. Follow our professional grooming tips to keep your long-haired cat's coat healthy, shiny, and tangle-free.",
+      "content": "### Choosing the Right Tools\n\nNot all brushes are created equal. For long-haired breeds like Maine Coons or Persians, you'll need:\n\n1.  **A wide-toothed comb:** For gently working out large tangles.\n2.  **A slicker brush:** For removing loose undercoat and preventing mats.\n3.  **A soft bristle brush:** For finishing and adding shine.\n\n### The Process\n\nStart slow and make it a positive experience. Use treats and praise. Brush in the direction of hair growth and be extra gentle around the belly and legs.",
+      "featuredImage": {
+        "url": "https://placekitten.com/800/401",
+        "altText": "A fluffy long-haired cat being gently brushed by its owner."
+      },
+      "status": "published",
+      "tags": ["grooming", "long-hair", "health"],
+      "category": "Grooming & Care",
+      "stats": {
+        "likes": 98,
+        "views": 1850
+      },
+      "comments": [
+         {
+          "_id": "comment_03",
+          "authorId": "user_101",
+          "content": "Excellent advice, Liam! A consistent grooming routine is key.",
+          "createdAt": "2025-03-22T11:45:00Z"
+        }
+      ],
+      "publishedAt": "2025-03-20T12:00:00Z"
+    },
+    {
+      "_id": "post_ghi003",
+      "authorId": "user_201",
+      "title": "Common Household Dangers for Cats You Might Overlook",
+      "slug": "common-household-dangers-for-cats",
+      "excerpt": "Your home should be a safe haven for your cat, but hidden dangers can lurk in plain sight. Learn what plants, foods, and items to keep away from your curious kitty.",
+      "content": "Many common household items can be toxic to cats. It's crucial to be aware of them.\n\n**Toxic Plants:**\n- Lilies\n- Tulips\n- Oleander\n\n**Dangerous Foods:**\n- Chocolate\n- Onions and Garlic\n- Grapes and Raisins\n\n**Other Hazards:**\n- Electrical cords\n- Cleaning supplies\n- Small objects they might swallow",
+      "featuredImage": {
+        "url": "https://placekitten.com/800/402",
+        "altText": "A cat curiously sniffing a lily in a vase, illustrating a household danger."
+      },
+      "status": "published",
+      "tags": ["health", "safety", "first-time owner"],
+      "category": "Feline Health",
+      "stats": {
+        "likes": 210,
+        "views": 3500
+      },
+      "comments": [],
+      "publishedAt": "2025-05-10T09:00:00Z"
+    },
+    {
+      "_id": "post_jkl004",
+      "authorId": "user_201",
+      "title": "Choosing the Best Food for Your Senior Cat",
+      "slug": "choosing-the-best-food-for-your-senior-cat",
+      "excerpt": "As cats age, their nutritional needs change. Let's explore what makes a great senior cat food and how to support your cat's health in their golden years.",
+      "content": "Senior cats (typically 11+ years) often benefit from diets that are:\n\n- Lower in calories to prevent obesity.\n- Higher in easily digestible protein to maintain muscle mass.\n- Fortified with nutrients like omega-3 fatty acids for joint health.\n\nAlways consult your vet before making any major changes to your cat's diet.",
+      "featuredImage": {
+        "url": "https://placekitten.com/800/403",
+        "altText": "An older, graceful cat eating from a food bowl."
+      },
+      "status": "published",
+      "tags": ["nutrition", "senior cats", "health"],
+      "category": "Feline Health",
+      "stats": {
+        "likes": 85,
+        "views": 1600
+      },
+      "comments": [
+        {
+          "_id": "comment_04",
+          "authorId": "user_302",
+          "content": "My 12-year-old cat has been slowing down a bit. This is timely, thank you!",
+          "createdAt": "2025-06-02T18:15:00Z"
+        }
+      ],
+      "publishedAt": "2025-06-01T11:30:00Z"
+    },
+    {
+      "_id": "post_mno005",
+      "authorId": "user_101",
+      "title": "Breed Spotlight: The Majestic Maine Coon",
+      "slug": "breed-spotlight-the-majestic-maine-coon",
+      "excerpt": "Known as the 'gentle giants' of the cat world, Maine Coons are as friendly as they are large. Dive into the history and characteristics of this amazing breed.",
+      "content": "The Maine Coon is one of the oldest natural breeds in North America. They are known for their shaggy coat, tufted ears, and bushy tail. Despite their size, they are incredibly good-natured and make fantastic family pets. They are playful, intelligent, and famously 'dog-like' in their loyalty.",
+      "featuredImage": {
+        "url": "https://placekitten.com/800/404",
+        "altText": "A large, majestic Maine Coon cat with a bushy tail sitting proudly."
+      },
+      "status": "published",
+      "tags": ["breeds", "maine coon", "behavior"],
+      "category": "Breed Spotlights",
+      "stats": {
+        "likes": 152,
+        "views": 2900
+      },
+      "comments": [],
+      "publishedAt": "2025-05-25T15:00:00Z"
+    },
+    {
+      "_id": "post_pqr006",
+      "authorId": "user_202",
+      "title": "Why Do Cats Love Boxes? The Science Behind the Silliness",
+      "slug": "why-do-cats-love-boxes",
+      "excerpt": "It's a universal truth: if it fits, it sits. But why are cats so obsessed with squeezing into boxes? We explore the comforting, instinctual reasons.",
+      "content": "The love for boxes is rooted in a cat's natural instincts. \n\n1.  **Security:** Enclosed spaces make cats feel safe and protected from predators.\n2.  **Stress Reduction:** Studies have shown that providing boxes to shelter cats helps them adapt and destress faster.\n3.  **Warmth:** Cardboard is a great insulator, making boxes a cozy place for a nap.",
+      "featuredImage": {
+        "url": "https://placekitten.com/800/405",
+        "altText": "A small tabby cat peeking out happily from inside a cardboard box."
+      },
+      "status": "published",
+      "tags": ["behavior", "funny", "science"],
+      "category": "Cat Behavior",
+      "stats": {
+        "likes": 350,
+        "views": 5500
+      },
+      "comments": [],
+      "publishedAt": "2025-02-14T10:00:00Z"
+    },
+    {
+      "_id": "post_stu007",
+      "authorId": "user_201",
+      "title": "Introduction to Clicker Training for Cats",
+      "slug": "introduction-to-clicker-training-for-cats",
+      "excerpt": "Can you really train a cat? Absolutely! This post will introduce the basics of clicker training, a positive reinforcement method to teach your cat new tricks.",
+      "content": "Clicker training is a fun way to bond with your cat. The basic idea is to 'charge' the clicker by clicking and immediately giving a treat. Soon, the cat associates the 'click' sound with a reward. Once the clicker is charged, you can use it to mark desired behaviors, like sitting or high-fiving.",
+      "featuredImage": {
+        "url": "https://placekitten.com/800/406",
+        "altText": "A hand holding a clicker training device with a cat looking on attentively."
+      },
+      "status": "draft",
+      "tags": ["training", "behavior", "enrichment"],
+      "category": "Cat Behavior",
+      "stats": {
+        "likes": 0,
+        "views": 15
+      },
+      "comments": [],
+      "publishedAt": null
+    },
+    {
+      "_id": "post_vwx008",
+      "authorId": "user_202",
+      "title": "DIY Cat Toys You Can Make from Household Items",
+      "slug": "diy-cat-toys-you-can-make-from-household-items",
+      "excerpt": "You don't need to spend a fortune to keep your cat entertained. Here are a few simple, safe, and fun toys you can create with things you already have.",
+      "content": "Before you start, always prioritize safety. Avoid small parts that can be swallowed.\n\n**Toy Ideas:**\n\n- **Cardboard Box Fort:** Simple, but a classic for a reason.\n- **Toilet Paper Roll Treat Puzzle:** Fold the ends of a toilet paper roll and poke holes in it. Fill with treats.\n- **Wine Cork Chase Toy:** Tie a wine cork to a string. That's it!",
+      "featuredImage": {
+        "url": "https://placekitten.com/800/407",
+        "altText": "A collection of handmade cat toys made from corks, toilet paper rolls, and fabric."
+      },
+      "status": "draft",
+      "tags": ["enrichment", "playing", "diy", "cat toys"],
+      "category": "Funny & Cute",
+      "stats": {
+        "likes": 2,
+        "views": 25
+      },
+      "comments": [],
+      "publishedAt": null
+    }
+  ],
+  "categories": [
+    { "_id": "cat_01", "name": "Feline Health", "slug": "feline-health" },
+    { "_id": "cat_02", "name": "Cat Behavior", "slug": "cat-behavior" },
+    { "_id": "cat_03", "name": "Grooming & Care", "slug": "grooming-and-care" },
+    { "_id": "cat_04", "name": "Breed Spotlights", "slug": "breed-spotlights" },
+    { "_id": "cat_05", "name": "Funny & Cute", "slug": "funny-and-cute" }
+  ],
+  "tags": [
+    { "_id": "tag_01", "name": "kittens", "slug": "kittens" },
+    { "_id": "tag_02", "name": "nutrition", "slug": "nutrition" },
+    { "_id": "tag_03", "name": "training", "slug": "training" },
+    { "_id": "tag_04", "name": "senior cats", "slug": "senior-cats" },
+    { "_id": "tag_05", "name": "playing", "slug": "playing" },
+    { "_id": "tag_06", "name": "health", "slug": "health" },
+    { "_id": "tag_07", "name": "first-time owner", "slug": "first-time-owner" },
+    { "_id": "tag_08", "name": "cat toys", "slug": "cat-toys" },
+    { "_id": "tag_09", "name": "grooming", "slug": "grooming" },
+    { "_id": "tag_10", "name": "behavior", "slug": "behavior" }
+  ],
+  "catBreeds": [
+    {
+      "_id": "breed_rag",
+      "name": "Ragdoll",
+      "description": "Ragdolls are large, blue-eyed cats known for their docile and placid temperament. They are affectionate and often go limp like a ragdoll when picked up, which is how they got their name.",
+      "imageUrl": "https://placekitten.com/500/500",
+      "attributes": {
+        "origin": "United States",
+        "temperament": ["Docile", "Gentle", "Affectionate", "Calm"],
+        "size": "Large",
+        "avgLifespan": "12-17 years"
+      }
+    },
+    {
+      "_id": "breed_sia",
+      "name": "Siamese",
+      "description": "The Siamese is one of the most recognized Asian cat breeds. They are famous for their striking colorpoint coats, slender bodies, and piercing blue eyes. Siamese cats are social, intelligent, and very vocal.",
+      "imageUrl": "https://placekitten.com/500/501",
+      "attributes": {
+        "origin": "Thailand",
+        "temperament": ["Vocal", "Intelligent", "Social", "Demanding"],
+        "size": "Medium",
+        "avgLifespan": "15-20 years"
+      }
+    },
+    {
+      "_id": "breed_mco",
+      "name": "Maine Coon",
+      "description": "Known as 'gentle giants', Maine Coons are one of the largest domesticated cat breeds. They have a rugged appearance with a shaggy coat and a kind, playful nature, often described as 'dog-like'.",
+      "imageUrl": "https://placekitten.com/500/502",
+      "attributes": {
+        "origin": "United States",
+        "temperament": ["Gentle", "Playful", "Intelligent", "Good-natured"],
+        "size": "Large",
+        "avgLifespan": "12-15 years"
+      }
+    },
+    {
+      "_id": "breed_sph",
+      "name": "Sphynx",
+      "description": "The Sphynx cat is known for its lack of fur. They are not actually hairless but are covered with a fine, downy fuzz. They are known for their extroverted behavior, high energy levels, and love for warmth.",
+      "imageUrl": "https://placekitten.com/500/503",
+      "attributes": {
+        "origin": "Canada",
+        "temperament": ["Loyal", "Mischievous", "Affectionate", "Energetic"],
+        "size": "Medium",
+        "avgLifespan": "8-14 years"
+      }
     }
   ]
 }

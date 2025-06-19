@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-bg">
     <!-- Navbar wrapped in container for consistent width -->
     <div class="container px-0">
       <Navbar />
@@ -218,6 +218,14 @@ onMounted(fetchData);
   --transition-smooth: 0.5s ease-in-out;
 }
 
+/* Match Home.vue color scheme to Navbar/Login.vue */
+.home-bg,
+body,
+#app {
+  background: #fff8f0 !important;
+  min-height: 100vh;
+}
+
 .feature-highlight {
   min-height: 340px;
   margin-bottom: 2.5rem;
@@ -277,8 +285,7 @@ onMounted(fetchData);
   line-height: 1.2;
 }
 .most-viewed-title:hover {
-  color: #007bff;
-  text-decoration: underline;
+  color: #6ec1e4 !important;
 }
 .most-viewed-badge {
   left: 16px;
@@ -339,5 +346,34 @@ onMounted(fetchData);
 }
 .footer {
   background-color: #fafafa;
+}
+
+.feature-highlight,
+.recent-post-card {
+  background: #fdf6f0cc !important;
+  border-radius: 1.5rem;
+}
+
+.most-viewed-card {
+  background: #fff8f0 !important;
+  border-radius: 1.2rem;
+}
+h2,
+h3,
+h5,
+.fw-bold,
+.text-dark {
+  color: #a67c52 !important;
+}
+
+.badge.bg-dark {
+  background: #a67c52 !important;
+  color: #fff !important;
+}
+section.container,
+footer.container {
+  border-radius: 1.5rem;
+  border: 1.5px solid #ffd6c0;
+  background: #fff8f0;
 }
 </style>
