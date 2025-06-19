@@ -13,7 +13,8 @@ const routes = [
   { path: '/about', component: About },
   { path: '/blog', component: Blog },
   { path: '/adminpanel', component: () => import('../views/AdminPanel.vue'), meta: { requiresAuth: true, requiresAdmin: true } },
-  { path: '/search', component: () => import('../views/Search.vue') }
+  { path: '/search', component: () => import('../views/Search.vue') },
+  { path: '/posts/:id', component: () => import('../views/PostDetail.vue') }
 ]
 
 const router = createRouter({

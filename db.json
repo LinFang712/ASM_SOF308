@@ -71,8 +71,8 @@
         "chu-nuoi-lan-dau"
       ],
       "stats": {
-        "likes": 125,
-        "views": 2430
+        "likes": 130,
+        "views": 2451
       },
       "title": "Giải mã ngôn ngữ cơ thể của mèo: Hướng dẫn cho người mới bắt đầu",
       "status": "published",
@@ -92,6 +92,31 @@
           "content": "Bài viết tuyệt vời. Mèo nhà mình lúc nào máy hút bụi chạy cũng phồng đuôi lên. Giờ thì mình hiểu rồi.",
           "authorId": "user_302",
           "createdAt": "2025-04-17T09:22:00Z"
+        },
+        {
+          "content": "Tuyệt vời!",
+          "authorId": "user_anonymous",
+          "createdAt": "2025-06-19T23:05:22.959Z"
+        },
+        {
+          "content": "HI!!!",
+          "authorId": "user_anonymous",
+          "createdAt": "2025-06-19T23:23:37.234Z"
+        },
+        {
+          "content": "Nice!",
+          "authorId": "user_anonymous",
+          "createdAt": "2025-06-19T23:35:43.319Z"
+        },
+        {
+          "content": "GGA",
+          "authorId": "user_anonymous",
+          "createdAt": "2025-06-19T23:37:06.406Z"
+        },
+        {
+          "content": "Hello",
+          "authorId": "user_303",
+          "createdAt": "2025-06-19T23:38:41.723Z"
         }
       ],
       "publishedAt": "2025-04-15T10:00:00Z",
@@ -143,8 +168,8 @@
         "chu-nuoi-lan-dau"
       ],
       "stats": {
-        "likes": 210,
-        "views": 3500
+        "likes": 211,
+        "views": 3507
       },
       "title": "Những nguy hiểm trong nhà đối với mèo mà bạn có thể bỏ qua",
       "status": "published",
@@ -152,7 +177,13 @@
       "excerpt": "Ngôi nhà của bạn nên là nơi an toàn cho mèo, nhưng có những nguy hiểm tiềm ẩn ngay trước mắt. Tìm hiểu những loại cây, thực phẩm và vật dụng cần tránh xa mèo của bạn.",
       "authorId": "user_201",
       "category": "Sức khỏe mèo",
-      "comments": [],
+      "comments": [
+        {
+          "content": "Hi",
+          "authorId": "user_303",
+          "createdAt": "2025-06-19T23:43:24.574Z"
+        }
+      ],
       "publishedAt": "2025-05-10T09:00:00Z",
       "featuredImage": {
         "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNci0H5vBHBJTrOW8gLZg9mW4mVu2tv1Sfeg&s",
@@ -203,7 +234,7 @@
       ],
       "stats": {
         "likes": 152,
-        "views": 2900
+        "views": 2903
       },
       "title": "Giống mèo: Maine Coon hùng vĩ",
       "status": "published",
@@ -229,7 +260,7 @@
       ],
       "stats": {
         "likes": 350,
-        "views": 5500
+        "views": 5503
       },
       "title": "Tại sao mèo thích hộp? Khoa học đằng sau sự ngớ ngẩn",
       "status": "published",
@@ -386,7 +417,7 @@
       ],
       "stats": {
         "likes": 120,
-        "views": 2100
+        "views": 2107
       },
       "title": "Tại sao mèo thích ngủ trên laptop?",
       "status": "published",
@@ -394,7 +425,13 @@
       "excerpt": "Laptop là nơi yêu thích của nhiều chú mèo. Lý do là gì?",
       "authorId": "user_302",
       "category": "Hành vi mèo",
-      "comments": [],
+      "comments": [
+        {
+          "content": "LMAO",
+          "authorId": "user_anonymous",
+          "createdAt": "2025-06-19T23:17:56.765Z"
+        }
+      ],
       "publishedAt": "2025-06-18T12:00:00Z",
       "featuredImage": {
         "url": "https://compote.slate.com/images/8a5bf959-9321-4a83-b960-dad1120144ac.jpeg?width=1200&rect=1560x1040&offset=0x0",
@@ -438,7 +475,7 @@
       ],
       "stats": {
         "likes": 54,
-        "views": 900
+        "views": 901
       },
       "title": "Làm sao để mèo không cào đồ đạc trong nhà?",
       "status": "published",
@@ -446,7 +483,13 @@
       "excerpt": "Cào là bản năng của mèo, nhưng bạn có thể hướng dẫn chúng cào đúng chỗ.",
       "authorId": "user_201",
       "category": "Chải lông & Chăm sóc",
-      "comments": [],
+      "comments": [
+        {
+          "content": "Hi",
+          "authorId": "user_303",
+          "createdAt": "2025-06-19T23:43:09.709Z"
+        }
+      ],
       "publishedAt": "2025-06-20T14:00:00Z",
       "featuredImage": {
         "url": "https://cdn.pixabay.com/photo/2015/03/27/13/16/cat-694730_1280.jpg",
@@ -489,8 +532,8 @@
         "thuc-an"
       ],
       "stats": {
-        "likes": 39,
-        "views": 600
+        "likes": 40,
+        "views": 601
       },
       "title": "Mèo có thể ăn cá sống không?",
       "status": "published",
@@ -516,7 +559,7 @@
       ],
       "stats": {
         "likes": 45,
-        "views": 800
+        "views": 801
       },
       "title": "Cách làm đồ chơi đơn giản cho mèo từ vải vụn",
       "status": "published",
@@ -541,8 +584,8 @@
         "khoa-hoc"
       ],
       "stats": {
-        "likes": 112,
-        "views": 1800
+        "likes": 113,
+        "views": 1820
       },
       "title": "Tại sao mèo thích ngồi trong hộp nhỏ?",
       "status": "published",

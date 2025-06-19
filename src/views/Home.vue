@@ -14,9 +14,9 @@
           >
             {{ featurePost.category }}
           </span>
-          <h2 class="fw-bold mb-2" style="font-size:2.2rem; line-height:1.1;">
+          <router-link :to="{ path: `/posts/${featurePost.id}` }" class="fw-bold mb-2" style="font-size:2.2rem; line-height:1.1; text-decoration: none; color: inherit;">
             {{ featurePost.title }}
-          </h2>
+          </router-link>
           <p class="lead text-muted mb-0" style="font-size:1.5rem;">
             {{ featurePost.excerpt }}
           </p>
@@ -55,9 +55,9 @@
           <span class="text-uppercase fw-bold small mb-1 most-viewed-category" :style="{ color: getCategoryColor(post.category) }">
             {{ post.category }}
           </span>
-          <a href="#" class="fw-bold most-viewed-post-title mb-1">
+          <router-link :to="{ path: `/posts/${post.id}` }" class="fw-bold most-viewed-post-title mb-1">
             {{ post.title }}
-          </a>
+          </router-link>
           <span class="text-muted small mb-2" style="line-height:1.2;">
             {{ post.excerpt }}
           </span>
@@ -83,9 +83,9 @@
               <span class="text-uppercase fw-bold small mb-2 d-block" :style="{ color: getCategoryColor(recentPosts[0].category) }">
                 {{ recentPosts[0].category }}
               </span>
-              <h3 class="card-title fw-bold text-white mb-1">
+              <router-link :to="{ path: `/posts/${recentPosts[0].id}` }" class="card-title fw-bold text-white mb-1" style="text-decoration: none; color: inherit;">
                 {{ recentPosts[0].title }}
-              </h3>
+              </router-link>
               <p class="card-text text-white d-none d-sm-block">
                 {{ recentPosts[0].excerpt }}
               </p>
@@ -105,9 +105,9 @@
               <span class="text-uppercase fw-bold small mb-2 d-block" :style="{ color: getCategoryColor(recentPosts[1].category) }">
                 {{ recentPosts[1].category }}
               </span>
-              <h3 class="card-title fw-bold text-white mb-1">
+              <router-link :to="{ path: `/posts/${recentPosts[1].id}` }" class="card-title fw-bold text-white mb-1" style="text-decoration: none; color: inherit;">
                 {{ recentPosts[1].title }}
-              </h3>
+              </router-link>
             </div>
           </div>
         </div>
@@ -124,9 +124,9 @@
                <span class="text-uppercase fw-bold small mb-1 d-block" :style="{ color: getCategoryColor(recentPosts[2].category) }">
                 {{ recentPosts[2].category }}
               </span>
-              <h4 class="card-title fw-bold text-white mb-1" style="font-size: 1.1rem">
+              <router-link :to="{ path: `/posts/${recentPosts[2].id}` }" class="card-title fw-bold text-white mb-1" style="font-size: 1.1rem; text-decoration: none; color: inherit;">
                 {{ recentPosts[2].title }}
-              </h4>
+              </router-link>
             </div>
           </div>
         </div>
@@ -141,7 +141,9 @@
                 <span class="text-uppercase fw-bold small mb-2 d-block" :style="{ color: getCategoryColor(post.category) }">
                   {{ post.category }}
                 </span>
-                <h5 class="card-title fw-bold">{{ post.title }}</h5>
+                <router-link :to="{ path: `/posts/${post.id}` }" class="card-title fw-bold" style="text-decoration: none; color: inherit;">
+                  {{ post.title }}
+                </router-link>
                 <p class="card-text text-muted small">{{ post.excerpt }}</p>
              </div>
           </div>

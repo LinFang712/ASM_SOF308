@@ -151,11 +151,13 @@ const saveChanges = async () => {
           <h2 class="section-title">Bài viết của tôi</h2>
           <div v-if="user.posts && user.posts.length > 0" class="posts-grid">
             <div v-for="post in user.posts" :key="post.id" class="post-card">
-              <img :src="post.imageUrl" alt="Post image" class="post-card-img">
-              <div class="post-card-body">
-                <h5 class="post-card-title">{{ post.title }}</h5>
-                <p class="post-card-date">Đăng vào {{ formatDate(post.date) }}</p>
-              </div>
+              <router-link :to="{ path: `/posts/${post.id || post._id}` }" class="post-link">
+                <img :src="post.imageUrl" alt="Post image" class="post-card-img">
+                <div class="post-card-body">
+                  <h5 class="post-card-title">{{ post.title }}</h5>
+                  <p class="post-card-date">Đăng vào {{ formatDate(post.publishedAt || post.createdAt || post.date) }}</p>
+                </div>
+              </router-link>
             </div>
           </div>
           <div v-else>
@@ -263,6 +265,17 @@ const saveChanges = async () => {
 .post-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.post-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.post-link:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 .post-card-img {
