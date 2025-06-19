@@ -37,7 +37,7 @@
                   v-model="email"
                   class="form-control"
                   required
-                  autocomplete="username"
+                  autocomplete="email"
                 />
               </div>
               <div class="mb-3">
@@ -92,16 +92,8 @@ import { useRouter } from 'vue-router';
 import axios from 'axios';
 import Navbar from '../components/Navbar.vue';
 
-const MOCK_PASSWORDS = {
-  'admin@purrfectposts.com': 'admin_pass_123',
-  'anya.v@purrfectposts.com': 'author_pass_123',
-  'liam.g@purrfectposts.com': 'author_pass_456',
-  'sam.jones@email.com': 'member_pass_abc',
-  'chloe.c@email.com': 'member_pass_def'
-};
-
 const email = ref('admin@purrfectposts.com');
-const password = ref('admin_pass_123');
+const password = ref('123123123');
 const errorMessage = ref('');
 const isLoggingIn = ref(false);
 const router = useRouter();
@@ -137,10 +129,10 @@ const login = async () => {
 
     if (response.data.length > 0) {
       const user = response.data[0];
-      if (MOCK_PASSWORDS[user.email] === password.value) {
+      if (user.passwordHash === password.value) {
         const loggedInUser = {
           _id: user._id,
-          username: user.username,
+          displayName: user.profile?.displayName || user.email.split('@')[0],
           email: user.email,
           role: user.role,
           profile: user.profile

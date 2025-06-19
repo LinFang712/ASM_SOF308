@@ -26,7 +26,7 @@
               </div>
               <div class="mb-3">
                 <label class="form-label">Username</label>
-                <input type="text" v-model="username" class="form-control" required />
+                <input type="text" v-model="displayName" class="form-control" required />
               </div>
               <div class="mb-3">
                 <label class="form-label">Password</label>
@@ -47,7 +47,25 @@
                 <label class="form-label">Date of Birth</label>
                 <input type="date" v-model="dob" class="form-control" required />
               </div>
-              <button type="submit" class="btn btn-brown w-100 fw-bold">Đăng ký</button>
+              <button
+                type="submit"
+                class="btn btn-brown w-100 fw-bold"
+                :disabled="isRegistering"
+              >
+                <span
+                  v-if="isRegistering"
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                {{ isRegistering ? ' Đang xử lý...' : 'Đăng ký' }}
+              </button>
+              <div
+                v-if="errorMessage"
+                class="mt-3 alert alert-danger p-2 text-center"
+              >
+                {{ errorMessage }}
+              </div>
             </form>
             <div class="text-center mt-3">
               <span class="text-muted small">Đã có tài khoản?</span>
@@ -73,13 +91,17 @@
 <script setup>
 import { ref, onMounted, nextTick, watch } from 'vue'
 import axios from 'axios'
+import { useRouter } from 'vue-router'
 import Navbar from '../components/Navbar.vue'
 
 const email = ref('')
-const username = ref('')
+const displayName = ref('')
 const password = ref('')
 const gender = ref('')
 const dob = ref('')
+const errorMessage = ref('')
+const isRegistering = ref(false)
+const router = useRouter()
 
 const formCard = ref(null)
 const catImg = ref(null)
@@ -100,8 +122,55 @@ onMounted(() => {
 })
 
 // Watch for changes in form fields to update height if needed
-watch([email, username, password, gender, dob], setCardHeight)
+watch([email, displayName, password, gender, dob, errorMessage, isRegistering], setCardHeight)
 
+const register = async () => {
+  if (isRegistering.value) return
+  isRegistering.value = true
+  errorMessage.value = ''
+
+  try {
+    // Check if email already exists
+    const checkEmail = await axios.get('http://localhost:3001/users', {
+      params: { email: email.value }
+    })
+
+    if (checkEmail.data.length > 0) {
+      errorMessage.value = 'Email đã được sử dụng. Vui lòng chọn email khác.'
+      isRegistering.value = false
+      return
+    }
+
+    // Create new user
+    const newUser = {
+      _id: `user_${Date.now().toString().substring(7)}`, // Simple ID generation
+      dob: dob.value,
+      role: 'member',
+      email: email.value,
+      gender: gender.value,
+      profile: {
+        bio: '',
+        banner: 'https://ik.imagekit.io/xingeria/your-banner.jpg',
+        avatarUrl: '',
+        displayName: displayName.value,
+        socialLinks: {}
+      },
+      createdAt: new Date().toISOString(),
+      passwordHash: password.value
+    }
+
+    // Send POST request to create user
+    const response = await axios.post('http://localhost:3001/users', newUser)
+
+    // Redirect to login page
+    await router.push('/login')
+  } catch (error) {
+    errorMessage.value = 'Không thể đăng ký. Vui lòng thử lại sau.'
+    console.error('Registration Error:', error)
+  } finally {
+    isRegistering.value = false
+  }
+}
 </script>
 
 <style scoped>

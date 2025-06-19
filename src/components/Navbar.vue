@@ -9,7 +9,6 @@ const searchQuery = ref('')
 const navLinks = ref([
   { name: 'Trang chủ', path: '/' },
   { name: 'Giới thiệu', path: '/about' },
-  { name: 'Bài viết', path: '/blog' }
 ])
 
 const loadUser = () => {
@@ -26,7 +25,7 @@ const logout = () => {
 
 const handleSearch = () => {
   if (searchQuery.value.trim()) {
-    router.push({ name: 'search', query: { q: searchQuery.value } })
+    router.push(`/search?q=${encodeURIComponent(searchQuery.value)}`)
     searchQuery.value = ''
   }
 }
@@ -58,10 +57,10 @@ onMounted(() => {
         <div class="d-flex align-items-center">
           <template v-if="user">
             <router-link to="/profile" class="fw-bold me-3 text-brown text-decoration-none">
-              Hello, {{ user.fullName || user.name || user.username }}
+              Hello, {{ user.fullName || user.name || user.displayName || user.profile?.displayName || user.email.split('@')[0] }}
             </router-link>
-            <router-link v-if="user.role === 'admin'" to="/admin/users" class="nav-link text-danger me-3">
-              Quản lý tài khoản
+            <router-link v-if="user.role === 'admin'" to="/adminpanel" class="nav-link text-danger me-3">
+              Trang quản trị
             </router-link>
             <button class="btn btn-outline-brown btn-sm" @click="logout">Đăng xuất</button>
           </template>
@@ -162,5 +161,13 @@ onMounted(() => {
 
 .nav-link.text-danger:hover {
   color: #a71b29 !important;
+}
+
+.btn, .nav-link, .search-input {
+  cursor: pointer;
+}
+
+.btn:hover, .nav-link:hover, .search-input:hover {
+  cursor: pointer;
 }
 </style>

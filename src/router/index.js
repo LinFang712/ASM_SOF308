@@ -12,6 +12,8 @@ const routes = [
   { path: '/profile', component: Profile, meta: { requiresAuth: true } },
   { path: '/about', component: About },
   { path: '/blog', component: Blog },
+  { path: '/adminpanel', component: () => import('../views/AdminPanel.vue'), meta: { requiresAuth: true, requiresAdmin: true } },
+  { path: '/search', component: () => import('../views/Search.vue') }
 ]
 
 const router = createRouter({

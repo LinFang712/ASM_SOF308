@@ -1,349 +1,864 @@
 {
-  "users": [
+  "tags": [
     {
-      "_id": "user_101",
-      "username": "catmin",
-      "email": "admin@purrfectposts.com",
-      "passwordHash": "$2b$12$l5nQ4A4zL8tH.3jO9bB7sO6tE.G/mN3wX/uYI.jK5lZ/oP6qR9pIe",
-      "profile": {
-        "displayName": "The Catmin",
-        "avatarUrl": "https://watermark.lovepik.com/photo/20211204/large/lovepik-foreign-male-business-picture_501509763.jpg",
-        "bio": "Chief administrator and cat enthusiast at Purrfect Posts. Ensuring everything runs smoothly, one cat nap at a time.",
-        "socialLinks": {
-          "twitter": "https://twitter.com/catmin_pp",
-          "instagram": "https://instagram.com/catmin_pp"
-        }
-      },
-      "role": "admin",
-      "createdAt": "2024-01-15T09:30:00Z"
+      "_id": "tag_01",
+      "name": "mèo con",
+      "slug": "meo-con",
+      "id": "b482"
     },
     {
-      "_id": "user_201",
-      "username": "anya_the_author",
-      "email": "anya.v@purrfectposts.com",
-      "passwordHash": "$2b$12$k8sP7aB3zL9tH.1jO9bB7sO6tE.G/mN3wX/uYI.jK5lZ/oP6qR9pIe",
-      "profile": {
-        "displayName": "Anya Volkov",
-        "avatarUrl": "https://cafebiz.cafebizcdn.vn/162123310254002176/2023/1/25/anh-chup-man-hinh-2023-01-24-luc-204334-1674608275008-16746082751041415603916.png",
-        "bio": "Veterinary technician and lifelong cat lover. I write about feline health and behavior to help owners give their pets the best life.",
-        "socialLinks": {
-          "instagram": "https://instagram.com/anyavolkov_cats"
-        }
-      },
-      "role": "author",
-      "createdAt": "2024-02-20T11:00:00Z"
+      "_id": "tag_02",
+      "name": "dinh dưỡng",
+      "slug": "dinh-duong",
+      "id": "02f2"
     },
     {
-      "_id": "user_202",
-      "username": "liam_writes",
-      "email": "liam.g@purrfectposts.com",
-      "passwordHash": "$2b$12$mN3wX/uYI.jK5lZ/oP6qR9pIek8sP7aB3zL9tH.1jO9bB7sO6tE.G/",
-      "profile": {
-        "displayName": "Liam Gallagher",
-        "avatarUrl": "https://cdn.baoquocte.vn/stores/news_dataimages/tranlieu/042020/07/22/5358_RMIT_-_Dr_Burkhard_Schrage.jpg",
-        "bio": "Professional cat groomer and photographer. I share tips on keeping your cat looking fabulous and capture their cutest moments.",
-        "socialLinks": {
-          "twitter": "https://twitter.com/liamg_cats"
-        }
-      },
-      "role": "author",
-      "createdAt": "2024-03-10T14:20:00Z"
+      "_id": "tag_03",
+      "name": "huấn luyện",
+      "slug": "huan-luyen",
+      "id": "7234"
     },
     {
-      "_id": "user_301",
-      "username": "sam_jones",
-      "email": "sam.jones@email.com",
-      "passwordHash": "$2b$12$oP6qR9pIe/uYI.jK5lZk8sP7aB3zL9tH.1jO9bB7sO6tE.G/mN3wX",
-      "profile": {
-        "displayName": "Sam J.",
-        "avatarUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7aKds9hMj-Hzlowxg76c5k6uyeZ28Y2YjzQ&s",
-        "bio": "Just a regular person who really, really loves cats. Here for the cute pictures and health tips!",
-        "socialLinks": {}
-      },
-      "role": "member",
-      "createdAt": "2024-05-01T18:45:00Z"
+      "_id": "tag_04",
+      "name": "mèo già",
+      "slug": "meo-gia",
+      "id": "a377"
     },
     {
-      "_id": "user_302",
-      "username": "chloe_catlady",
-      "email": "chloe.c@email.com",
-      "passwordHash": "$2b$12$jK5lZ/oP6qR9pIek8sP7aB3zL9tH.1jO9bB7sO6tE.G/mN3wX/uYI.",
-      "profile": {
-        "displayName": "Chloe",
-        "avatarUrl": "https://img.lovepik.com/free-png/20211215/lovepik-foreign-business-male-half-body-image-png-image_401629045_wh860.png",
-        "bio": "Proud owner of three rescue cats. Always looking to learn more about my furry family members.",
-        "socialLinks": {
-          "instagram": "https://instagram.com/chloes_cat_crew"
-        }
-      },
-      "role": "member",
-      "createdAt": "2024-06-12T20:00:00Z"
+      "_id": "tag_05",
+      "name": "chơi đùa",
+      "slug": "choi-dua",
+      "id": "4c6d"
+    },
+    {
+      "_id": "tag_06",
+      "name": "sức khỏe",
+      "slug": "suc-khoe",
+      "id": "8bdc"
+    },
+    {
+      "_id": "tag_07",
+      "name": "chủ nuôi lần đầu",
+      "slug": "chu-nuoi-lan-dau",
+      "id": "40bc"
+    },
+    {
+      "_id": "tag_08",
+      "name": "đồ chơi mèo",
+      "slug": "do-choi-meo",
+      "id": "d58d"
+    },
+    {
+      "_id": "tag_09",
+      "name": "chải lông",
+      "slug": "chai-long",
+      "id": "f8e9"
+    },
+    {
+      "_id": "tag_10",
+      "name": "hành vi",
+      "slug": "hanh-vi",
+      "id": "77ea"
     }
   ],
   "posts": [
     {
       "_id": "post_abc001",
-      "authorId": "user_201",
-      "title": "Decoding Your Cat's Body Language: A Beginner's Guide",
-      "slug": "decoding-your-cats-body-language-a-beginners-guide",
-      "excerpt": "Is that tail twitch a sign of affection or annoyance? We break down the subtle cues of feline communication to help you better understand your furry friend.",
-      "content": "## Understanding the Tail\n\nThe tail is one of the most expressive parts of a cat. Here's a quick guide:\n\n- **Tail high:** Confident and happy.\n- **Tail low or tucked:** Fearful or insecure.\n- **Tail twitching:** Excitement or anxiety.\n- **Tail puffed up:** Scared or angry, trying to look bigger.\n\n## The Eyes and Ears\n\nPay attention to the eyes and ears as well:\n\n- **Slow Blinks:** A sign of trust and affection. It's often called a 'cat kiss'.\n- **Dilated Pupils:** Can mean excitement, fear, or low light.\n- **Ears Forward:** Alert and interested.\n- **Ears Flat:** Angry or scared.",
-      "featuredImage": {
-        "url": "https://thumbs.dreamstime.com/b/british-shorthair-cat-unhappy-closeup-looking-directly-camera-its-ears-different-directions-british-shorthair-cat-105552563.jpg",
-        "altText": "A curious cat with its ears forward looking directly at the camera."
-      },
-      "status": "published",
-      "tags": ["behavior", "communication", "first-time owner"],
-      "category": "Cat Behavior",
+      "slug": "giai-ma-ngon-ngu-co-the-cua-meo-huong-dan-cho-nguoi-moi-bat-dau",
+      "tags": [
+        "hanh-vi",
+        "giao-tiep",
+        "chu-nuoi-lan-dau"
+      ],
       "stats": {
         "likes": 125,
         "views": 2430
       },
+      "title": "Giải mã ngôn ngữ cơ thể của mèo: Hướng dẫn cho người mới bắt đầu",
+      "status": "published",
+      "content": "## Hiểu về đuôi mèo\n\nĐuôi là một trong những bộ phận biểu cảm nhất của mèo. Dưới đây là hướng dẫn nhanh:\n\n- **Đuôi dựng cao:** Tự tin và vui vẻ.\n- **Đuôi thấp hoặc cụp:** Sợ hãi hoặc thiếu tự tin.\n- **Đuôi giật nhẹ:** Hào hứng hoặc lo lắng.\n- **Đuôi phồng to:** Sợ hãi hoặc tức giận, cố gắng trông to lớn hơn.\n\n## Đôi mắt và tai\n\nHãy chú ý đến mắt và tai:\n\n- **Chớp mắt chậm:** Dấu hiệu của sự tin tưởng và yêu thương. Thường được gọi là 'nụ hôn của mèo'.\n- **Đồng tử giãn to:** Có thể là phấn khích, sợ hãi hoặc do ánh sáng yếu.\n- **Tai hướng về phía trước:** Cảnh giác và quan tâm.\n- **Tai cụp xuống:** Tức giận hoặc sợ hãi.",
+      "excerpt": "Cái vẫy đuôi đó là dấu hiệu của sự yêu thương hay khó chịu? Chúng tôi phân tích các tín hiệu tinh tế trong giao tiếp của mèo để giúp bạn hiểu rõ hơn về người bạn lông xù của mình.",
+      "authorId": "user_201",
+      "category": "Hành vi mèo",
       "comments": [
         {
           "_id": "comment_01",
+          "content": "Bài viết rất hữu ích! Mình không biết chớp mắt chậm là nụ hôn của mèo luôn!",
           "authorId": "user_301",
-          "content": "This is so helpful! I never knew the slow blink was a cat kiss!",
           "createdAt": "2025-04-16T14:05:10Z"
         },
         {
           "_id": "comment_02",
+          "content": "Bài viết tuyệt vời. Mèo nhà mình lúc nào máy hút bụi chạy cũng phồng đuôi lên. Giờ thì mình hiểu rồi.",
           "authorId": "user_302",
-          "content": "Great article. My cat's tail is always puffed up when the vacuum cleaner is on. This makes so much sense now.",
           "createdAt": "2025-04-17T09:22:00Z"
         }
       ],
-      "publishedAt": "2025-04-15T10:00:00Z"
+      "publishedAt": "2025-04-15T10:00:00Z",
+      "featuredImage": {
+        "url": "https://thumbs.dreamstime.com/b/british-shorthair-cat-unhappy-closeup-looking-directly-camera-its-ears-different-directions-british-shorthair-cat-105552563.jpg",
+        "altText": "Một chú mèo tò mò với đôi tai hướng về phía trước nhìn thẳng vào máy ảnh."
+      },
+      "id": "0317"
     },
     {
       "_id": "post_def002",
-      "authorId": "user_202",
-      "title": "The Ultimate Guide to Brushing Your Long-Haired Cat",
-      "slug": "the-ultimate-guide-to-brushing-your-long-haired-cat",
-      "excerpt": "Tangled fur and mats can be a nightmare. Follow our professional grooming tips to keep your long-haired cat's coat healthy, shiny, and tangle-free.",
-      "content": "### Choosing the Right Tools\n\nNot all brushes are created equal. For long-haired breeds like Maine Coons or Persians, you'll need:\n\n1.  **A wide-toothed comb:** For gently working out large tangles.\n2.  **A slicker brush:** For removing loose undercoat and preventing mats.\n3.  **A soft bristle brush:** For finishing and adding shine.\n\n### The Process\n\nStart slow and make it a positive experience. Use treats and praise. Brush in the direction of hair growth and be extra gentle around the belly and legs.",
-      "featuredImage": {
-        "url": "https://thumbs.dreamstime.com/b/close-up-image-gray-british-shorthair-cat-being-gently-brushed-s-adorable-slightly-grumpy-expression-adds-touch-humor-330312217.jpg",
-        "altText": "A fluffy long-haired cat being gently brushed by its owner."
-      },
-      "status": "published",
-      "tags": ["grooming", "long-hair", "health"],
-      "category": "Grooming & Care",
+      "slug": "huong-dan-chai-long-cho-meo-long-dai",
+      "tags": [
+        "chai-long",
+        "long-dai",
+        "suc-khoe"
+      ],
       "stats": {
         "likes": 98,
         "views": 1850
       },
+      "title": "Hướng dẫn chải lông cho mèo lông dài",
+      "status": "published",
+      "content": "### Chọn dụng cụ phù hợp\n\nKhông phải bàn chải nào cũng giống nhau. Với các giống mèo lông dài như Maine Coon hoặc Ba Tư, bạn cần:\n\n1.  **Lược răng thưa:** Để gỡ các búi lông lớn nhẹ nhàng.\n2.  **Bàn chải lông kim:** Để loại bỏ lông tơ rụng và ngăn ngừa rối.\n3.  **Bàn chải lông mềm:** Để hoàn thiện và làm bóng lông.\n\n### Quy trình\n\nBắt đầu từ từ và tạo trải nghiệm tích cực. Sử dụng đồ ăn thưởng và lời khen. Chải theo chiều lông mọc và nhẹ nhàng ở vùng bụng, chân.",
+      "excerpt": "Lông rối và bết có thể là cơn ác mộng. Hãy làm theo các mẹo chải lông chuyên nghiệp để giữ cho bộ lông mèo của bạn luôn khỏe mạnh, bóng mượt và không bị rối.",
+      "authorId": "user_202",
+      "category": "Chải lông & Chăm sóc",
       "comments": [
-         {
+        {
           "_id": "comment_03",
+          "content": "Lời khuyên tuyệt vời, Liam! Chải lông đều đặn là chìa khóa.",
           "authorId": "user_101",
-          "content": "Excellent advice, Liam! A consistent grooming routine is key.",
           "createdAt": "2025-03-22T11:45:00Z"
         }
       ],
-      "publishedAt": "2025-03-20T12:00:00Z"
+      "publishedAt": "2025-03-20T12:00:00Z",
+      "featuredImage": {
+        "url": "https://thumbs.dreamstime.com/b/close-up-image-gray-british-shorthair-cat-being-gently-brushed-s-adorable-slightly-grumpy-expression-adds-touch-humor-330312217.jpg",
+        "altText": "Một chú mèo lông dài đang được chủ chải lông nhẹ nhàng."
+      },
+      "id": "8503"
     },
     {
       "_id": "post_ghi003",
-      "authorId": "user_201",
-      "title": "Common Household Dangers for Cats You Might Overlook",
-      "slug": "common-household-dangers-for-cats",
-      "excerpt": "Your home should be a safe haven for your cat, but hidden dangers can lurk in plain sight. Learn what plants, foods, and items to keep away from your curious kitty.",
-      "content": "Many common household items can be toxic to cats. It's crucial to be aware of them.\n\n**Toxic Plants:**\n- Lilies\n- Tulips\n- Oleander\n\n**Dangerous Foods:**\n- Chocolate\n- Onions and Garlic\n- Grapes and Raisins\n\n**Other Hazards:**\n- Electrical cords\n- Cleaning supplies\n- Small objects they might swallow",
-      "featuredImage": {
-        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNci0H5vBHBJTrOW8gLZg9mW4mVu2tv1Sfeg&s",
-        "altText": "A cat curiously sniffing a lily in a vase, illustrating a household danger."
-      },
-      "status": "published",
-      "tags": ["health", "safety", "first-time owner"],
-      "category": "Feline Health",
+      "slug": "nhung-nguy-hiem-trong-nha-doi-voi-meo",
+      "tags": [
+        "suc-khoe",
+        "an-toan",
+        "chu-nuoi-lan-dau"
+      ],
       "stats": {
         "likes": 210,
         "views": 3500
       },
+      "title": "Những nguy hiểm trong nhà đối với mèo mà bạn có thể bỏ qua",
+      "status": "published",
+      "content": "Nhiều vật dụng trong nhà có thể gây độc cho mèo. Việc nhận biết là rất quan trọng.\n\n**Cây độc:**\n- Hoa loa kèn\n- Hoa tulip\n- Hoa trúc đào\n\n**Thực phẩm nguy hiểm:**\n- Sô cô la\n- Hành tây và tỏi\n- Nho và nho khô\n\n**Nguy cơ khác:**\n- Dây điện\n- Chất tẩy rửa\n- Vật nhỏ có thể nuốt phải",
+      "excerpt": "Ngôi nhà của bạn nên là nơi an toàn cho mèo, nhưng có những nguy hiểm tiềm ẩn ngay trước mắt. Tìm hiểu những loại cây, thực phẩm và vật dụng cần tránh xa mèo của bạn.",
+      "authorId": "user_201",
+      "category": "Sức khỏe mèo",
       "comments": [],
-      "publishedAt": "2025-05-10T09:00:00Z"
+      "publishedAt": "2025-05-10T09:00:00Z",
+      "featuredImage": {
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNci0H5vBHBJTrOW8gLZg9mW4mVu2tv1Sfeg&s",
+        "altText": "Một chú mèo đang ngửi hoa loa kèn trong bình, minh họa cho nguy hiểm trong nhà."
+      },
+      "id": "d311"
     },
     {
       "_id": "post_jkl004",
-      "authorId": "user_201",
-      "title": "Choosing the Best Food for Your Senior Cat",
-      "slug": "choosing-the-best-food-for-your-senior-cat",
-      "excerpt": "As cats age, their nutritional needs change. Let's explore what makes a great senior cat food and how to support your cat's health in their golden years.",
-      "content": "Senior cats (typically 11+ years) often benefit from diets that are:\n\n- Lower in calories to prevent obesity.\n- Higher in easily digestible protein to maintain muscle mass.\n- Fortified with nutrients like omega-3 fatty acids for joint health.\n\nAlways consult your vet before making any major changes to your cat's diet.",
-      "featuredImage": {
-        "url": "https://media.istockphoto.com/id/1134929565/photo/hungry-cat-at-home-kitchen.jpg?s=612x612&w=0&k=20&c=Dhcn-O8metlHbHDasLeQnMGBuLgm5NIgIyjcpq05nZA=",
-        "altText": "An older, graceful cat eating from a food bowl."
-      },
-      "status": "published",
-      "tags": ["nutrition", "senior cats", "health"],
-      "category": "Feline Health",
+      "slug": "chon-thuc-an-tot-nhat-cho-meo-gia",
+      "tags": [
+        "dinh-duong",
+        "meo-gia",
+        "suc-khoe"
+      ],
       "stats": {
         "likes": 85,
         "views": 1600
       },
+      "title": "Chọn thức ăn tốt nhất cho mèo già",
+      "status": "published",
+      "content": "Mèo già (thường từ 11 tuổi trở lên) nên ăn:\n\n- Ít calo hơn để tránh béo phì.\n- Nhiều protein dễ tiêu hóa để duy trì cơ bắp.\n- Bổ sung dưỡng chất như omega-3 tốt cho khớp.\n\nLuôn hỏi ý kiến bác sĩ thú y trước khi thay đổi chế độ ăn của mèo.",
+      "excerpt": "Khi mèo già đi, nhu cầu dinh dưỡng của chúng thay đổi. Hãy cùng tìm hiểu loại thức ăn phù hợp và cách hỗ trợ sức khỏe cho mèo ở tuổi xế chiều.",
+      "authorId": "user_201",
+      "category": "Sức khỏe mèo",
       "comments": [
         {
           "_id": "comment_04",
+          "content": "Mèo nhà mình 12 tuổi rồi, có vẻ chậm chạp hơn một chút. Thông tin này thật hữu ích, cảm ơn bạn!",
           "authorId": "user_302",
-          "content": "My 12-year-old cat has been slowing down a bit. This is timely, thank you!",
           "createdAt": "2025-06-02T18:15:00Z"
         }
       ],
-      "publishedAt": "2025-06-01T11:30:00Z"
+      "publishedAt": "2025-06-01T11:30:00Z",
+      "featuredImage": {
+        "url": "https://media.istockphoto.com/id/1134929565/photo/hungry-cat-at-home-kitchen.jpg?s=612x612&w=0&k=20&c=Dhcn-O8metlHbHDasLeQnMGBuLgm5NIgIyjcpq05nZA=",
+        "altText": "Một chú mèo lớn tuổi, duyên dáng đang ăn từ bát thức ăn."
+      },
+      "id": "cca3"
     },
     {
       "_id": "post_mno005",
-      "authorId": "user_101",
-      "title": "Breed Spotlight: The Majestic Maine Coon",
-      "slug": "breed-spotlight-the-majestic-maine-coon",
-      "excerpt": "Known as the 'gentle giants' of the cat world, Maine Coons are as friendly as they are large. Dive into the history and characteristics of this amazing breed.",
-      "content": "The Maine Coon is one of the oldest natural breeds in North America. They are known for their shaggy coat, tufted ears, and bushy tail. Despite their size, they are incredibly good-natured and make fantastic family pets. They are playful, intelligent, and famously 'dog-like' in their loyalty.",
-      "featuredImage": {
-        "url": "https://i.ytimg.com/vi/kqiW9413jfM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB5i_lX0cDyruvTMv4f9AVPuOzhdg",
-        "altText": "A large, majestic Maine Coon cat with a bushy tail sitting proudly."
-      },
-      "status": "published",
-      "tags": ["breeds", "maine coon", "behavior"],
-      "category": "Breed Spotlights",
+      "slug": "giong-meo-maine-coon-hung-vi",
+      "tags": [
+        "giong-meo",
+        "maine-coon",
+        "hanh-vi"
+      ],
       "stats": {
         "likes": 152,
         "views": 2900
       },
+      "title": "Giống mèo: Maine Coon hùng vĩ",
+      "status": "published",
+      "content": "Maine Coon là một trong những giống mèo tự nhiên lâu đời nhất ở Bắc Mỹ. Chúng nổi tiếng với bộ lông xù, tai cụp và đuôi dài. Bất chấp kích thước của mình, chúng có tính cách rất tốt và là những thú cưng tuyệt vời cho gia đình. Chúng vui tươi, thông minh và nổi tiếng với sự trung thành như chó.",
+      "excerpt": "Được biết đến như những 'gã khổng lồ hiền lành' của thế giới mèo, Maine Coon vừa thân thiện vừa to lớn. Khám phá lịch sử và đặc điểm của giống mèo tuyệt vời này.",
+      "authorId": "user_101",
+      "category": "Giống mèo nổi bật",
       "comments": [],
-      "publishedAt": "2025-05-25T15:00:00Z"
+      "publishedAt": "2025-05-25T15:00:00Z",
+      "featuredImage": {
+        "url": "https://i.ytimg.com/vi/kqiW9413jfM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB5i_lX0cDyruvTMv4f9AVPuOzhdg",
+        "altText": "Một chú mèo Maine Coon lớn, hùng vĩ với đuôi xù ngồi tự hào."
+      },
+      "id": "61ca"
     },
     {
       "_id": "post_pqr006",
-      "authorId": "user_202",
-      "title": "Why Do Cats Love Boxes? The Science Behind the Silliness",
-      "slug": "why-do-cats-love-boxes",
-      "excerpt": "It's a universal truth: if it fits, it sits. But why are cats so obsessed with squeezing into boxes? We explore the comforting, instinctual reasons.",
-      "content": "The love for boxes is rooted in a cat's natural instincts. \n\n1.  **Security:** Enclosed spaces make cats feel safe and protected from predators.\n2.  **Stress Reduction:** Studies have shown that providing boxes to shelter cats helps them adapt and destress faster.\n3.  **Warmth:** Cardboard is a great insulator, making boxes a cozy place for a nap.",
-      "featuredImage": {
-        "url": "https://media.istockphoto.com/id/545462228/photo/cat-playing-peek-a-boo-in-a-box.jpg?s=612x612&w=0&k=20&c=QlBKIL5t35Fj694ihunakEMK6M9GMs5CRwHCUNPPTeA=",
-        "altText": "A small tabby cat peeking out happily from inside a cardboard box."
-      },
-      "status": "published",
-      "tags": ["behavior", "funny", "science"],
-      "category": "Cat Behavior",
+      "slug": "tai-sao-meo-thich-hop",
+      "tags": [
+        "hanh-vi",
+        "hai-huoc",
+        "khoa-hoc"
+      ],
       "stats": {
         "likes": 350,
         "views": 5500
       },
+      "title": "Tại sao mèo thích hộp? Khoa học đằng sau sự ngớ ngẩn",
+      "status": "published",
+      "content": "Tình yêu dành cho hộp bắt nguồn từ bản năng tự nhiên của mèo. \n\n1.  **An toàn:** Không gian kín khiến mèo cảm thấy an toàn và được bảo vệ khỏi kẻ thù.\n2.  **Giảm căng thẳng:** Các nghiên cứu đã chỉ ra rằng việc cung cấp hộp cho mèo giúp chúng thích nghi và giảm căng thẳng nhanh hơn.\n3.  **Sự ấm áp:** Bìa các tông là một chất cách nhiệt tuyệt vời, khiến hộp trở thành nơi lý tưởng cho một giấc ngủ trưa.",
+      "excerpt": "Đó là một sự thật phổ quát: nếu vừa vặn, mèo sẽ ngồi vào đó. Nhưng tại sao mèo lại cuồng nhiệt với việc chui vào hộp đến vậy? Chúng tôi khám phá những lý do an toàn, theo bản năng.",
+      "authorId": "user_202",
+      "category": "Hành vi mèo",
       "comments": [],
-      "publishedAt": "2025-02-14T10:00:00Z"
+      "publishedAt": "2025-02-14T10:00:00Z",
+      "featuredImage": {
+        "url": "https://media.istockphoto.com/id/545462228/photo/cat-playing-peek-a-boo-in-a-box.jpg?s=612x612&w=0&k=20&c=QlBKIL5t35Fj694ihunakEMK6M9GMs5CRwHCUNPPTeA=",
+        "altText": "Một chú mèo tabby nhỏ nhắn vui vẻ nhìn ra từ bên trong một hộp các tông."
+      },
+      "id": "da71"
     },
     {
       "_id": "post_stu007",
-      "authorId": "user_201",
-      "title": "Introduction to Clicker Training for Cats",
-      "slug": "introduction-to-clicker-training-for-cats",
-      "excerpt": "Can you really train a cat? Absolutely! This post will introduce the basics of clicker training, a positive reinforcement method to teach your cat new tricks.",
-      "content": "Clicker training is a fun way to bond with your cat. The basic idea is to 'charge' the clicker by clicking and immediately giving a treat. Soon, the cat associates the 'click' sound with a reward. Once the clicker is charged, you can use it to mark desired behaviors, like sitting or high-fiving.",
-      "featuredImage": {
-        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP9M6-_uPY7-U4ga1u4EAsUDc9HzbZqG8JdQ&s",
-        "altText": "A hand holding a clicker training device with a cat looking on attentively."
-      },
-      "status": "draft",
-      "tags": ["training", "behavior", "enrichment"],
-      "category": "Cat Behavior",
+      "slug": "gioi-thieu-ve-huan-luyen-bang-clicker-cho-meo",
+      "tags": [
+        "huan-luyen",
+        "hanh-vi",
+        "lam-giau"
+      ],
       "stats": {
         "likes": 0,
         "views": 15
       },
+      "title": "Giới thiệu về huấn luyện bằng clicker cho mèo",
+      "status": "draft",
+      "content": "Huấn luyện bằng clicker là một cách thú vị để gắn bó với mèo của bạn. Ý tưởng cơ bản là 'nạp năng lượng' cho clicker bằng cách nhấn và ngay lập tức cho thưởng. Sớm thôi, mèo sẽ liên kết âm thanh 'click' với phần thưởng. Khi clicker đã được nạp năng lượng, bạn có thể sử dụng nó để đánh dấu những hành vi mong muốn, như ngồi hoặc vẫy tay.",
+      "excerpt": "Bạn có thể huấn luyện mèo thật không? Chắc chắn rồi! Bài viết này sẽ giới thiệu những điều cơ bản về huấn luyện bằng clicker, một phương pháp tăng cường hành vi tích cực để dạy mèo những trò mới.",
+      "authorId": "user_201",
+      "category": "Hành vi mèo",
       "comments": [],
-      "publishedAt": null
+      "publishedAt": null,
+      "featuredImage": {
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP9M6-_uPY7-U4ga1u4EAsUDc9HzbZqG8JdQ&s",
+        "altText": "Một bàn tay cầm thiết bị huấn luyện clicker với một chú mèo nhìn chăm chú."
+      },
+      "id": "f190"
     },
     {
       "_id": "post_vwx008",
-      "authorId": "user_202",
-      "title": "DIY Cat Toys You Can Make from Household Items",
-      "slug": "diy-cat-toys-you-can-make-from-household-items",
-      "excerpt": "You don't need to spend a fortune to keep your cat entertained. Here are a few simple, safe, and fun toys you can create with things you already have.",
-      "content": "Before you start, always prioritize safety. Avoid small parts that can be swallowed.\n\n**Toy Ideas:**\n\n- **Cardboard Box Fort:** Simple, but a classic for a reason.\n- **Toilet Paper Roll Treat Puzzle:** Fold the ends of a toilet paper roll and poke holes in it. Fill with treats.\n- **Wine Cork Chase Toy:** Tie a wine cork to a string. That's it!",
-      "featuredImage": {
-        "url": "https://www.madpaws.com.au/wp-content/uploads/2018/11/Screen-Shot-2018-11-13-at-11.23.03-am.png",
-        "altText": "A collection of handmade cat toys made from corks, toilet paper rolls, and fabric."
-      },
-      "status": "draft",
-      "tags": ["enrichment", "playing", "diy", "cat toys"],
-      "category": "Funny & Cute",
+      "slug": "do-choi-cho-meo-tu-lam-tu-vat-dung-trong-nha",
+      "tags": [
+        "lam-giau",
+        "choi-dua",
+        "tu-lam",
+        "do-choi-meo"
+      ],
       "stats": {
         "likes": 2,
         "views": 25
       },
+      "title": "Đồ chơi cho mèo tự làm từ vật dụng trong nhà",
+      "status": "draft",
+      "content": "Trước khi bắt đầu, hãy luôn đặt sự an toàn lên hàng đầu. Tránh các bộ phận nhỏ có thể bị nuốt phải.\n\n**Ý tưởng đồ chơi:**\n\n- **Pháo đài hộp các tông:** Đơn giản nhưng có lý do chính đáng.\n- **Câu đố đồ ăn từ cuộn giấy vệ sinh:** Gập các đầu của một cuộn giấy vệ sinh và đục lỗ. Đổ đầy đồ ăn vặt.\n- **Đồ chơi đuổi theo nút chai rượu vang:** Buộc một nút chai rượu vang vào một sợi dây. Chỉ vậy thôi!",
+      "excerpt": "Bạn không cần phải chi nhiều tiền để giữ cho mèo của mình vui vẻ. Dưới đây là một vài đồ chơi đơn giản, an toàn và thú vị mà bạn có thể tạo ra từ những thứ bạn đã có.",
+      "authorId": "user_202",
+      "category": "Vui nhộn & Dễ thương",
       "comments": [],
-      "publishedAt": null
+      "publishedAt": null,
+      "featuredImage": {
+        "url": "https://www.madpaws.com.au/wp-content/uploads/2018/11/Screen-Shot-2018-11-13-at-11.23.03-am.png",
+        "altText": "Một bộ sưu tập các đồ chơi mèo tự làm từ nút chai, cuộn giấy vệ sinh và vải."
+      },
+      "id": "e55a"
+    },
+    {
+      "_id": "post_new001",
+      "slug": "5-dau-hieu-meo-hanh-phuc",
+      "tags": [
+        "hanh-vi",
+        "hanh-phuc",
+        "dau-hieu"
+      ],
+      "stats": {
+        "likes": 77,
+        "views": 1200
+      },
+      "title": "5 Dấu hiệu mèo của bạn đang hạnh phúc",
+      "status": "published",
+      "content": "1. Kêu rừ rừ khi được vuốt ve.\n2. Đuôi dựng cao khi gặp bạn.\n3. Ăn uống đều đặn.\n4. Chơi đùa và vận động.\n5. Thường xuyên chớp mắt chậm với bạn.",
+      "excerpt": "Bạn có biết mèo thể hiện sự hạnh phúc như thế nào không? Dưới đây là 5 dấu hiệu dễ nhận biết.",
+      "authorId": "user_202",
+      "category": "Hành vi mèo",
+      "comments": [],
+      "publishedAt": "2025-06-15T09:00:00Z",
+      "featuredImage": {
+        "url": "https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_1280.jpg",
+        "altText": "Mèo nằm thư giãn trên ghế sofa"
+      },
+      "id": "92f0"
+    },
+    {
+      "_id": "post_new002",
+      "slug": "cach-tam-cho-meo-khong-bi-cao",
+      "tags": [
+        "chai-long",
+        "cham-soc",
+        "meo"
+      ],
+      "stats": {
+        "likes": 65,
+        "views": 980
+      },
+      "title": "Cách tắm cho mèo mà không bị cào",
+      "status": "published",
+      "content": "Chuẩn bị nước ấm, khăn mềm và đồ ăn thưởng. Nhẹ nhàng làm ướt lông mèo, tránh làm ướt đầu. Sử dụng dầu gội chuyên dụng cho mèo và xả sạch. Lau khô bằng khăn và thưởng cho mèo sau khi tắm.",
+      "excerpt": "Tắm cho mèo là thử thách với nhiều người. Hãy thử các mẹo sau để mọi việc dễ dàng hơn.",
+      "authorId": "user_201",
+      "category": "Chải lông & Chăm sóc",
+      "comments": [],
+      "publishedAt": "2025-06-16T10:00:00Z",
+      "featuredImage": {
+        "url": "https://cdn.pixabay.com/photo/2016/02/10/16/37/cat-1192026_1280.jpg",
+        "altText": "Mèo ướt sau khi tắm"
+      },
+      "id": "8b2c"
+    },
+    {
+      "_id": "post_new003",
+      "slug": "nhung-loai-cay-an-toan-cho-meo",
+      "tags": [
+        "suc-khoe",
+        "cay",
+        "an-toan"
+      ],
+      "stats": {
+        "likes": 49,
+        "views": 700
+      },
+      "title": "Những loại cây an toàn cho mèo trong nhà",
+      "status": "published",
+      "content": "Một số loại cây an toàn cho mèo: Cỏ bạc hà mèo (catnip), cỏ lúa mì, dương xỉ Boston, cây lan ý (peace lily không an toàn), cây trầu bà vàng (pothos không an toàn). Luôn kiểm tra trước khi mua cây mới.",
+      "excerpt": "Không phải loại cây nào cũng an toàn cho mèo. Dưới đây là một số gợi ý bạn có thể yên tâm trồng.",
+      "authorId": "user_301",
+      "category": "Sức khỏe mèo",
+      "comments": [],
+      "publishedAt": "2025-06-17T11:00:00Z",
+      "featuredImage": {
+        "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuEFZ7nRypKnikMdQF2jLhFNPiu9gGamY8d8N_xRR7g5F9FxSq5Yhw1pUjkdyNjlUOJCzJ8mtU29YC6rZ1klNUbwOnZeGboMVYd0VxB1UkLs1JKLudCtIQ6Ve0UVSN00PyAkIfgjBwKFs/s1600/IMG_4080.jpeg",
+        "altText": "Mèo ngồi cạnh chậu cây xanh"
+      },
+      "id": "ed72"
+    },
+    {
+      "_id": "post_new004",
+      "slug": "tai-sao-meo-thich-ngu-tren-laptop",
+      "tags": [
+        "hanh-vi",
+        "hai-huoc",
+        "thoi-quen"
+      ],
+      "stats": {
+        "likes": 120,
+        "views": 2100
+      },
+      "title": "Tại sao mèo thích ngủ trên laptop?",
+      "status": "published",
+      "content": "Mèo thích sự ấm áp từ laptop, đồng thời muốn gần gũi với bạn khi bạn làm việc. Ngoài ra, bàn phím mềm cũng tạo cảm giác dễ chịu cho mèo.",
+      "excerpt": "Laptop là nơi yêu thích của nhiều chú mèo. Lý do là gì?",
+      "authorId": "user_302",
+      "category": "Hành vi mèo",
+      "comments": [],
+      "publishedAt": "2025-06-18T12:00:00Z",
+      "featuredImage": {
+        "url": "https://compote.slate.com/images/8a5bf959-9321-4a83-b960-dad1120144ac.jpeg?width=1200&rect=1560x1040&offset=0x0",
+        "altText": "Mèo nằm trên bàn phím laptop"
+      },
+      "id": "5ceb"
+    },
+    {
+      "_id": "post_new005",
+      "slug": "meo-co-nho-ten-cua-minh-khong",
+      "tags": [
+        "hanh-vi",
+        "khoa-hoc",
+        "huan-luyen"
+      ],
+      "stats": {
+        "likes": 88,
+        "views": 1500
+      },
+      "title": "Mèo có thực sự nhớ tên của mình không?",
+      "status": "published",
+      "content": "Mèo thường nhận ra tên mình nhưng chỉ phản hồi khi chúng muốn. Hãy gọi tên mèo với giọng nhẹ nhàng và thưởng khi chúng đáp lại.",
+      "excerpt": "Nhiều nghiên cứu cho thấy mèo có thể nhận ra tên gọi của mình. Nhưng chúng có phản hồi không?",
+      "authorId": "user_101",
+      "category": "Hành vi mèo",
+      "comments": [],
+      "publishedAt": "2025-06-19T13:00:00Z",
+      "featuredImage": {
+        "url": "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg",
+        "altText": "Mèo nhìn lên khi được gọi tên"
+      },
+      "id": "73a9"
+    },
+    {
+      "_id": "post_new006",
+      "slug": "lam-sao-meo-khong-cao-do-dac",
+      "tags": [
+        "hanh-vi",
+        "huan-luyen",
+        "cham-soc"
+      ],
+      "stats": {
+        "likes": 54,
+        "views": 900
+      },
+      "title": "Làm sao để mèo không cào đồ đạc trong nhà?",
+      "status": "published",
+      "content": "Cung cấp cột cào ở nhiều vị trí, dùng catnip để thu hút mèo, thưởng khi mèo cào đúng chỗ. Che phủ hoặc xịt đuổi ở nơi không muốn mèo cào.",
+      "excerpt": "Cào là bản năng của mèo, nhưng bạn có thể hướng dẫn chúng cào đúng chỗ.",
+      "authorId": "user_201",
+      "category": "Chải lông & Chăm sóc",
+      "comments": [],
+      "publishedAt": "2025-06-20T14:00:00Z",
+      "featuredImage": {
+        "url": "https://cdn.pixabay.com/photo/2015/03/27/13/16/cat-694730_1280.jpg",
+        "altText": "Mèo cào cột cào"
+      },
+      "id": "3fd6"
+    },
+    {
+      "_id": "post_new007",
+      "slug": "top-3-giong-meo-cho-nguoi-moi",
+      "tags": [
+        "giong-meo",
+        "nguoi-moi",
+        "meo"
+      ],
+      "stats": {
+        "likes": 61,
+        "views": 1100
+      },
+      "title": "Top 3 giống mèo phù hợp với người mới nuôi",
+      "status": "published",
+      "content": "1. Ragdoll: Hiền lành, dễ gần.\n2. British Shorthair: Ít bệnh, dễ chăm.\n3. Maine Coon: Thông minh, thân thiện với trẻ nhỏ.",
+      "excerpt": "Bạn mới nuôi mèo? Dưới đây là 3 giống mèo dễ chăm sóc và thân thiện.",
+      "authorId": "user_202",
+      "category": "Giống mèo nổi bật",
+      "comments": [],
+      "publishedAt": "2025-06-21T15:00:00Z",
+      "featuredImage": {
+        "url": "https://cdn.pixabay.com/photo/2016/02/10/16/37/cat-1192026_1280.jpg",
+        "altText": "Ba chú mèo ngồi cạnh nhau"
+      },
+      "id": "a18c"
+    },
+    {
+      "_id": "post_new008",
+      "slug": "meo-co-an-ca-song-khong",
+      "tags": [
+        "dinh-duong",
+        "suc-khoe",
+        "thuc-an"
+      ],
+      "stats": {
+        "likes": 39,
+        "views": 600
+      },
+      "title": "Mèo có thể ăn cá sống không?",
+      "status": "published",
+      "content": "Cá sống có thể chứa ký sinh trùng và thiếu một số dưỡng chất cần thiết. Hãy cho mèo ăn cá đã nấu chín và chỉ thỉnh thoảng, không nên thay thế hoàn toàn thức ăn chính.",
+      "excerpt": "Cá sống không phải là lựa chọn tốt cho mèo. Tìm hiểu lý do tại sao.",
+      "authorId": "user_301",
+      "category": "Sức khỏe mèo",
+      "comments": [],
+      "publishedAt": "2025-06-22T16:00:00Z",
+      "featuredImage": {
+        "url": "https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_1280.jpg",
+        "altText": "Mèo nhìn miếng cá sống"
+      },
+      "id": "d9e2"
+    },
+    {
+      "_id": "post_new009",
+      "slug": "cach-lam-do-choi-meo-tu-vai-vun",
+      "tags": [
+        "tu-lam",
+        "do-choi-meo",
+        "choi-dua"
+      ],
+      "stats": {
+        "likes": 45,
+        "views": 800
+      },
+      "title": "Cách làm đồ chơi đơn giản cho mèo từ vải vụn",
+      "status": "published",
+      "content": "Cắt vải thành dải nhỏ, buộc lại thành chùm hoặc nhồi bông vào trong vải rồi khâu kín. Có thể thêm catnip để mèo thích thú hơn.",
+      "excerpt": "Bạn có thể tự làm đồ chơi cho mèo từ những mảnh vải không dùng đến.",
+      "authorId": "user_302",
+      "category": "Vui nhộn & Dễ thương",
+      "comments": [],
+      "publishedAt": "2025-06-23T17:00:00Z",
+      "featuredImage": {
+        "url": "https://meowyjanes.com/wp-content/uploads/2022/12/Meowy-Janes-Cats-Playing-Photos_4.jpg",
+        "altText": "Mèo chơi với đồ chơi vải"
+      },
+      "id": "719e"
+    },
+    {
+      "_id": "post_new010",
+      "slug": "tai-sao-meo-thich-hop-nho",
+      "tags": [
+        "hanh-vi",
+        "hai-huoc",
+        "khoa-hoc"
+      ],
+      "stats": {
+        "likes": 112,
+        "views": 1800
+      },
+      "title": "Tại sao mèo thích ngồi trong hộp nhỏ?",
+      "status": "published",
+      "content": "Mèo thích không gian kín để cảm thấy an toàn và kiểm soát môi trường xung quanh. Hộp nhỏ giúp mèo giảm căng thẳng và cảm thấy được bảo vệ.",
+      "excerpt": "Dù hộp nhỏ đến đâu, mèo vẫn cố gắng chui vào. Đó là bản năng hay chỉ là trò vui?",
+      "authorId": "user_101",
+      "category": "Hành vi mèo",
+      "comments": [],
+      "publishedAt": "2025-06-24T18:00:00Z",
+      "featuredImage": {
+        "url": "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg",
+        "altText": "Mèo nằm gọn trong hộp nhỏ"
+      },
+      "id": "ebb6"
     }
   ],
-  "categories": [
-    { "_id": "cat_01", "name": "Feline Health", "slug": "feline-health" },
-    { "_id": "cat_02", "name": "Cat Behavior", "slug": "cat-behavior" },
-    { "_id": "cat_03", "name": "Grooming & Care", "slug": "grooming-and-care" },
-    { "_id": "cat_04", "name": "Breed Spotlights", "slug": "breed-spotlights" },
-    { "_id": "cat_05", "name": "Funny & Cute", "slug": "funny-and-cute" }
-  ],
-  "tags": [
-    { "_id": "tag_01", "name": "kittens", "slug": "kittens" },
-    { "_id": "tag_02", "name": "nutrition", "slug": "nutrition" },
-    { "_id": "tag_03", "name": "training", "slug": "training" },
-    { "_id": "tag_04", "name": "senior cats", "slug": "senior-cats" },
-    { "_id": "tag_05", "name": "playing", "slug": "playing" },
-    { "_id": "tag_06", "name": "health", "slug": "health" },
-    { "_id": "tag_07", "name": "first-time owner", "slug": "first-time-owner" },
-    { "_id": "tag_08", "name": "cat toys", "slug": "cat-toys" },
-    { "_id": "tag_09", "name": "grooming", "slug": "grooming" },
-    { "_id": "tag_10", "name": "behavior", "slug": "behavior" }
+  "users": [
+    {
+      "_id": "user_101",
+      "dob": "1990-05-15",
+      "role": "admin",
+      "email": "admin@purrfectposts.com",
+      "gender": "male",
+      "profile": {
+        "bio": "Quản trị viên trưởng và người yêu mèo tại Purrfect Posts. Đảm bảo mọi thứ vận hành trơn tru, từng giấc ngủ của mèo.",
+        "banner": "https://i.pinimg.com/736x/72/ed/77/72ed7726d2e8648bbb81ed94f9b6f223.jpg",
+        "avatarUrl": "https://watermark.lovepik.com/photo/20211204/large/lovepik-foreign-male-business-picture_501509763.jpg",
+        "displayName": "Quản Trị Mèo",
+        "socialLinks": {
+          "twitter": "https://twitter.com/catmin_pp",
+          "instagram": "https://instagram.com/catmin_pp"
+        }
+      },
+      "createdAt": "2024-01-15T09:30:00Z",
+      "passwordHash": "123123123",
+      "id": "e515",
+      "posts": [
+        {
+          "_id": "post_mno005",
+          "slug": "giong-meo-maine-coon-hung-vi",
+          "tags": [
+            "giong-meo",
+            "maine-coon",
+            "hanh-vi"
+          ],
+          "stats": {
+            "likes": 152,
+            "views": 2900
+          },
+          "title": "Giống mèo: Maine Coon hùng vĩ",
+          "status": "published",
+          "content": "Maine Coon là một trong những giống mèo tự nhiên lâu đời nhất ở Bắc Mỹ. Chúng nổi tiếng với bộ lông xù, tai cụp và đuôi dài. Bất chấp kích thước của mình, chúng có tính cách rất tốt và là những thú cưng tuyệt vời cho gia đình. Chúng vui tươi, thông minh và nổi tiếng với sự trung thành như chó.",
+          "excerpt": "Được biết đến như những 'gã khổng lồ hiền lành' của thế giới mèo, Maine Coon vừa thân thiện vừa to lớn. Khám phá lịch sử và đặc điểm của giống mèo tuyệt vời này.",
+          "authorId": "user_101",
+          "category": "Giống mèo nổi bật",
+          "comments": [],
+          "publishedAt": "2025-05-25T15:00:00Z",
+          "featuredImage": {
+            "url": "https://i.ytimg.com/vi/kqiW9413jfM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB5i_lX0cDyruvTMv4f9AVPuOzhdg",
+            "altText": "Một chú mèo Maine Coon lớn, hùng vĩ với đuôi xù ngồi tự hào."
+          },
+          "id": "61ca",
+          "imageUrl": "https://i.ytimg.com/vi/kqiW9413jfM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB5i_lX0cDyruvTMv4f9AVPuOzhdg"
+        },
+        {
+          "_id": "post_new005",
+          "slug": "meo-co-nho-ten-cua-minh-khong",
+          "tags": [
+            "hanh-vi",
+            "khoa-hoc",
+            "huan-luyen"
+          ],
+          "stats": {
+            "likes": 88,
+            "views": 1500
+          },
+          "title": "Mèo có thực sự nhớ tên của mình không?",
+          "status": "published",
+          "content": "Mèo thường nhận ra tên mình nhưng chỉ phản hồi khi chúng muốn. Hãy gọi tên mèo với giọng nhẹ nhàng và thưởng khi chúng đáp lại.",
+          "excerpt": "Nhiều nghiên cứu cho thấy mèo có thể nhận ra tên gọi của mình. Nhưng chúng có phản hồi không?",
+          "authorId": "user_101",
+          "category": "Hành vi mèo",
+          "comments": [],
+          "publishedAt": "2025-06-19T13:00:00Z",
+          "featuredImage": {
+            "url": "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg",
+            "altText": "Mèo nhìn lên khi được gọi tên"
+          },
+          "id": "73a9",
+          "imageUrl": "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg"
+        },
+        {
+          "_id": "post_new010",
+          "slug": "tai-sao-meo-thich-hop-nho",
+          "tags": [
+            "hanh-vi",
+            "hai-huoc",
+            "khoa-hoc"
+          ],
+          "stats": {
+            "likes": 112,
+            "views": 1800
+          },
+          "title": "Tại sao mèo thích ngồi trong hộp nhỏ?",
+          "status": "published",
+          "content": "Mèo thích không gian kín để cảm thấy an toàn và kiểm soát môi trường xung quanh. Hộp nhỏ giúp mèo giảm căng thẳng và cảm thấy được bảo vệ.",
+          "excerpt": "Dù hộp nhỏ đến đâu, mèo vẫn cố gắng chui vào. Đó là bản năng hay chỉ là trò vui?",
+          "authorId": "user_101",
+          "category": "Hành vi mèo",
+          "comments": [],
+          "publishedAt": "2025-06-24T18:00:00Z",
+          "featuredImage": {
+            "url": "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg",
+            "altText": "Mèo nằm gọn trong hộp nhỏ"
+          },
+          "id": "ebb6",
+          "imageUrl": "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "user_201",
+      "dob": "1992-08-10",
+      "role": "author",
+      "email": "anya.v@purrfectposts.com",
+      "gender": "female",
+      "profile": {
+        "bio": "Kỹ thuật viên thú y và người yêu mèo suốt đời. Tôi viết về sức khỏe và hành vi của mèo để giúp chủ nuôi chăm sóc thú cưng tốt nhất.",
+        "banner": "https://ik.imagekit.io/xingeria/your-banner.jpg",
+        "avatarUrl": "https://cafebiz.cafebizcdn.vn/162123310254002176/2023/1/25/anh-chup-man-hinh-2023-01-24-luc-204334-1674608275008-16746082751041415603916.png",
+        "displayName": "Anya Volkov",
+        "socialLinks": {
+          "instagram": "https://instagram.com/anyavolkov_cats"
+        }
+      },
+      "createdAt": "2024-02-20T11:00:00Z",
+      "passwordHash": "123123123",
+      "id": "d2b1"
+    },
+    {
+      "_id": "user_202",
+      "dob": "1988-12-05",
+      "role": "author",
+      "email": "liam.g@purrfectposts.com",
+      "gender": "male",
+      "profile": {
+        "bio": "Chuyên gia chải lông mèo và nhiếp ảnh gia. Tôi chia sẻ mẹo giữ cho mèo của bạn luôn xinh đẹp và ghi lại những khoảnh khắc dễ thương nhất.",
+        "banner": "https://ik.imagekit.io/xingeria/your-banner.jpg",
+        "avatarUrl": "https://cdn.baoquocte.vn/stores/news_dataimages/tranlieu/042020/07/22/5358_RMIT_-_Dr_Burkhard_Schrage.jpg",
+        "displayName": "Liam Gallagher",
+        "socialLinks": {
+          "twitter": "https://twitter.com/liamg_cats"
+        }
+      },
+      "createdAt": "2024-03-10T14:20:00Z",
+      "passwordHash": "123123123",
+      "id": "6500"
+    },
+    {
+      "_id": "user_301",
+      "dob": "1995-07-21",
+      "role": "member",
+      "email": "sam.jones@email.com",
+      "gender": "male",
+      "profile": {
+        "bio": "Chỉ là một người bình thường nhưng cực kỳ yêu mèo. Đến đây để xem ảnh dễ thương và mẹo chăm sóc sức khỏe!",
+        "banner": "https://ik.imagekit.io/xingeria/your-banner.jpg",
+        "avatarUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7aKds9hMj-Hzlowxg76c5k6uyeZ28Y2YjzQ&s",
+        "displayName": "Sam J.",
+        "socialLinks": {}
+      },
+      "createdAt": "2024-05-01T18:45:00Z",
+      "passwordHash": "123123123",
+      "id": "20ee"
+    },
+    {
+      "_id": "user_302",
+      "dob": "1998-03-30",
+      "role": "member",
+      "email": "chloe.c@email.com",
+      "gender": "female",
+      "profile": {
+        "bio": "Tự hào là chủ của ba chú mèo cứu hộ. Luôn muốn học hỏi thêm về các thành viên lông xù của mình.",
+        "banner": "https://ik.imagekit.io/xingeria/your-banner.jpg",
+        "avatarUrl": "https://img.lovepik.com/free-png/20211215/lovepik-foreign-business-male-half-body-image-png-image_401629045_wh860.png",
+        "displayName": "Chloe",
+        "socialLinks": {
+          "instagram": "https://instagram.com/chloes_cat_crew"
+        }
+      },
+      "createdAt": "2024-06-12T20:00:00Z",
+      "passwordHash": "123123123",
+      "id": "afc5"
+    },
+    {
+      "_id": "user_303",
+      "dob": "2000-09-22",
+      "role": "member",
+      "email": "nguyenthaitrieu2302@gmail.com",
+      "gender": "male",
+      "profile": {
+        "bio": "",
+        "banner": "https://ik.imagekit.io/xingeria/your-banner.jpg",
+        "avatarUrl": "",
+        "displayName": "burgerking",
+        "socialLinks": {}
+      },
+      "createdAt": "2025-06-19T15:48:22.741Z",
+      "passwordHash": "123123123",
+      "id": "22ec"
+    }
   ],
   "catBreeds": [
     {
       "_id": "breed_rag",
       "name": "Ragdoll",
-      "description": "Ragdolls are large, blue-eyed cats known for their docile and placid temperament. They are affectionate and often go limp like a ragdoll when picked up, which is how they got their name.",
       "imageUrl": "https://assets.elanco.com/8e0bf1c2-1ae4-001f-9257-f2be3c683fb1/ac235c31-8953-4e7e-a582-2d5fa92d60d6/ragdoll_cat_01401.jpg",
       "attributes": {
-        "origin": "United States",
-        "temperament": ["Docile", "Gentle", "Affectionate", "Calm"],
-        "size": "Large",
-        "avgLifespan": "12-17 years"
-      }
+        "size": "Lớn",
+        "origin": "Hoa Kỳ",
+        "avgLifespan": "12-17 năm",
+        "temperament": [
+          "Hiền lành",
+          "Nhẹ nhàng",
+          "Thân thiện",
+          "Bình tĩnh"
+        ]
+      },
+      "description": "Ragdoll là những chú mèo lớn, mắt xanh nổi tiếng với tính cách hiền lành và điềm tĩnh. Chúng rất thân thiện và thường mềm nhũn như búp bê vải khi được bế lên, đó cũng là cách chúng có tên gọi này.",
+      "id": "5d69"
     },
     {
       "_id": "breed_sia",
-      "name": "Siamese",
-      "description": "The Siamese is one of the most recognized Asian cat breeds. They are famous for their striking colorpoint coats, slender bodies, and piercing blue eyes. Siamese cats are social, intelligent, and very vocal.",
+      "name": "Xiêm",
       "imageUrl": "https://cdn.prod.website-files.com/659c0b0024c127bdbe890959/673afd25892be17ee3ea1c52_41.jpg",
       "attributes": {
-        "origin": "Thailand",
-        "temperament": ["Vocal", "Intelligent", "Social", "Demanding"],
-        "size": "Medium",
-        "avgLifespan": "15-20 years"
-      }
+        "size": "Trung bình",
+        "origin": "Thái Lan",
+        "avgLifespan": "15-20 năm",
+        "temperament": [
+          "Kêu nhiều",
+          "Thông minh",
+          "Thích giao tiếp",
+          "Đòi hỏi"
+        ]
+      },
+      "description": "Mèo Xiêm là một trong những giống mèo châu Á được biết đến nhiều nhất. Chúng nổi tiếng với bộ lông điểm màu ấn tượng, thân hình mảnh mai và đôi mắt xanh sắc sảo. Mèo Xiêm rất thích giao tiếp, thông minh và kêu nhiều.",
+      "id": "07b2"
     },
     {
       "_id": "breed_mco",
       "name": "Maine Coon",
-      "description": "Known as 'gentle giants', Maine Coons are one of the largest domesticated cat breeds. They have a rugged appearance with a shaggy coat and a kind, playful nature, often described as 'dog-like'.",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVjvkjuUH-7bQ4oBNCxgvegJpVajkLivxF1Q&s",
       "attributes": {
-        "origin": "United States",
-        "temperament": ["Gentle", "Playful", "Intelligent", "Good-natured"],
-        "size": "Large",
-        "avgLifespan": "12-15 years"
-      }
+        "size": "Lớn",
+        "origin": "Hoa Kỳ",
+        "avgLifespan": "12-15 năm",
+        "temperament": [
+          "Hiền lành",
+          "Vui tươi",
+          "Thông minh",
+          "Tốt tính"
+        ]
+      },
+      "description": "Được biết đến như 'những gã khổng lồ hiền lành', Maine Coon là một trong những giống mèo nhà lớn nhất. Chúng có vẻ ngoài thô ráp với bộ lông xù và tính cách vui vẻ, tốt bụng, thường được mô tả là 'giống chó'.",
+      "id": "4987"
     },
     {
       "_id": "breed_sph",
       "name": "Sphynx",
-      "description": "The Sphynx cat is known for its lack of fur. They are not actually hairless but are covered with a fine, downy fuzz. They are known for their extroverted behavior, high energy levels, and love for warmth.",
       "imageUrl": "https://images.squarespace-cdn.com/content/v1/54822a56e4b0b30bd821480c/1672325275441-8O2J3VIWG1ZWAOAOPQ7V/sphynx.jpg?format=1000w",
       "attributes": {
+        "size": "Trung bình",
         "origin": "Canada",
-        "temperament": ["Loyal", "Mischievous", "Affectionate", "Energetic"],
-        "size": "Medium",
-        "avgLifespan": "8-14 years"
-      }
+        "avgLifespan": "8-14 năm",
+        "temperament": [
+          "Trung thành",
+          "Tinh nghịch",
+          "Thân thiện",
+          "Năng động"
+        ]
+      },
+      "description": "Mèo Sphynx nổi tiếng với việc không có lông. Chúng không thực sự không có lông mà được phủ một lớp lông tơ mịn. Chúng được biết đến với hành vi hướng ngoại, mức năng lượng cao và tình yêu với sự ấm áp.",
+      "id": "5133"
+    }
+  ],
+  "categories": [
+    {
+      "_id": "cat_01",
+      "name": "Sức khỏe mèo",
+      "slug": "suc-khoe-meo",
+      "id": "c5cf"
+    },
+    {
+      "_id": "cat_02",
+      "name": "Hành vi mèo",
+      "slug": "hanh-vi-meo",
+      "id": "3223"
+    },
+    {
+      "_id": "cat_03",
+      "name": "Chải lông & Chăm sóc",
+      "slug": "chai-long-va-cham-soc",
+      "id": "2faa"
+    },
+    {
+      "_id": "cat_04",
+      "name": "Giống mèo nổi bật",
+      "slug": "giong-meo-noi-bat",
+      "id": "3cbd"
+    },
+    {
+      "_id": "cat_05",
+      "name": "Vui nhộn & Dễ thương",
+      "slug": "vui-nhon-va-de-thuong",
+      "id": "db33"
     }
   ]
 }

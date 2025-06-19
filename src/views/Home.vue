@@ -133,7 +133,7 @@
       </div>
 
       <!-- Standard 3-Column Grid for the Rest of the Posts -->
-      <div class="row g-4">
+      <div class="row g-4 mb-4">
         <div class="col-lg-4 col-md-6" v-for="post in remainingPosts" :key="post._id">
           <div class="card h-100 shadow-sm border-0 recent-post-card-grid">
              <img :src="post.featuredImage.url" class="card-img-top" :alt="post.featuredImage.altText">
@@ -148,6 +148,21 @@
         </div>
       </div>
 
+      <!-- Load More Button -->
+      <div class="text-center mt-5 mb-3" v-if="hasMorePosts">
+        <button @click="loadMore" class="btn load-more-btn" :disabled="isLoading">
+          <span v-if="isLoading">
+            <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            Đang tải...
+          </span>
+          <span v-else>
+            Xem thêm
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down ms-1" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+            </svg>
+          </span>
+        </button>
+      </div>
     </section>
 
     <!-- Footer -->
@@ -177,6 +192,7 @@ import { ref, onMounted, computed } from 'vue';
 import axios from 'axios';
 import Navbar from '../components/Navbar.vue';
 
+// State
 const posts = ref([]);
 const isLoading = ref(true);
 const error = ref(null);
@@ -184,6 +200,9 @@ const error = ref(null);
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
 
 const fetchData = async () => {
+  // Reset grid display limit on new fetch
+  gridDisplayLimit.value = 3; // Initial number of grid posts
+
   isLoading.value = true;
   error.value = null;
   try {
@@ -199,7 +218,12 @@ const fetchData = async () => {
   }
 };
 
+// Lifecycle hook
 onMounted(fetchData);
+
+// State for pagination
+const gridDisplayLimit = ref(3); // Number of posts to show in the grid initially
+const postsPerLoad = 6; // Number of additional posts to load per click
 
 // Computed property for the main feature post (the latest one)
 const featurePost = computed(() => posts.value[0]);
@@ -207,8 +231,13 @@ const featurePost = computed(() => posts.value[0]);
 // Computed property for all posts excluding the main feature one
 const recentPosts = computed(() => posts.value.slice(1));
 
-// Computed property for the standard grid posts (from the 4th recent post onwards)
-const remainingPosts = computed(() => recentPosts.value.slice(3));
+// Computed property for the standard grid posts (from the 4th recent post onwards, limited by gridDisplayLimit)
+const remainingPosts = computed(() => recentPosts.value.slice(3, 3 + gridDisplayLimit.value));
+
+// Computed property to check if there are more posts to load
+const hasMorePosts = computed(() => recentPosts.value.length > 3 + gridDisplayLimit.value);
+
+// Method to load more posts
 
 // Computed property for most viewed posts (top 5 by default)
 const mostViewedPosts = computed(() =>
@@ -216,6 +245,14 @@ const mostViewedPosts = computed(() =>
     .sort((a, b) => (b.stats?.views || 0) - (a.stats?.views || 0))
     .slice(0, 5)
 );
+
+const loadMore = async () => {
+  isLoading.value = true;
+  // Simulate loading delay for better UX
+  await new Promise(resolve => setTimeout(resolve, 500));
+  gridDisplayLimit.value += postsPerLoad;
+  isLoading.value = false;
+};
 
 
 const getCategoryColor = (category) => {
@@ -357,6 +394,34 @@ a:hover, .most-viewed-post-title:hover, .recent-post-card-grid .card-title:hover
   color: #6c757d !important;
 }
 
+.load-more-btn {
+    background-color: #f7e7d6;
+    color: var(--theme-brown) !important;
+    border: 2px solid var(--theme-border);
+    border-radius: 2rem;
+    padding: 0.75rem 2.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(166,124,82,0.1);
+}
+
+.load-more-btn:hover {
+    background-color: var(--theme-border);
+    color: var(--theme-brown) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(166,124,82,0.15);
+}
+
+.load-more-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(166,124,82,0.1);
+}
+
+.load-more-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
 /* Recent Posts Cards - General Styling */
 .recent-post-card, .recent-post-card-grid {
   border: none;

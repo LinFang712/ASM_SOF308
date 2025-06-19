@@ -4,14 +4,14 @@
 
     <!-- Header Section -->
     <header class="container text-center py-5">
-      <h1 class="display-4 fw-bold">Welcome to CatBase Stories</h1>
+      <h1 class="display-4 fw-bold">Chào mừng đến với CatBase Stories</h1>
       <p class="lead text-muted col-lg-8 mx-auto">
-        A cozy corner of the internet for cat lovers, storytellers, and anyone who believes in the power of sharing authentic moments.
+        Một góc ấm cúng trên internet dành cho những người yêu mèo, người kể chuyện và bất kỳ ai tin vào sức mạnh của việc chia sẻ những khoảnh khắc chân thực.
       </p>
       <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
-        <a href="/register" class="btn btn-brown btn-lg">Start Writing Today</a>
-        <a href="/blog" class="btn btn-outline-brown btn-lg">Explore Stories</a>
-        <a href="/about" class="btn btn-brown-light btn-lg">Learn More</a>
+        <a href="/register" class="btn btn-brown btn-lg">Bắt đầu viết ngay hôm nay</a>
+        <a href="/blog" class="btn btn-outline-brown btn-lg">Khám phá câu chuyện</a>
+        <a href="/about" class="btn btn-brown-light btn-lg">Tìm hiểu thêm</a>
       </div>
     </header>
 
@@ -19,16 +19,16 @@
     <div class="container my-5">
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
-          <h2 class="fw-bold mb-3">What is CatBase?</h2>
+          <h2 class="fw-bold mb-3">CatBase là gì?</h2>
           <p>
-            CatBase is more than just a blog; it's a community built on the foundation of shared experiences. We believe everyone has a story worth telling—whether it's a grand adventure, a quiet reflection, or a funny anecdote about your feline friend.
+            CatBase không chỉ là một blog; đó là một cộng đồng được xây dựng trên nền tảng của những trải nghiệm chung. Chúng tôi tin rằng mọi người đều có một câu chuyện đáng để kể—dù đó là một cuộc phiêu lưu lớn, một suy ngẫm yên lặng, hay một câu chuyện hài hước về người bạn mèo của bạn.
           </p>
           <p class="mb-4">
-            Our platform provides a beautiful, simple, and inspiring space for you to write, share, and connect with others who appreciate the art of storytelling and the joy cats bring into our lives.
+            Nền tảng của chúng tôi cung cấp một không gian đẹp, đơn giản và truyền cảm hứng để bạn viết, chia sẻ và kết nối với những người khác, những người trân trọng nghệ thuật kể chuyện và niềm vui mà mèo mang lại cho cuộc sống của chúng ta.
           </p>
         </div>
         <div class="col-lg-6">
-          <img src="https://whatyourcatwants.com/wp-content/uploads/2020/09/Big_Fat_Red_Cat-Wikimedia-Commons-1500x800.jpg" alt="Happy Cat" class="img-fluid rounded-4 shadow-lg" />
+          <img src="https://whatyourcatwants.com/wp-content/uploads/2020/09/Big_Fat_Red_Cat-Wikimedia-Commons-1500x800.jpg" alt="Mèo vui vẻ" class="img-fluid rounded-4 shadow-lg" />
         </div>
       </div>
     </div>
@@ -36,29 +36,29 @@
     <!-- Our Values Section -->
     <section class="container my-5 py-5 bg-white rounded-4 shadow-sm">
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Our Core Values</h2>
-            <p class="lead text-muted">The principles that guide our community.</p>
+            <h2 class="fw-bold">Giá trị cốt lõi của chúng tôi</h2>
+            <p class="lead text-muted">Những nguyên tắc dẫn dắt cộng đồng của chúng tôi.</p>
         </div>
         <div class="row text-center g-4">
             <div class="col-md-4">
                 <div class="p-3">
                     <i class="bi bi-heart-fill fs-1 text-danger mb-3"></i>
-                    <h4 class="fw-semibold">Empathy</h4>
-                    <p class="text-muted">We listen and connect with kindness, creating a supportive space for all voices.</p>
+                    <h4 class="fw-semibold">Đồng cảm</h4>
+                    <p class="text-muted">Chúng tôi lắng nghe và kết nối với lòng tử tế, tạo ra một không gian hỗ trợ cho tất cả các tiếng nói.</p>
                 </div>
             </div>
             <div class="col-md-4">
                  <div class="p-3">
                     <i class="bi bi-shield-check fs-1 text-success mb-3"></i>
-                    <h4 class="fw-semibold">Authenticity</h4>
-                    <p class="text-muted">Share your true self. We celebrate genuine stories and honest reflections.</p>
+                    <h4 class="fw-semibold">Chân thực</h4>
+                    <p class="text-muted">Hãy chia sẻ con người thật của bạn. Chúng tôi tôn vinh những câu chuyện chân thành và những suy ngẫm trung thực.</p>
                 </div>
             </div>
             <div class="col-md-4">
                  <div class="p-3">
                     <i class="bi bi-lightbulb-fill fs-1 text-warning mb-3"></i>
-                    <h4 class="fw-semibold">Creativity</h4>
-                    <p class="text-muted">We inspire creativity and provide the tools for beautiful storytelling.</p>
+                    <h4 class="fw-semibold">Sáng tạo</h4>
+                    <p class="text-muted">Chúng tôi truyền cảm hứng cho sự sáng tạo và cung cấp các công cụ để kể chuyện một cách đẹp đẽ.</p>
                 </div>
             </div>
         </div>
@@ -67,18 +67,18 @@
     <!-- Meet the Team Section -->
     <div class="container my-5">
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Meet Our Team</h2>
-            <p class="lead text-muted">The people behind CatBase, dedicated to our community.</p>
+            <h2 class="fw-bold">Gặp gỡ đội ngũ của chúng tôi</h2>
+            <p class="lead text-muted">Những người đứng sau CatBase, tận tâm với cộng đồng của chúng tôi.</p>
         </div>
         <div class="row g-4 justify-content-center">
             <!-- Team Member Card 1 -->
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 text-center h-100 shadow-sm hover-lift">
                     <div class="card-body p-4">
-                        <img src="https://i.pravatar.cc/150?u=user_101" alt="The Catmin" class="rounded-circle mb-3" width="100" height="100" />
-                        <h5 class="card-title fw-bold mb-1">The Catmin</h5>
-                        <p class="text-primary fw-semibold mb-2">Founder & Admin</p>
-                        <p class="card-text text-muted small">The visionary who started it all, ensuring the platform runs smoothly for everyone.</p>
+                        <img src="https://i.pravatar.cc/150?u=user_101" alt="Quản Trị Mèo" class="rounded-circle mb-3" width="100" height="100" />
+                        <h5 class="card-title fw-bold mb-1">Quản Trị Mèo</h5>
+                        <p class="text-primary fw-semibold mb-2">Người sáng lập & Quản trị viên</p>
+                        <p class="card-text text-muted small">Người có tầm nhìn đã khởi đầu tất cả, đảm bảo nền tảng hoạt động trơn tru cho mọi người.</p>
                     </div>
                 </div>
             </div>
@@ -88,8 +88,8 @@
                     <div class="card-body p-4">
                         <img src="https://i.pravatar.cc/150?u=user_201" alt="Anya Volkov" class="rounded-circle mb-3" width="100" height="100" />
                         <h5 class="card-title fw-bold mb-1">Anya Volkov</h5>
-                        <p class="text-primary fw-semibold mb-2">Lead Author & Vet Tech</p>
-                        <p class="card-text text-muted small">Our expert on feline health, providing trusted advice and heartwarming stories.</p>
+                        <p class="text-primary fw-semibold mb-2">Tác giả chính & Kỹ thuật viên thú y</p>
+                        <p class="card-text text-muted small">Chuyên gia của chúng tôi về sức khỏe mèo, cung cấp lời khuyên đáng tin cậy và những câu chuyện ấm lòng.</p>
                     </div>
                 </div>
             </div>
@@ -99,8 +99,8 @@
                     <div class="card-body p-4">
                         <img src="https://i.pravatar.cc/150?u=user_202" alt="Liam Gallagher" class="rounded-circle mb-3" width="100" height="100" />
                         <h5 class="card-title fw-bold mb-1">Liam Gallagher</h5>
-                        <p class="text-primary fw-semibold mb-2">Community & Grooming Expert</p>
-                        <p class="card-text text-muted small">The friendly face of our community and our go-to for all things grooming.</p>
+                        <p class="text-primary fw-semibold mb-2">Chuyên gia cộng đồng & Chải lông</p>
+                        <p class="card-text text-muted small">Gương mặt thân thiện của cộng đồng chúng tôi và người phụ trách mọi thứ liên quan đến chải lông.</p>
                     </div>
                 </div>
             </div>
@@ -110,8 +110,8 @@
                     <div class="card-body p-4">
                         <img src="https://i.pravatar.cc/150?u=user_203" alt="Mia Chen" class="rounded-circle mb-3" width="100" height="100" />
                         <h5 class="card-title fw-bold mb-1">Mia Chen</h5>
-                        <p class="text-primary fw-semibold mb-2">Content Curator</p>
-                        <p class="card-text text-muted small">Brings the best cat stories to the spotlight and keeps our content fresh and inspiring.</p>
+                        <p class="text-primary fw-semibold mb-2">Người quản lý nội dung</p>
+                        <p class="card-text text-muted small">Mang những câu chuyện về mèo hay nhất đến ánh đèn sân khấu và giữ nội dung của chúng tôi luôn mới mẻ và truyền cảm hứng.</p>
                     </div>
                 </div>
             </div>
@@ -121,8 +121,8 @@
                     <div class="card-body p-4">
                         <img src="https://i.pravatar.cc/150?u=user_204" alt="Oscar Nguyen" class="rounded-circle mb-3" width="100" height="100" />
                         <h5 class="card-title fw-bold mb-1">Oscar Nguyen</h5>
-                        <p class="text-primary fw-semibold mb-2">Tech Lead</p>
-                        <p class="card-text text-muted small">Ensures CatBase runs smoothly and securely for all users, every day.</p>
+                        <p class="text-primary fw-semibold mb-2">Trưởng nhóm kỹ thuật</p>
+                        <p class="card-text text-muted small">Đảm bảo CatBase hoạt động trơn tru và an toàn cho tất cả người dùng, mỗi ngày.</p>
                     </div>
                 </div>
             </div>
@@ -132,8 +132,8 @@
                     <div class="card-body p-4">
                         <img src="https://i.pravatar.cc/150?u=user_205" alt="Sophie Tran" class="rounded-circle mb-3" width="100" height="100" />
                         <h5 class="card-title fw-bold mb-1">Sophie Tran</h5>
-                        <p class="text-primary fw-semibold mb-2">Community Manager</p>
-                        <p class="card-text text-muted small">Connects members, organizes events, and fosters a welcoming environment for all.</p>
+                        <p class="text-primary fw-semibold mb-2">Quản lý cộng đồng</p>
+                        <p class="card-text text-muted small">Kết nối các thành viên, tổ chức sự kiện và xây dựng một môi trường thân thiện cho tất cả.</p>
                     </div>
                 </div>
             </div>
@@ -143,18 +143,18 @@
     <!-- Final CTA -->
     <section class="container my-5">
       <div class="text-center bg-white p-5 rounded-4 shadow-sm">
-        <h2 class="fw-bold">Ready to Share Your Story?</h2>
+        <h2 class="fw-bold">Sẵn sàng chia sẻ câu chuyện của bạn?</h2>
         <p class="lead text-muted col-lg-8 mx-auto">
-          Join a growing community of passionate writers and cat enthusiasts. Your next chapter starts here.
+          Tham gia cộng đồng ngày càng phát triển của những nhà văn đam mê và những người yêu mèo. Chương tiếp theo của bạn bắt đầu từ đây.
         </p>
         <a href="/register" class="btn btn-brown btn-lg mt-3 me-2">
-            <i class="bi bi-pencil-square me-2"></i>Create Your First Post
+            <i class="bi bi-pencil-square me-2"></i>Tạo bài viết đầu tiên của bạn
         </a>
         <a href="/blog" class="btn btn-outline-brown btn-lg mt-3 me-2">
-            <i class="bi bi-book me-2"></i>Read Stories
+            <i class="bi bi-book me-2"></i>Đọc câu chuyện
         </a>
         <a href="/about" class="btn btn-brown-light btn-lg mt-3">
-            <i class="bi bi-info-circle me-2"></i>About Us
+            <i class="bi bi-info-circle me-2"></i>Về chúng tôi
         </a>
       </div>
     </section>
