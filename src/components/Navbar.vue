@@ -75,7 +75,7 @@ onMounted(() => {
   </nav>
 </template>
 
-<style scoped>
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
 
 .cat-navbar {

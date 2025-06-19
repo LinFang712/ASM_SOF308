@@ -1,196 +1,185 @@
 <template>
   <div class="home-bg">
-    <!-- Navbar wrapped in container for consistent width -->
     <div class="container px-0">
       <Navbar />
     </div>
 
-    <!-- Feature Highlight Section -->
-    <section class="container mb-5">
+    <!-- Feature Highlight: Latest Published Post -->
+    <section v-if="featurePost" class="container mt-5">
       <div class="row align-items-center g-4 feature-highlight">
         <div class="col-md-6 order-2 order-md-1">
-          <span class="text-uppercase fw-bold text-secondary small mb-2 d-block" style="color: #e57373;">People</span>
+          <span
+            class="text-uppercase fw-bold text-secondary small mb-2 d-block"
+            :style="{ color: getCategoryColor(featurePost.category) }"
+          >
+            {{ featurePost.category }}
+          </span>
           <h2 class="fw-bold mb-2" style="font-size:2.2rem; line-height:1.1;">
-            Creative pretty photography ideas from smart devices
+            {{ featurePost.title }}
           </h2>
           <p class="lead text-muted mb-0" style="font-size:1.5rem;">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faci...
+            {{ featurePost.excerpt }}
           </p>
         </div>
         <div class="col-md-6 order-1 order-md-2 text-center">
           <img
-            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80"
-            alt="Creative pretty photography ideas from smart devices"
+            :src="featurePost.featuredImage.url"
+            :alt="featurePost.featuredImage.altText"
             class="img-fluid rounded-4 shadow feature-img"
-            style="max-height:340px; object-fit:cover; width:100%;"
           />
         </div>
       </div>
     </section>
 
-    <!-- Most Viewed Section: full container width, dynamic height -->
+    <!-- Most Viewed Posts Section -->
     <section class="container mb-5">
-      <h5 class="fw-bold mb-3 border-bottom pb-2">Most Viewed</h5>
+      <h5 class="fw-bold mb-4 most-viewed-title">
+        <span>Most Viewed</span>
+      </h5>
       <div class="d-flex flex-row flex-nowrap overflow-auto most-viewed-row gap-4">
         <div
-          v-for="(item, idx) in mostViewed"
-          :key="item.id"
-          class="most-viewed-card d-flex flex-column align-items-start"
+          v-for="(post, idx) in mostViewedPosts"
+          :key="post._id"
+          class="most-viewed-card d-flex flex-column align-items-start p-3"
         >
           <div class="position-relative w-100">
             <img
-              :src="item.image"
-              :alt="item.title"
+              :src="post.featuredImage.url"
+              :alt="post.featuredImage.altText"
               class="img-fluid rounded-4 mb-2 most-viewed-img"
-              style="width:100%;height:auto;object-fit:cover;"
             />
-            <span class="position-absolute badge rounded-pill bg-light text-dark shadow-sm most-viewed-badge">
+            <span class="position-absolute badge rounded-pill most-viewed-badge">
               {{ idx + 1 }}
             </span>
           </div>
-          <span class="text-uppercase fw-bold small mb-1" :style="{ color: item.categoryColor || '#e57373' }">
-            {{ item.category }}
+          <span class="text-uppercase fw-bold small mb-1 most-viewed-category" :style="{ color: getCategoryColor(post.category) }">
+            {{ post.category }}
           </span>
-          <a href="#" class="fw-bold text-dark mb-1 most-viewed-title" style="font-size:1rem; line-height:1.1;">
-            {{ item.title }}
+          <a href="#" class="fw-bold most-viewed-post-title mb-1">
+            {{ post.title }}
           </a>
           <span class="text-muted small mb-2" style="line-height:1.2;">
-            {{ item.description }}
+            {{ post.excerpt }}
           </span>
         </div>
       </div>
     </section>
 
-    <!-- Recent Posts Section (example, you can adjust as needed) -->
-    <section class="container mb-5">
-      <h5 class="fw-bold mb-3">Recent posts</h5>
-      <div class="row">
-        <div class="col-12">
-          <div class="position-relative rounded-4 overflow-hidden recent-post-card">
+    <!-- Recent Posts Section -->
+    <section class="container mb-5" v-if="recentPosts.length">
+      <h5 class="fw-bold mb-4 border-bottom pb-2">Recent posts</h5>
+
+      <!-- Special Layout for First 3 Posts -->
+      <div class="row g-4 mb-4">
+        <!-- First post: full width -->
+        <div class="col-12" v-if="recentPosts[0]">
+          <div class="card recent-post-card recent-post-card-lg">
             <img
-              src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80"
-              alt="Recent post"
-              class="img-fluid w-100 h-100 recent-post-img"
-              style="object-fit:cover; min-height:220px;"
+              :src="recentPosts[0].featuredImage.url"
+              :alt="recentPosts[0].featuredImage.altText"
+              class="card-img recent-post-img"
             />
-            <div class="position-absolute bottom-0 start-0 w-100 p-4 recent-post-caption">
-              <span class="text-uppercase fw-bold small mb-2 d-block" style="color: #fff; opacity:0.8;">Design</span>
-              <h3 class="fw-bold text-white mb-0" style="font-size:1.5rem;">
-                Is Britain’s likely next leader a great brain or an opportunist? <span class="fw-normal">Lorem ipsum dolor sit, consectetur adipiscin...</span>
+            <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+              <span class="text-uppercase fw-bold small mb-2 d-block" :style="{ color: getCategoryColor(recentPosts[0].category) }">
+                {{ recentPosts[0].category }}
+              </span>
+              <h3 class="card-title fw-bold text-white mb-1">
+                {{ recentPosts[0].title }}
+              </h3>
+              <p class="card-text text-white d-none d-sm-block">
+                {{ recentPosts[0].excerpt }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second post: 2/3 width -->
+        <div class="col-md-8" v-if="recentPosts[1]">
+          <div class="card recent-post-card recent-post-card-md h-100">
+            <img
+              :src="recentPosts[1].featuredImage.url"
+              :alt="recentPosts[1].featuredImage.altText"
+              class="card-img recent-post-img"
+            />
+            <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+              <span class="text-uppercase fw-bold small mb-2 d-block" :style="{ color: getCategoryColor(recentPosts[1].category) }">
+                {{ recentPosts[1].category }}
+              </span>
+              <h3 class="card-title fw-bold text-white mb-1">
+                {{ recentPosts[1].title }}
               </h3>
             </div>
           </div>
         </div>
+
+        <!-- Third post: 1/3 width -->
+        <div class="col-md-4" v-if="recentPosts[2]">
+          <div class="card recent-post-card recent-post-card-sm h-100">
+             <img
+              :src="recentPosts[2].featuredImage.url"
+              :alt="recentPosts[2].featuredImage.altText"
+              class="card-img recent-post-img"
+            />
+            <div class="card-img-overlay d-flex flex-column justify-content-end p-3">
+               <span class="text-uppercase fw-bold small mb-1 d-block" :style="{ color: getCategoryColor(recentPosts[2].category) }">
+                {{ recentPosts[2].category }}
+              </span>
+              <h4 class="card-title fw-bold text-white mb-1" style="font-size: 1.1rem">
+                {{ recentPosts[2].title }}
+              </h4>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Standard 3-Column Grid for the Rest of the Posts -->
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" v-for="post in remainingPosts" :key="post._id">
+          <div class="card h-100 shadow-sm border-0 recent-post-card-grid">
+             <img :src="post.featuredImage.url" class="card-img-top" :alt="post.featuredImage.altText">
+             <div class="card-body">
+                <span class="text-uppercase fw-bold small mb-2 d-block" :style="{ color: getCategoryColor(post.category) }">
+                  {{ post.category }}
+                </span>
+                <h5 class="card-title fw-bold">{{ post.title }}</h5>
+                <p class="card-text text-muted small">{{ post.excerpt }}</p>
+             </div>
+          </div>
+        </div>
+      </div>
+
     </section>
-
-    <!-- Featured Posts Section -->
-    <div class="container animate__animated animate__fadeIn animate__delay-1s">
-      <div class="d-flex align-items-center mb-4">
-        <h2 class="fw-bold mb-0 me-3 text-black">Bài viết nổi bật</h2>
-        <span class="badge bg-dark bg-gradient text-white animate__animated animate__pulse animate__infinite">Mới</span>
-      </div>
-
-      <!-- Loading and Error States -->
-      <div v-if="isLoading" class="text-center py-5">
-        <div class="spinner-border text-secondary" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
-      <div v-else-if="error" class="alert alert-danger" role="alert">
-        {{ error }}
-      </div>
-
-      <!-- Post Grid -->
-      <div v-else-if="posts.length" class="row g-4">
-        <div
-          class="col-md-6 col-lg-4 d-flex"
-          v-for="(post, idx) in posts"
-          :key="post.id"
-        >
-          <PostCard :post="post" class="w-100 animate__animated animate__fadeInUp" :style="{ 'animation-delay': `${idx * 100}ms` }"/>
-        </div>
-      </div>
-      <div v-else class="text-center text-muted py-5">
-        Không có bài viết nào.
-      </div>
-    </div>
 
     <!-- Footer -->
     <footer class="container mt-5 py-4 border-top">
        <div class="row text-secondary">
-        <div class="col-md-4 mb-3 fw-bold text-dark">CatBase Stories</div>
-        <div class="col-md-4 mb-3">
-          <div class="mb-1 text-dark">Chủ đề</div>
-          <a href="#" class="text-decoration-none text-muted d-block mb-1">Lối sống</a>
-          <a href="#" class="text-decoration-none text-muted d-block mb-1">Du lịch</a>
-          <a href="#" class="text-decoration-none text-muted d-block">Ẩm thực</a>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="mb-1 text-dark">Trang</div>
-          <a href="#" class="text-decoration-none text-muted d-block mb-1">Giới thiệu</a>
-          <a href="#" class="text-decoration-none text-muted d-block mb-1">Liên hệ</a>
-          <a href="#" class="text-decoration-none text-muted d-block">Bảo mật</a>
-        </div>
-      </div>
-      <div class="text-center text-muted small mt-3">&copy; 2025 CatBase Stories. Bảo lưu mọi quyền.</div>
-    </footer>
+         <div class="col-md-4 mb-3 fw-bold text-dark">CatBase Stories</div>
+         <div class="col-md-4 mb-3">
+           <div class="mb-1 text-dark">Chủ đề</div>
+           <a href="#" class="text-decoration-none text-muted d-block mb-1">Lối sống</a>
+           <a href="#" class="text-decoration-none text-muted d-block mb-1">Du lịch</a>
+           <a href="#" class="text-decoration-none text-muted d-block">Ẩm thực</a>
+         </div>
+         <div class="col-md-4 mb-3">
+           <div class="mb-1 text-dark">Trang</div>
+           <a href="#" class="text-decoration-none text-muted d-block mb-1">Giới thiệu</a>
+           <a href="#" class="text-decoration-none text-muted d-block mb-1">Liên hệ</a>
+           <a href="#" class="text-decoration-none text-muted d-block">Bảo mật</a>
+         </div>
+       </div>
+       <div class="text-center text-muted small mt-3">&copy; 2025 CatBase Stories. Bảo lưu mọi quyền.</div>
+     </footer>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import axios from 'axios';
 import Navbar from '../components/Navbar.vue';
-import PostCard from '../components/PostCard.vue';
 
 const posts = ref([]);
 const isLoading = ref(true);
 const error = ref(null);
-
-// Example data for Most Viewed section
-const mostViewed = ref([
-  {
-    id: 1,
-    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
-    category: 'People',
-    categoryColor: '#e57373',
-    title: 'Creative pretty photography ideas from smart devices',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscin...'
-  },
-  {
-    id: 2,
-    image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
-    category: 'Lifestyle',
-    categoryColor: '#ba68c8',
-    title: 'Duis tempor purus rutrum, tincidunt lacus.',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscin...'
-  },
-  {
-    id: 3,
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
-    category: 'Carousel',
-    categoryColor: '#64b5f6',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscin...',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscin...'
-  },
-  {
-    id: 4,
-    image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80',
-    category: 'Friends',
-    categoryColor: '#81c784',
-    title: 'Nunc accumsan ex ligula, in sapien consectetur.',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscin...'
-  },
-  {
-    id: 5,
-    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
-    category: 'Business',
-    categoryColor: '#ffd54f',
-    title: 'Corporate Workflow make a difference.',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscin...'
-  }
-]);
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
 
@@ -199,181 +188,284 @@ const fetchData = async () => {
   error.value = null;
   try {
     const postsResponse = await axios.get(`${API_BASE_URL}/posts`);
-    posts.value = postsResponse.data;
+    posts.value = postsResponse.data
+      .filter(p => p.status === 'published')
+      .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
   } catch (err) {
-    console.error('Error fetching data:', err);
     error.value = 'Không thể tải dữ liệu. Vui lòng thử lại sau.';
+    console.error(err);
   } finally {
     isLoading.value = false;
   }
 };
 
 onMounted(fetchData);
+
+// Computed property for the main feature post (the latest one)
+const featurePost = computed(() => posts.value[0]);
+
+// Computed property for all posts excluding the main feature one
+const recentPosts = computed(() => posts.value.slice(1));
+
+// Computed property for the standard grid posts (from the 4th recent post onwards)
+const remainingPosts = computed(() => recentPosts.value.slice(3));
+
+// Computed property for most viewed posts (top 5 by default)
+const mostViewedPosts = computed(() =>
+  [...posts.value]
+    .sort((a, b) => (b.stats?.views || 0) - (a.stats?.views || 0))
+    .slice(0, 5)
+);
+
+
+const getCategoryColor = (category) => {
+  const categoryColors = {
+    'Cat Behavior': '#e57373',
+    'Feline Health': '#ba68c8',
+    'Grooming & Care': '#64b5f6',
+    'Breed Spotlights': '#81c784',
+    'Funny & Cute': '#ffd54f',
+  };
+  return categoryColors[category] || '#a67c52';
+};
 </script>
 
-<style scoped>
+<style>
 :root {
-  --carousel-height: 300px;
-  --image-filter-grayscale: grayscale(0.1);
-  --transition-smooth: 0.5s ease-in-out;
+  --transition-smooth: 0.3s ease-in-out;
+  --card-border-radius: 1.25rem;
+  --theme-bg: #fff8f0;
+  --theme-border: #ffd6c0;
+  --theme-brown: #a67c52;
+  --theme-blue: #6ec1e4;
 }
 
-/* Match Home.vue color scheme to Navbar/Login.vue */
-.home-bg,
-body,
-#app {
-  background: #fff8f0 !important;
-  min-height: 100vh;
+body, .home-bg {
+  background-color: var(--theme-bg) !important;
 }
 
-.feature-highlight {
-  min-height: 340px;
-  margin-bottom: 2.5rem;
+section.container {
+  background: var(--theme-bg);
+  border-radius: 1.5rem;
+  border: none;
+  margin-bottom: 3.5rem !important;
+  padding: 1.5rem;
 }
 
-.feature-highlight h2 {
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
+h2, h3, h4, h5, .fw-bold, .text-dark {
+  color: var(--theme-brown) !important;
 }
 
+.text-secondary {
+  color: var(--theme-brown) !important;
+}
+
+a, .most-viewed-post-title, .recent-post-card-grid .card-title {
+  color: var(--theme-brown) !important;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover, .most-viewed-post-title:hover, .recent-post-card-grid .card-title:hover {
+  color: var(--theme-blue) !important;
+}
+
+/* Feature Highlight Section */
 .feature-highlight .feature-img {
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 8px 32px rgba(166,124,82,0.10);
   object-fit: cover;
   width: 100%;
   max-height: 340px;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+.feature-highlight .feature-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 36px rgba(166,124,82,0.18);
+}
+
+/* Most Viewed Posts Section */
+.most-viewed-title {
+  color: var(--theme-brown) !important;
+  font-size: 1.25rem;
+  border-bottom: none;
+  display: inline-block;
+  padding-bottom: 2px;
+  margin-bottom: 1.5rem !important;
+  letter-spacing: 0.5px;
 }
 
 .most-viewed-row {
-  scrollbar-width: thin;
-  scrollbar-color: #e0e0e0 #fff;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
-.most-viewed-row::-webkit-scrollbar {
-  height: 8px;
-}
-.most-viewed-row::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
-  border-radius: 4px;
-}
+
 .most-viewed-card {
-  min-width: 210px;
-  max-width: 220px;
-  flex: 0 0 auto;
-  background: transparent;
-}
-.most-viewed-img {
-  transition: transform 0.2s;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4/3;
-  object-fit: cover;
+  background-color: #f7e7d6;
   border-radius: 1.2rem;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 220px;
+  border: none;
 }
-.most-viewed-img:hover {
-  transform: scale(1.04);
+
+.most-viewed-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
 }
-.most-viewed-title {
+
+.most-viewed-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+.most-viewed-badge {
+  background-color: var(--theme-border);
+  color: var(--theme-brown) !important;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  top: 10px;
+  left: 10px;
+  border: none;
+}
+
+.most-viewed-category {
+  color: var(--theme-brown) !important;
+  opacity: 0.7;
+  letter-spacing: 0.5px;
+}
+
+.most-viewed-post-title {
+  color: var(--theme-brown) !important;
+  font-size: 1.1rem;
+  font-weight: 700;
   text-decoration: none;
+  line-height: 1.2;
   transition: color 0.2s;
   display: block;
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  line-height: 1.2;
-}
-.most-viewed-title:hover {
-  color: #6ec1e4 !important;
-}
-.most-viewed-badge {
-  left: 16px;
-  top: 16px;
-  font-size: 1rem;
-  padding: 0.35em 0.8em;
-  font-weight: 600;
-  z-index: 2;
 }
 
-.recent-post-card {
-  min-height: 240px;
-  max-height: 340px;
-  background: #eee;
+.most-viewed-post-title:hover {
+  color: var(--theme-blue) !important;
 }
-.recent-post-img {
-  min-height: 220px;
-  max-height: 340px;
+
+.most-viewed-card .small {
+  color: #6c757d !important;
+}
+
+/* Recent Posts Cards - General Styling */
+.recent-post-card, .recent-post-card-grid {
+  border: none;
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  position: relative;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  background: #f7e7d6;
+}
+
+.recent-post-card:hover, .recent-post-card-grid:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.recent-post-card .card-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  filter: brightness(0.85);
-  transition: filter 0.2s;
+  filter: brightness(0.8);
+  transition: filter var(--transition-smooth), transform var(--transition-smooth);
 }
-.recent-post-card:hover .recent-post-img {
-  filter: brightness(1);
-}
-.recent-post-caption {
-  background: linear-gradient(0deg, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.1) 100%);
-  border-radius: 0 0 1.5rem 1.5rem;
+.recent-post-card:hover .card-img {
+    filter: brightness(1);
+    transform: scale(1.05);
 }
 
-@media (max-width: 1200px) {
-  .most-viewed-card {
-    min-width: 180px;
-    max-width: 200px;
-  }
+.recent-post-card .card-img-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%);
+  color: white;
 }
-@media (max-width: 768px) {
-  .feature-highlight {
-    flex-direction: column;
-    min-height: unset;
-  }
-  .feature-highlight .feature-img {
-    max-height: 200px;
-    margin-bottom: 1rem;
-  }
-  .most-viewed-card {
-    min-width: 140px;
-    max-width: 180px;
-  }
-  .recent-post-card {
-    min-height: 160px;
-    max-height: 200px;
-  }
-  .recent-post-img {
-    min-height: 160px;
-    max-height: 200px;
-  }
+.recent-post-card .card-title, .recent-post-card .card-text, .recent-post-card .small {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
-.footer {
-  background-color: #fafafa;
+.recent-post-card .small {
+    opacity: 0.9;
 }
 
-.feature-highlight,
-.recent-post-card {
-  background: #fdf6f0cc !important;
-  border-radius: 1.5rem;
+/* Specific Sizes for Special Layout */
+.recent-post-card-lg { min-height: 400px; }
+.recent-post-card-md { min-height: 350px; }
+.recent-post-card-sm { min-height: 350px; }
+
+/* Grid Layout Card Styling */
+.recent-post-card-grid {
+    background-color: #f7e7d6;
+}
+.recent-post-card-grid .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+}
+.recent-post-card-grid .card-body {
+    padding: 1.25rem;
+}
+.recent-post-card-grid .card-title {
+    font-size: 1.15rem;
+    color: var(--theme-brown) !important;
+}
+.recent-post-card-grid .card-text {
+    font-size: 0.9rem;
+    color: #6c757d !important;
+}
+.recent-post-card-grid .small {
+    color: var(--theme-brown) !important;
 }
 
-.most-viewed-card {
-  background: #fff8f0 !important;
-  border-radius: 1.2rem;
-}
-h2,
-h3,
-h5,
-.fw-bold,
-.text-dark {
-  color: #a67c52 !important;
-}
-
-.badge.bg-dark {
-  background: #a67c52 !important;
-  color: #fff !important;
-}
-section.container,
+/* Footer */
 footer.container {
   border-radius: 1.5rem;
-  border: 1.5px solid #ffd6c0;
-  background: #fff8f0;
+  border: none;
+  background: var(--theme-bg);
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(166,124,82,0.06);
+}
+footer .fw-bold {
+  color: var(--theme-brown) !important;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+footer .text-dark {
+  color: var(--theme-brown) !important;
+}
+footer .text-muted {
+  color: var(--theme-blue) !important;
+}
+footer a {
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: var(--theme-brown) !important;
+  text-decoration: underline;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .recent-post-card-lg, .recent-post-card-md, .recent-post-card-sm {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .recent-post-card-lg, .recent-post-card-md, .recent-post-card-sm {
+    min-height: 250px;
+  }
+  .feature-highlight .feature-img {
+    max-height: 250px;
+  }
 }
 </style>
