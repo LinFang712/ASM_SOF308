@@ -234,7 +234,7 @@
       ],
       "stats": {
         "likes": 153,
-        "views": 2916
+        "views": 2938
       },
       "title": "Giống mèo: Maine Coon hùng vĩ",
       "status": "published",
@@ -242,7 +242,13 @@
       "excerpt": "Được biết đến như những 'gã khổng lồ hiền lành' của thế giới mèo, Maine Coon vừa thân thiện vừa to lớn. Khám phá lịch sử và đặc điểm của giống mèo tuyệt vời này.",
       "authorId": "user_101",
       "category": "Giống mèo nổi bật",
-      "comments": [],
+      "comments": [
+        {
+          "content": "hELLO",
+          "authorId": "user_101",
+          "createdAt": "2025-06-20T01:57:59.835Z"
+        }
+      ],
       "publishedAt": "2025-05-25T15:00:00Z",
       "featuredImage": {
         "url": "https://i.ytimg.com/vi/kqiW9413jfM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB5i_lX0cDyruvTMv4f9AVPuOzhdg",
@@ -910,45 +916,51 @@
       "notifications": [
         {
           "id": 1,
-          "message": "Có người đã bình luận bài viết 'Giống mèo: Maine Coon hùng vĩ' của bạn.",
+          "message": "Sam J. đã bình luận bài viết 'Giống mèo: Maine Coon hùng vĩ' của bạn.",
           "unread": true,
           "createdAt": "2025-06-20T08:00:00Z"
         }
-      ]
+      ],
+      "id": "e1ec"
     },
     {
       "userId": "user_201",
       "notifications": [
         {
           "id": 1,
-          "message": "Có người đã bình luận bài viết 'Giải mã ngôn ngữ cơ thể của mèo: Hướng dẫn cho người mới bắt đầu' của bạn.",
+          "message": "Chloe đã bình luận bài viết 'Giải mã ngôn ngữ cơ thể của mèo: Hướng dẫn cho người mới bắt đầu' của bạn.",
           "unread": true,
           "createdAt": "2025-06-20T08:00:00Z"
         }
-      ]
+      ],
+      "id": "5816"
     },
     {
       "userId": "user_202",
       "notifications": [
         {
           "id": 1,
-          "message": "Có người đã bình luận bài viết 'Hướng dẫn chải lông cho mèo lông dài' của bạn.",
+          "message": "Quản Trị Mèo đã bình luận bài viết 'Hướng dẫn chải lông cho mèo lông dài' của bạn.",
           "unread": true,
           "createdAt": "2025-06-20T08:00:00Z"
         }
-      ]
+      ],
+      "id": "40d5"
     },
     {
       "userId": "user_301",
-      "notifications": []
+      "notifications": [],
+      "id": "dd05"
     },
     {
       "userId": "user_302",
-      "notifications": []
+      "notifications": [],
+      "id": "b101"
     },
     {
       "userId": "user_303",
-      "notifications": []
+      "notifications": [],
+      "id": "2c40"
     }
   ]
 }

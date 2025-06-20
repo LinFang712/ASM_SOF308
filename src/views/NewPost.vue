@@ -13,7 +13,12 @@
       </div>
       <div class="mb-3">
         <label for="content" class="form-label">Nội dung</label>
-        <textarea class="form-control" id="content" v-model="post.content" rows="10" required></textarea>
+        <QuillEditor
+          v-model:content="post.content"
+          :options="editorOptions"
+          style="height: 400px; margin-bottom: 40px;"
+          required
+        />
       </div>
       <div class="mb-3">
         <label for="category" class="form-label">Danh mục</label>
@@ -65,6 +70,22 @@ import { ref, onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 import Navbar from '../components/Navbar.vue';
+import { QuillEditor } from '@vueup/vue-quill';
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
+// Quill editor toolbar configuration
+const editorOptions = {
+  theme: 'snow',
+  modules: {
+    toolbar: [
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      ['link', 'image'],
+      ['clean']
+    ]
+  }
+};
 
 const router = useRouter();
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
@@ -154,13 +175,64 @@ const formatDate = (dateStr) => {
 };
 
 const formattedContent = computed(() => {
-  if (post.value.content) {
+  if (typeof post.value.content === 'string') {
     return post.value.content
       .replace(/## (.*?)\n/g, '<h2 style="color: #a67c52; margin-top: 2rem; margin-bottom: 1rem;">$1</h2>')
       .replace(/- (.*?)\n/g, '<li>$1</li>')
       .replace(/\n\n/g, '<br>')
       .replace(/\n/g, '<br>')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  } else if (post.value.content && typeof post.value.content === 'object' && post.value.content.ops) {
+    // Handle Quill Delta format
+    let contentHtml = '';
+    let currentList = null;
+    post.value.content.ops.forEach(op => {
+      let text = (op.insert || '').replace(/\n/g, '<br>');
+      if (op.attributes) {
+        if (op.attributes.bold) {
+          text = `<strong>${text}</strong>`;
+        }
+        if (op.attributes.italic) {
+          text = `<em>${text}</em>`;
+        }
+        if (op.attributes.underline) {
+          text = `<u>${text}</u>`;
+        }
+        if (op.attributes.strike) {
+          text = `<del>${text}</del>`;
+        }
+        if (op.attributes.header) {
+          text = `<h${op.attributes.header} style="color: #a67c52; margin-top: 2rem; margin-bottom: 1rem;">${text}</h${op.attributes.header}>`;
+        }
+        if (op.attributes.list === 'ordered') {
+          if (currentList !== 'ol') {
+            contentHtml += '<ol>';
+            currentList = 'ol';
+          }
+          text = `<li>${text}</li>`;
+        } else if (op.attributes.list === 'bullet') {
+          if (currentList !== 'ul') {
+            contentHtml += '<ul>';
+            currentList = 'ul';
+          }
+          text = `<li>${text}</li>`;
+        } else if (currentList) {
+          contentHtml += currentList === 'ol' ? '</ol>' : '</ul>';
+          currentList = null;
+        }
+        if (op.attributes.link) {
+          text = `<a href="${op.attributes.link}" target="_blank">${text}</a>`;
+        }
+      } else if (currentList) {
+        contentHtml += currentList === 'ol' ? '</ol>' : '</ul>';
+        currentList = null;
+      }
+      contentHtml += text;
+    });
+    if (currentList) {
+      contentHtml += currentList === 'ol' ? '</ol>' : '</ul>';
+    }
+    return contentHtml || '<p style="color: #8d6843;">Nội dung bài viết sẽ hiển thị ở đây.</p>';
   }
   return '<p style="color: #8d6843;">Nội dung bài viết sẽ hiển thị ở đây.</p>';
 });

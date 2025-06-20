@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, inject } from 'vue'
 import { useRouter } from 'vue-router'
+import NotificationModal from './NotificationModal.vue'
 
 const router = useRouter()
 const user = ref(null)
@@ -11,24 +12,93 @@ const markNotificationsAsRead = () => {
   notificationStore.markAllAsRead()
 }
 
+const isNotificationModalOpen = ref(false)
+
+const showNotificationModal = () => {
+  isNotificationModalOpen.value = true
+}
+
+const hideNotificationModal = () => {
+  isNotificationModalOpen.value = false
+}
+
+const handleNotificationClick = async (notification) => {
+  // Remove the notification from the store after clicking
+  const index = notificationStore.notifications.findIndex(n => n.id === notification.id);
+  if (index !== -1) {
+    notificationStore.notifications.splice(index, 1);
+    // Attempt to trigger an update to unreadCount if it's a computed property or similar
+    if (typeof notificationStore.updateUnreadCount === 'function') {
+      notificationStore.updateUnreadCount();
+    }
+  }
+  // Attempt to simulate updating db.json by removing the notification
+  try {
+    const response = await fetch('/db.json');
+    const data = await response.json();
+    // Find the user's notifications array in db.json structure
+    const userNotifications = data.notifications.find(n => n.userId === user.value._id || n.userId === user.value.id);
+    if (userNotifications) {
+      const notifIndex = userNotifications.notifications.findIndex(n => n.id === notification.id);
+      if (notifIndex !== -1) {
+        userNotifications.notifications.splice(notifIndex, 1);
+        console.log('Simulated removal of notification from db.json data:', data.notifications);
+        // Note: Actual update to db.json is not possible without a backend
+      }
+    }
+  } catch (error) {
+    console.error('Error simulating update to db.json:', error);
+  }
+  // Attempt to extract post information from the message for redirection
+  const message = notification.message;
+  const postMatch = message.match(/bài viết '([^']+)'/);
+  if (postMatch && postMatch[1]) {
+    try {
+      const response = await fetch('/db.json');
+      const data = await response.json();
+      const postTitle = postMatch[1];
+      const targetPost = data.posts.find(post => post.title === postTitle);
+      hideNotificationModal();
+      if (targetPost) {
+        router.push(`/posts/${targetPost.id}`);
+      } else {
+        console.log(`Post with title ${postTitle} not found.`);
+      }
+    } catch (error) {
+      console.error('Error fetching db.json for navigation:', error);
+      hideNotificationModal();
+    }
+  }
+}
+
 // Function to fetch notifications based on user's posts
 const fetchNotifications = async () => {
   if (!user.value) return;
   try {
+    console.log('Attempting to fetch notifications...');
     // Fetch notifications from db.json
     const response = await fetch('/db.json')
     const data = await response.json()
+    console.log('Fetched data from db.json:', data);
     const userId = user.value._id || user.value.id
+    console.log('Current user ID:', userId);
     const userNotifications = data.notifications.find(n => n.userId === userId)
-    notificationStore.clearNotifications()
+    console.log('User notifications found:', userNotifications);
     if (userNotifications && userNotifications.notifications.length > 0) {
       userNotifications.notifications.forEach(notification => {
-        notificationStore.addNotification({
-          id: notification.id,
-          message: notification.message,
-          unread: notification.unread
-        })
+        // Check if notification already exists in store to prevent duplicates
+        if (!notificationStore.notifications.some(n => n.id === notification.id)) {
+          console.log('Adding notification:', notification);
+          notificationStore.addNotification({
+            id: notification.id,
+            message: notification.message,
+            unread: notification.unread,
+            createdAt: notification.createdAt
+          })
+        }
       })
+    } else {
+      console.log('No notifications found for this user.');
     }
   } catch (error) {
     console.error('Error fetching notifications:', error)
@@ -92,20 +162,12 @@ onMounted(() => {
             <router-link to="/profile" class="fw-bold me-3 text-brown text-decoration-none">
               Hello, {{ user.fullName || user.name || user.displayName || user.profile?.displayName || user.email.split('@')[0] }}
             </router-link>
-            <div class="dropdown me-3">
-              <button class="btn btn-link text-brown position-relative p-0" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false" @click="markNotificationsAsRead">
-                🔔
-                <span v-if="notificationStore.unreadCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  {{ notificationStore.unreadCount }}
-                </span>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
-                <li v-for="notification in notificationStore.notifications" :key="notification.id" class="dropdown-item" :class="{ 'fw-bold': notification.unread }">
-                  {{ notification.message }}
-                </li>
-                <li v-if="notificationStore.notifications.length === 0" class="dropdown-item text-muted">Không có thông báo nào.</li>
-              </ul>
-            </div>
+            <button class="btn btn-link text-brown position-relative p-0 me-3" type="button" @click="showNotificationModal">
+              🔔
+              <span v-if="notificationStore.unreadCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ notificationStore.unreadCount }}
+              </span>
+            </button>
             <router-link v-if="user.role === 'admin'" to="/adminpanel" class="nav-link text-danger me-3">
               Trang quản trị
             </router-link>
@@ -119,6 +181,13 @@ onMounted(() => {
       </div>
     </div>
   </nav>
+  <NotificationModal 
+    :isOpen="isNotificationModalOpen" 
+    :notifications="notificationStore.notifications" 
+    @close="hideNotificationModal" 
+    @notification-click="handleNotificationClick" 
+    @mark-all-read="markNotificationsAsRead" 
+  />
 </template>
 
 <style>

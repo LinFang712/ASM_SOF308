@@ -488,12 +488,67 @@ onMounted(() => {
 
 const updateFormattedContent = () => {
   if (post.value && post.value.content) {
-    formattedContent.value = post.value.content
-      .replace(/## (.*?)\n/g, '<h2>$1</h2>')
-      .replace(/- (.*?)\n/g, '<li>$1</li>')
-      .replace(/\n\n/g, '<br>')
-      .replace(/\n/g, '<br>')
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    if (typeof post.value.content === 'string') {
+      formattedContent.value = post.value.content
+        .replace(/## (.*?)\n/g, '<h2>$1</h2>')
+        .replace(/- (.*?)\n/g, '<li>$1</li>')
+        .replace(/\n\n/g, '<br>')
+        .replace(/\n/g, '<br>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    } else if (typeof post.value.content === 'object' && post.value.content.ops) {
+      // Handle Quill Delta format
+      let contentHtml = '';
+      let currentList = null;
+      post.value.content.ops.forEach(op => {
+        let text = (op.insert || '').replace(/\n/g, '<br>');
+        if (op.attributes) {
+          if (op.attributes.bold) {
+            text = `<strong>${text}</strong>`;
+          }
+          if (op.attributes.italic) {
+            text = `<em>${text}</em>`;
+          }
+          if (op.attributes.underline) {
+            text = `<u>${text}</u>`;
+          }
+          if (op.attributes.strike) {
+            text = `<del>${text}</del>`;
+          }
+          if (op.attributes.header) {
+            text = `<h${op.attributes.header}>${text}</h${op.attributes.header}>`;
+          }
+          if (op.attributes.list === 'ordered') {
+            if (currentList !== 'ol') {
+              contentHtml += '<ol>';
+              currentList = 'ol';
+            }
+            text = `<li>${text}</li>`;
+          } else if (op.attributes.list === 'bullet') {
+            if (currentList !== 'ul') {
+              contentHtml += '<ul>';
+              currentList = 'ul';
+            }
+            text = `<li>${text}</li>`;
+          } else if (currentList) {
+            contentHtml += currentList === 'ol' ? '</ol>' : '</ul>';
+            currentList = null;
+          }
+          if (op.attributes.link) {
+            text = `<a href="${op.attributes.link}" target="_blank">${text}</a>`;
+          }
+        } else if (currentList) {
+          contentHtml += currentList === 'ol' ? '</ol>' : '</ul>';
+          currentList = null;
+        }
+        contentHtml += text;
+      });
+      if (currentList) {
+        contentHtml += currentList === 'ol' ? '</ol>' : '</ul>';
+      }
+      formattedContent.value = contentHtml || '<p>Nội dung bài viết không khả dụng.</p>';
+    } else {
+      formattedContent.value = '<p>Nội dung bài viết không khả dụng.</p>';
+    }
   }
 }
 
