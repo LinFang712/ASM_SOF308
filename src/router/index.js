@@ -14,7 +14,8 @@ const routes = [
   { path: '/blog', component: Blog },
   { path: '/adminpanel', component: () => import('../views/AdminPanel.vue'), meta: { requiresAuth: true, requiresAdmin: true } },
   { path: '/search', component: () => import('../views/Search.vue') },
-  { path: '/posts/:id', component: () => import('../views/PostDetail.vue') }
+  { path: '/posts/:id', component: () => import('../views/PostDetail.vue') },
+  { path: '/new-post', component: () => import('../views/NewPost.vue'), meta: { requiresAuth: true, requiresAuthor: true } }
 ]
 
 const router = createRouter({
@@ -31,6 +32,9 @@ router.beforeEach((to, from, next) => {
     next('/login')
   } else if (to.meta.requiresAdmin && user?.role !== 'admin') {
     alert('Bạn không có quyền truy cập trang này!')
+    next('/') // hoặc quay lại trang chủ
+  } else if (to.meta.requiresAuthor && user?.role !== 'author' && user?.role !== 'admin') {
+    alert('Bạn không có quyền tạo bài viết mới!')
     next('/') // hoặc quay lại trang chủ
   } else {
     next()

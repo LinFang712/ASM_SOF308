@@ -67,7 +67,21 @@
 
     <!-- Recent Posts Section -->
     <section class="container mb-5" v-if="recentPosts.length">
-      <h5 class="fw-bold mb-4 border-bottom pb-2">Recent posts</h5>
+      <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+        <h5 class="fw-bold m-0">Recent posts</h5>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-brown btn-sm" :class="{ 'active': sortBy === 'date' }" @click="setSortBy('date')">Date</button>
+          <button type="button" class="btn btn-outline-brown btn-sm" :class="{ 'active': sortBy === 'views' }" @click="setSortBy('views')">Views</button>
+          <button type="button" class="btn btn-outline-brown btn-sm" :class="{ 'active': sortBy === 'category' }" @click="setSortBy('category')">Category</button>
+          <button type="button" class="btn btn-outline-brown btn-sm" @click="sortOrder = sortOrder === 'desc' ? 'asc' : 'desc'">
+            <i v-if="sortOrder === 'desc'" class="bi bi-sort-down"></i>
+            <i v-else class="bi bi-sort-up"></i>
+          </button>
+        </div>
+      </div>
+      <div v-if="currentUser && (currentUser.role === 'author' || currentUser.role === 'admin')" class="mb-3">
+        <button class="btn btn-brown" @click="$router.push('/new-post')">Write New Post</button>
+      </div>
 
       <!-- Special Layout for First 3 Posts -->
       <div class="row g-4 mb-4">
@@ -145,6 +159,10 @@
                   {{ post.title }}
                 </router-link>
                 <p class="card-text text-muted small">{{ post.excerpt }}</p>
+                <div class="d-flex justify-content-between mt-2">
+                  <span class="text-muted small">Likes: {{ post.stats.likes }}</span>
+                  <span class="text-muted small">Comments: {{ post.comments ? post.comments.length : 0 }}</span>
+                </div>
              </div>
           </div>
         </div>
@@ -159,9 +177,7 @@
           </span>
           <span v-else>
             Xem thêm
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down ms-1" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
-            </svg>
+            <i class="bi bi-arrow-down ms-1"></i>
           </span>
         </button>
       </div>
@@ -209,9 +225,7 @@ const fetchData = async () => {
   error.value = null;
   try {
     const postsResponse = await axios.get(`${API_BASE_URL}/posts`);
-    posts.value = postsResponse.data
-      .filter(p => p.status === 'published')
-      .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+    posts.value = postsResponse.data.sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0));
   } catch (err) {
     error.value = 'Không thể tải dữ liệu. Vui lòng thử lại sau.';
     console.error(err);
@@ -221,7 +235,10 @@ const fetchData = async () => {
 };
 
 // Lifecycle hook
-onMounted(fetchData);
+onMounted(() => {
+  fetchData();
+  loadUser();
+});
 
 // State for pagination
 const gridDisplayLimit = ref(3); // Number of posts to show in the grid initially
@@ -230,8 +247,32 @@ const postsPerLoad = 6; // Number of additional posts to load per click
 // Computed property for the main feature post (the latest one)
 const featurePost = computed(() => posts.value[0]);
 
+// Sorting state
+const sortBy = ref('date');
+const sortOrder = ref('desc');
+
+// User state for author check
+const currentUser = ref(null);
+
+const loadUser = () => {
+  const stored = localStorage.getItem('loggedInUser');
+  if (stored) {
+    currentUser.value = JSON.parse(stored);
+  }
+};
+
 // Computed property for all posts excluding the main feature one
-const recentPosts = computed(() => posts.value.slice(1));
+const recentPosts = computed(() => {
+  let sortedPosts = [...posts.value.slice(1)];
+  if (sortBy.value === 'views') {
+    sortedPosts.sort((a, b) => sortOrder.value === 'desc' ? (b.stats?.views || 0) - (a.stats?.views || 0) : (a.stats?.views || 0) - (b.stats?.views || 0));
+  } else if (sortBy.value === 'category') {
+    sortedPosts.sort((a, b) => sortOrder.value === 'desc' ? b.category.localeCompare(a.category) : a.category.localeCompare(b.category));
+  } else {
+    sortedPosts.sort((a, b) => sortOrder.value === 'desc' ? new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0) : new Date(a.publishedAt || 0) - new Date(b.publishedAt || 0));
+  }
+  return sortedPosts;
+});
 
 // Computed property for the standard grid posts (from the 4th recent post onwards, limited by gridDisplayLimit)
 const remainingPosts = computed(() => recentPosts.value.slice(3, 3 + gridDisplayLimit.value));
@@ -239,7 +280,15 @@ const remainingPosts = computed(() => recentPosts.value.slice(3, 3 + gridDisplay
 // Computed property to check if there are more posts to load
 const hasMorePosts = computed(() => recentPosts.value.length > 3 + gridDisplayLimit.value);
 
-// Method to load more posts
+// Method to set sorting criteria
+const setSortBy = (criteria) => {
+  if (sortBy.value === criteria) {
+    sortOrder.value = sortOrder.value === 'desc' ? 'asc' : 'desc';
+  } else {
+    sortBy.value = criteria;
+    sortOrder.value = 'desc';
+  }
+};
 
 // Computed property for most viewed posts (top 5 by default)
 const mostViewedPosts = computed(() =>

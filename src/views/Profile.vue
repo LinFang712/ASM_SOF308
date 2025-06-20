@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, reactive } from 'vue'
 import axios from 'axios'
 // The Navbar component might need separate styling to match the new theme.
 import Navbar from '../components/Navbar.vue'
+import ActionModal from '../components/ActionModal.vue'
 
 // --- State Management ---
 const user = ref(null)
@@ -16,6 +17,47 @@ const avatarUrl = ref('')
 const bannerUrl = ref('')
 const isLoading = ref(true)
 const error = ref<string | null>(null)
+// --- Modal State & Handlers ---
+const isModalOpen = ref(false)
+const modalIsLoading = ref(false)
+const modalError = ref(null)
+const modalContent = reactive({
+  mode: 'confirm',
+  title: '',
+  config: {},
+  action: null,
+})
+
+const openModal = (config) => {
+  modalContent.mode = config.mode
+  modalContent.title = config.title
+  modalContent.config = config.config
+  modalContent.action = config.action
+  modalError.value = null
+  isModalOpen.value = true
+}
+
+const closeModal = () => {
+  isModalOpen.value = false
+  modalIsLoading.value = false
+}
+
+const onModalSubmit = async (formData) => {
+  if (modalContent.action) {
+    modalIsLoading.value = true
+    modalError.value = null
+    try {
+      await modalContent.action(formData)
+      closeModal()
+    } catch (err) {
+      console.error("Modal action failed:", err)
+      modalError.value = err.message || "Đã có lỗi xảy ra."
+    } finally {
+      modalIsLoading.value = false
+    }
+  }
+}
+
 const showSuccessMessage = ref(false)
 
 // --- Lifecycle Hooks ---
@@ -96,6 +138,87 @@ const cancelEditing = () => {
   isEditing.value = false;
 }
 
+// --- Post Editing ---
+const handleEditPost = (post) => {
+  let isPreviewMode = false;
+  let currentContent = post.content;
+  const togglePreview = (formData) => {
+    isPreviewMode = !isPreviewMode;
+    if (isPreviewMode) {
+      const formattedPreview = currentContent
+        .replace(/## (.*?)\n/g, '<h2>$1</h2>')
+        .replace(/- (.*?)\n/g, '<li>$1</li>')
+        .replace(/\n\n/g, '<br>')
+        .replace(/\n/g, '<br>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      modalContent.config.previewContent = formattedPreview;
+    }
+    modalContent.config.showPreview = isPreviewMode;
+    modalContent.config.showForm = !isPreviewMode;
+  };
+  const insertSnippet = (snippet, formData) => {
+    const textarea = formData.content;
+    currentContent = textarea + snippet;
+    formData.content = currentContent;
+    modalContent.config.fields[1].value = currentContent;
+  };
+  openModal({
+    mode: 'form',
+    title: 'Chỉnh sửa bài viết',
+    config: {
+      fields: [
+        { name: 'title', label: 'Tiêu đề', type: 'text', required: true, value: post.title },
+        { name: 'content', label: 'Nội dung', type: 'textarea', required: true, value: post.content },
+        { name: 'category', label: 'Danh mục', type: 'text', required: true, value: post.category },
+        { name: 'status', label: 'Trạng thái', type: 'select', required: true, value: post.status, options: [
+          { value: 'draft', text: 'Bản nháp' },
+          { value: 'published', text: 'Đã xuất bản' }
+        ]},
+        { name: 'featuredImageUrl', label: 'URL ảnh nổi bật', type: 'text', required: false, value: post.featuredImage?.url || '' }
+      ],
+      snippets: [
+        { label: 'Tiêu đề phụ (##)', value: '## Tiêu đề phụ\n' },
+        { label: 'Danh sách (-)', value: '- Mục 1\n- Mục 2\n- Mục 3\n' },
+        { label: 'In đậm (**)', value: '**Văn bản in đậm**' }
+      ],
+      onSnippetSelect: insertSnippet,
+      confirmButtonText: 'Lưu thay đổi',
+      additionalButtons: [
+        { label: 'Xem trước', action: togglePreview, class: 'btn-primary' }
+      ],
+      showPreview: false,
+      showForm: true,
+      previewContent: ''
+    },
+    action: async (formData) => {
+      try {
+        const postId = post.id || post._id;
+        const updatedPost = {
+          ...post,
+          title: formData.title,
+          content: formData.content,
+          category: formData.category,
+          status: formData.status,
+          featuredImage: {
+            url: formData.featuredImageUrl || post.featuredImage?.url || '',
+            altText: formData.featuredImageUrl ? post.featuredImage?.altText || 'Ảnh nổi bật' : ''
+          },
+          publishedAt: formData.status === 'published' && !post.publishedAt ? new Date().toISOString() : post.publishedAt
+        };
+        await axios.patch(`http://localhost:3001/posts/${postId}`, updatedPost);
+        // Update the local post data
+        const index = user.value.posts.findIndex(p => (p.id || p._id) === postId);
+        if (index !== -1) {
+          user.value.posts[index] = updatedPost;
+        }
+      } catch (err) {
+        console.error('Error updating post:', err);
+        throw new Error('Có lỗi xảy ra khi cập nhật bài viết. Server có thể không khả dụng.');
+      }
+    }
+  });
+};
+
 const saveChanges = async () => {
   const updatedUser = {
     ...user.value,
@@ -148,6 +271,16 @@ const saveChanges = async () => {
 
       <div v-else-if="user" class="profile-layout">
         <main class="main-content">
+          <ActionModal
+            :isOpen="isModalOpen"
+            :mode="modalContent.mode"
+            :title="modalContent.title"
+            :config="modalContent.config"
+            :isLoading="modalIsLoading"
+            :error="modalError"
+            @close="closeModal"
+            @submit="onModalSubmit"
+          />
           <h2 class="section-title">Bài viết của tôi</h2>
           <div v-if="user.posts && user.posts.length > 0" class="posts-grid">
             <div v-for="post in user.posts" :key="post.id" class="post-card">
@@ -158,6 +291,7 @@ const saveChanges = async () => {
                   <p class="post-card-date">Đăng vào {{ formatDate(post.publishedAt || post.createdAt || post.date) }}</p>
                 </div>
               </router-link>
+              <button @click="handleEditPost(post)" class="btn btn-warning btn-sm edit-btn">Sửa</button>
             </div>
           </div>
           <div v-else>
@@ -188,7 +322,7 @@ const saveChanges = async () => {
             
             <template v-else>
               <div class="edit-form">
-                <div class="mb-2"><label class="form-label">Tên hiển thị</label><input v-model="displayName" class="form-control" /></div>
+                <div class="mb-2"><label class="form-label">Tên hiển thị</label><input v-model="fullName" class="form-control" /></div>
                 <div class="mb-2"><label class="form-label">Email</label><input v-model="email" type="email" class="form-control" /></div>
                 <div class="mb-2"><label class="form-label">Giới tính</label><select v-model="gender" class="form-select"><option value="male">Nam</option><option value="female">Nữ</option><option value="other">Khác</option></select></div>
                 <div class="mb-2"><label class="form-label">Ngày sinh</label><input v-model="dob" type="date" class="form-control" /></div>
@@ -260,6 +394,14 @@ const saveChanges = async () => {
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.edit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
 }
 
 .post-card:hover {

@@ -72,7 +72,7 @@
       ],
       "stats": {
         "likes": 130,
-        "views": 2451
+        "views": 2455
       },
       "title": "Giải mã ngôn ngữ cơ thể của mèo: Hướng dẫn cho người mới bắt đầu",
       "status": "published",
@@ -169,7 +169,7 @@
       ],
       "stats": {
         "likes": 211,
-        "views": 3507
+        "views": 3511
       },
       "title": "Những nguy hiểm trong nhà đối với mèo mà bạn có thể bỏ qua",
       "status": "published",
@@ -233,8 +233,8 @@
         "hanh-vi"
       ],
       "stats": {
-        "likes": 152,
-        "views": 2903
+        "likes": 153,
+        "views": 2916
       },
       "title": "Giống mèo: Maine Coon hùng vĩ",
       "status": "published",
@@ -260,7 +260,7 @@
       ],
       "stats": {
         "likes": 350,
-        "views": 5503
+        "views": 5511
       },
       "title": "Tại sao mèo thích hộp? Khoa học đằng sau sự ngớ ngẩn",
       "status": "published",
@@ -417,7 +417,7 @@
       ],
       "stats": {
         "likes": 120,
-        "views": 2107
+        "views": 2109
       },
       "title": "Tại sao mèo thích ngủ trên laptop?",
       "status": "published",
@@ -449,7 +449,7 @@
       ],
       "stats": {
         "likes": 88,
-        "views": 1500
+        "views": 1507
       },
       "title": "Mèo có thực sự nhớ tên của mình không?",
       "status": "published",
@@ -533,7 +533,7 @@
       ],
       "stats": {
         "likes": 40,
-        "views": 601
+        "views": 602
       },
       "title": "Mèo có thể ăn cá sống không?",
       "status": "published",
@@ -585,7 +585,7 @@
       ],
       "stats": {
         "likes": 113,
-        "views": 1820
+        "views": 1822
       },
       "title": "Tại sao mèo thích ngồi trong hộp nhỏ?",
       "status": "published",
@@ -902,6 +902,53 @@
       "name": "Vui nhộn & Dễ thương",
       "slug": "vui-nhon-va-de-thuong",
       "id": "db33"
+    }
+  ],
+  "notifications": [
+    {
+      "userId": "user_101",
+      "notifications": [
+        {
+          "id": 1,
+          "message": "Có người đã bình luận bài viết 'Giống mèo: Maine Coon hùng vĩ' của bạn.",
+          "unread": true,
+          "createdAt": "2025-06-20T08:00:00Z"
+        }
+      ]
+    },
+    {
+      "userId": "user_201",
+      "notifications": [
+        {
+          "id": 1,
+          "message": "Có người đã bình luận bài viết 'Giải mã ngôn ngữ cơ thể của mèo: Hướng dẫn cho người mới bắt đầu' của bạn.",
+          "unread": true,
+          "createdAt": "2025-06-20T08:00:00Z"
+        }
+      ]
+    },
+    {
+      "userId": "user_202",
+      "notifications": [
+        {
+          "id": 1,
+          "message": "Có người đã bình luận bài viết 'Hướng dẫn chải lông cho mèo lông dài' của bạn.",
+          "unread": true,
+          "createdAt": "2025-06-20T08:00:00Z"
+        }
+      ]
+    },
+    {
+      "userId": "user_301",
+      "notifications": []
+    },
+    {
+      "userId": "user_302",
+      "notifications": []
+    },
+    {
+      "userId": "user_303",
+      "notifications": []
     }
   ]
 }

@@ -30,6 +30,10 @@
               <span class="ms-1">{{ post.stats.likes }}</span>
             </span>
           </span>
+          <span v-if="canManagePost()" class="ms-2">
+            <button @click="handleEditPost" class="btn btn-warning btn-sm me-1">Sửa</button>
+            <button @click="handleDeletePost" class="btn btn-danger btn-sm">Xóa</button>
+          </span>
         </div>
         <img v-if="post.featuredImage && post.featuredImage.url" :src="post.featuredImage.url" class="img-fluid mb-4 post-img" :alt="post.featuredImage.altText || post.title">
         <div class="post-content" v-html="formattedContent"></div>
@@ -87,7 +91,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, reactive } from 'vue'
+import { ref, onMounted, watch, reactive, inject } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
 import Navbar from '../components/Navbar.vue'
@@ -279,6 +283,17 @@ const submitComment = async () => {
       post.value.comments.push(newComment)
       commentText.value = ''
       await fetchUsersForComments();
+      // Trigger notification for post author if not the same as commenter
+      if (post.value.authorId !== newComment.authorId) {
+        const store = inject('notificationStore', null)
+        if (store) {
+          store.addNotification({
+            id: Date.now(),
+            message: `Có người đã bình luận bài viết "${post.value.title}" của bạn.`,
+            unread: true
+          })
+        }
+      }
     } else {
       commentError.value = 'Không thể gửi bình luận. Vui lòng thử lại sau.'
     }
@@ -293,6 +308,17 @@ const submitComment = async () => {
     })
     commentText.value = ''
     await fetchUsersForComments();
+    // Trigger notification for post author if not the same as commenter (fallback)
+    if (post.value.authorId !== 'user_101') {
+      const store = inject('notificationStore', null)
+      if (store) {
+        store.addNotification({
+          id: Date.now(),
+          message: `Có người đã bình luận bài viết "${post.value.title}" của bạn.`,
+          unread: true
+        })
+      }
+    }
   } finally {
     commentLoading.value = false
   }
@@ -327,6 +353,112 @@ const handleDeleteComment = (comment) => {
                 console.error('Error deleting comment:', err);
                 // Throw error to be caught by the modal handler
                 throw new Error('Có lỗi xảy ra khi xóa bình luận. Server có thể không khả dụng.');
+            }
+        }
+    });
+};
+
+const canManagePost = () => {
+  const currentUserId = 'user_101'; // Hardcoded for now; ideally, this would be dynamically set based on logged-in user
+  const currentUser = users.value[currentUserId];
+  const isAdmin = currentUser && currentUser.role === 'admin';
+  const isPostAuthor = post.value && post.value.authorId === currentUserId;
+  return isAdmin || isPostAuthor;
+};
+
+const handleEditPost = () => {
+    let isPreviewMode = false;
+    let currentContent = post.value.content;
+    const togglePreview = (formData) => {
+        isPreviewMode = !isPreviewMode;
+        if (isPreviewMode) {
+            const formattedPreview = currentContent
+                .replace(/## (.*?)\n/g, '<h2>$1</h2>')
+                .replace(/- (.*?)\n/g, '<li>$1</li>')
+                .replace(/\n\n/g, '<br>')
+                .replace(/\n/g, '<br>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            modalContent.config.previewContent = formattedPreview;
+        }
+        modalContent.config.showPreview = isPreviewMode;
+        modalContent.config.showForm = !isPreviewMode;
+    };
+    const insertSnippet = (snippet, formData) => {
+        const textarea = formData.content;
+        currentContent = textarea + snippet;
+        formData.content = currentContent;
+        modalContent.config.fields[1].value = currentContent;
+    };
+    openModal({
+        mode: 'form',
+        title: 'Chỉnh sửa bài viết',
+        config: {
+            fields: [
+                { name: 'title', label: 'Tiêu đề', type: 'text', required: true, value: post.value.title },
+                { name: 'content', label: 'Nội dung', type: 'textarea', required: true, value: post.value.content },
+                { name: 'category', label: 'Danh mục', type: 'text', required: true, value: post.value.category },
+                { name: 'status', label: 'Trạng thái', type: 'select', required: true, value: post.value.status, options: [
+                    { value: 'draft', text: 'Bản nháp' },
+                    { value: 'published', text: 'Đã xuất bản' }
+                ]},
+                { name: 'featuredImageUrl', label: 'URL ảnh nổi bật', type: 'text', required: false, value: post.value.featuredImage?.url || '' }
+            ],
+            snippets: [
+                { label: 'Tiêu đề phụ (##)', value: '## Tiêu đề phụ\n' },
+                { label: 'Danh sách (-)', value: '- Mục 1\n- Mục 2\n- Mục 3\n' },
+                { label: 'In đậm (**)', value: '**Văn bản in đậm**' }
+            ],
+            onSnippetSelect: insertSnippet,
+            confirmButtonText: 'Lưu thay đổi',
+            additionalButtons: [
+                { label: 'Xem trước', action: togglePreview, class: 'btn-primary' }
+            ],
+            showPreview: false,
+            showForm: true,
+            previewContent: ''
+        },
+        action: async (formData) => {
+            try {
+                const updatedPost = {
+                    ...post.value,
+                    title: formData.title,
+                    content: formData.content,
+                    category: formData.category,
+                    status: formData.status,
+                    featuredImage: {
+                        url: formData.featuredImageUrl || post.value.featuredImage?.url || '',
+                        altText: formData.featuredImageUrl ? post.value.featuredImage?.altText || 'Ảnh nổi bật' : ''
+                    },
+                    publishedAt: formData.status === 'published' && !post.value.publishedAt ? new Date().toISOString() : post.value.publishedAt
+                };
+                await axios.patch(`http://localhost:3001/posts/${postId.value}`, updatedPost);
+                post.value = updatedPost;
+            } catch (err) {
+                console.error('Error updating post:', err);
+                throw new Error('Có lỗi xảy ra khi cập nhật bài viết. Server có thể không khả dụng.');
+            }
+        }
+    });
+};
+
+const handleDeletePost = () => {
+    openModal({
+        mode: 'confirm',
+        title: 'Xác nhận xóa bài viết',
+        config: {
+            message: `Bạn có chắc muốn xóa bài viết "${post.value.title}"? Hành động này không thể hoàn tác.`,
+            confirmButtonText: 'Xóa',
+            confirmButtonClass: 'btn-danger'
+        },
+        action: async () => {
+            try {
+                await axios.delete(`http://localhost:3001/posts/${postId.value}`);
+                alert('Xóa bài viết thành công!');
+                // Redirect to home page after deletion
+                window.location.href = '/';
+            } catch (err) {
+                console.error('Error deleting post:', err);
+                throw new Error('Có lỗi xảy ra khi xóa bài viết. Server có thể không khả dụng.');
             }
         }
     });

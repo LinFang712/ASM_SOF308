@@ -1,14 +1,44 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const user = ref(null)
 const searchQuery = ref('')
+const notificationStore = inject('notificationStore')
+
+const markNotificationsAsRead = () => {
+  notificationStore.markAllAsRead()
+}
+
+// Function to fetch notifications based on user's posts
+const fetchNotifications = async () => {
+  if (!user.value) return;
+  try {
+    // Fetch notifications from db.json
+    const response = await fetch('/db.json')
+    const data = await response.json()
+    const userId = user.value._id || user.value.id
+    const userNotifications = data.notifications.find(n => n.userId === userId)
+    notificationStore.clearNotifications()
+    if (userNotifications && userNotifications.notifications.length > 0) {
+      userNotifications.notifications.forEach(notification => {
+        notificationStore.addNotification({
+          id: notification.id,
+          message: notification.message,
+          unread: notification.unread
+        })
+      })
+    }
+  } catch (error) {
+    console.error('Error fetching notifications:', error)
+  }
+}
 
 const navLinks = ref([
   { name: 'Trang chủ', path: '/' },
   { name: 'Giới thiệu', path: '/about' },
+  { name: 'Blog', path: '/blog' }
 ])
 
 const loadUser = () => {
@@ -33,6 +63,9 @@ const handleSearch = () => {
 onMounted(() => {
   loadUser()
   window.addEventListener('user-logged-in', loadUser)
+  fetchNotifications()
+  // Simulate periodic check for new notifications (every 30 seconds)
+  setInterval(fetchNotifications, 30000)
 })
 </script>
 
@@ -59,6 +92,20 @@ onMounted(() => {
             <router-link to="/profile" class="fw-bold me-3 text-brown text-decoration-none">
               Hello, {{ user.fullName || user.name || user.displayName || user.profile?.displayName || user.email.split('@')[0] }}
             </router-link>
+            <div class="dropdown me-3">
+              <button class="btn btn-link text-brown position-relative p-0" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false" @click="markNotificationsAsRead">
+                🔔
+                <span v-if="notificationStore.unreadCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {{ notificationStore.unreadCount }}
+                </span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                <li v-for="notification in notificationStore.notifications" :key="notification.id" class="dropdown-item" :class="{ 'fw-bold': notification.unread }">
+                  {{ notification.message }}
+                </li>
+                <li v-if="notificationStore.notifications.length === 0" class="dropdown-item text-muted">Không có thông báo nào.</li>
+              </ul>
+            </div>
             <router-link v-if="user.role === 'admin'" to="/adminpanel" class="nav-link text-danger me-3">
               Trang quản trị
             </router-link>

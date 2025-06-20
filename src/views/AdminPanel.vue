@@ -389,7 +389,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { onMounted, ref, reactive } from 'vue'
 import axios from 'axios'
 import Navbar from '../components/Navbar.vue'
@@ -398,12 +398,12 @@ import ActionModal from '../components/ActionModal.vue'
 // --- Modal State & Handlers ---
 const isModalOpen = ref(false)
 const modalIsLoading = ref(false)
-const modalError = ref<string | null>(null)
+const modalError = ref(null)
 const modalContent = reactive({
   mode: 'view',
   title: '',
   config: {},
-  action: null as Function | null,
+  action: null,
 })
 
 const openModal = (config) => {
@@ -420,7 +420,7 @@ const closeModal = () => {
   modalIsLoading.value = false
 }
 
-const onModalSubmit = async (formData?: any) => {
+const onModalSubmit = async (formData) => {
   if (modalContent.action) {
     modalIsLoading.value = true
     modalError.value = null
@@ -441,7 +441,7 @@ const activeTab = ref('users')
 // Users
 const users = ref([])
 const loadingUsers = ref(true)
-const errorUsers = ref<string | null>(null)
+const errorUsers = ref(null)
 const showAddUserForm = ref(false)
 const newUser = ref({
   email: '',
@@ -456,13 +456,13 @@ const newUser = ref({
   },
   createdAt: new Date().toISOString()
 })
-const addUserError = ref<string | null>(null)
+const addUserError = ref(null)
 const addUserSuccess = ref(false)
 
 // Posts
 const posts = ref([])
 const loadingPosts = ref(true)
-const errorPosts = ref<string | null>(null)
+const errorPosts = ref(null)
 const showAddPostForm = ref(false)
 const newPost = ref({
   title: '',
@@ -485,37 +485,37 @@ const newPost = ref({
   comments: []
 })
 const newPostTagsInput = ref('')
-const addPostError = ref<string | null>(null)
+const addPostError = ref(null)
 const addPostSuccess = ref(false)
 
 // Tags
 const tags = ref([])
 const loadingTags = ref(true)
-const errorTags = ref<string | null>(null)
+const errorTags = ref(null)
 const showAddTagForm = ref(false)
 const newTag = ref({
   name: '',
   slug: ''
 })
-const addTagError = ref<string | null>(null)
+const addTagError = ref(null)
 const addTagSuccess = ref(false)
 
 // Categories
 const categories = ref([])
 const loadingCategories = ref(true)
-const errorCategories = ref<string | null>(null)
+const errorCategories = ref(null)
 const showAddCategoryForm = ref(false)
 const newCategory = ref({
   name: '',
   slug: ''
 })
-const addCategoryError = ref<string | null>(null)
+const addCategoryError = ref(null)
 const addCategorySuccess = ref(false)
 
 // Cat Breeds
 const catBreeds = ref([])
 const loadingBreeds = ref(true)
-const errorBreeds = ref<string | null>(null)
+const errorBreeds = ref(null)
 const showAddBreedForm = ref(false)
 const newBreed = ref({
   name: '',
@@ -529,7 +529,7 @@ const newBreed = ref({
   }
 })
 const newBreedTemperamentInput = ref('')
-const addBreedError = ref<string | null>(null)
+const addBreedError = ref(null)
 const addBreedSuccess = ref(false)
 
 
@@ -542,7 +542,7 @@ onMounted(() => {
   fetchBreeds()
 })
 
-const formatDate = (dateStr: string) => {
+const formatDate = (dateStr) => {
   if (!dateStr) return 'N/A'
   try {
     return new Date(dateStr).toLocaleDateString('vi-VN', {
@@ -551,7 +551,7 @@ const formatDate = (dateStr: string) => {
   } catch (e) { return 'Ngày không hợp lệ' }
 }
 
-const getRoleBadgeClass = (role: string) => {
+const getRoleBadgeClass = (role) => {
   switch (role) {
     case 'admin': return 'badge bg-danger'
     case 'author': return 'badge bg-success'
