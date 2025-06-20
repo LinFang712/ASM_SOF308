@@ -136,7 +136,7 @@
       ],
       "stats": {
         "likes": 98,
-        "views": 1850
+        "views": 1851
       },
       "title": "Hướng dẫn chải lông cho mèo lông dài",
       "status": "published",
@@ -234,7 +234,7 @@
       ],
       "stats": {
         "likes": 153,
-        "views": 2938
+        "views": 2941
       },
       "title": "Giống mèo: Maine Coon hùng vĩ",
       "status": "published",
@@ -247,6 +247,11 @@
           "content": "hELLO",
           "authorId": "user_101",
           "createdAt": "2025-06-20T01:57:59.835Z"
+        },
+        {
+          "content": "HIII!",
+          "authorId": "user_101",
+          "createdAt": "2025-06-20T02:30:38.294Z"
         }
       ],
       "publishedAt": "2025-05-25T15:00:00Z",

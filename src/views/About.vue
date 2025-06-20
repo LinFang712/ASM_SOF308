@@ -52,7 +52,7 @@
                     <i class="bi bi-shield-check fs-1 text-success mb-3"></i>
                     <h4 class="fw-semibold">Chân thực</h4>
                     <p class="text-muted">Hãy chia sẻ con người thật của bạn. Chúng tôi tôn vinh những câu chuyện chân thành và những suy ngẫm trung thực.</p>
-                </div>
+                </div>  
             </div>
             <div class="col-md-4">
                  <div class="p-3">
@@ -75,8 +75,8 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 text-center h-100 shadow-sm hover-lift">
                     <div class="card-body p-4">
-                        <img src="https://i.pravatar.cc/150?u=user_101" alt="Quản Trị Mèo" class="rounded-circle mb-3" width="100" height="100" />
-                        <h5 class="card-title fw-bold mb-1">Quản Trị Mèo</h5>
+                        <img src="https://i.pinimg.com/736x/69/d4/f5/69d4f553a801270cc080e78402855353.jpg" alt="Quản Trị Mèo" class="rounded-circle mb-3" width="100" height="100" />
+                        <h5 class="card-title fw-bold mb-1">Thái Triệu</h5>
                         <p class="text-primary fw-semibold mb-2">Người sáng lập & Quản trị viên</p>
                         <p class="card-text text-muted small">Người có tầm nhìn đã khởi đầu tất cả, đảm bảo nền tảng hoạt động trơn tru cho mọi người.</p>
                     </div>
@@ -86,8 +86,8 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 text-center h-100 shadow-sm hover-lift">
                     <div class="card-body p-4">
-                        <img src="https://i.pravatar.cc/150?u=user_201" alt="Anya Volkov" class="rounded-circle mb-3" width="100" height="100" />
-                        <h5 class="card-title fw-bold mb-1">Anya Volkov</h5>
+                        <img src="https://i.pinimg.com/736x/e1/69/96/e16996de8f95ffad7527687f1c2b6bfa.jpg" alt="Anya Volkov" class="rounded-circle mb-3" width="100" height="100" />
+                        <h5 class="card-title fw-bold mb-1">Khánh Nhi</h5>
                         <p class="text-primary fw-semibold mb-2">Tác giả chính & Kỹ thuật viên thú y</p>
                         <p class="card-text text-muted small">Chuyên gia của chúng tôi về sức khỏe mèo, cung cấp lời khuyên đáng tin cậy và những câu chuyện ấm lòng.</p>
                     </div>
@@ -97,8 +97,8 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 text-center h-100 shadow-sm hover-lift">
                     <div class="card-body p-4">
-                        <img src="https://i.pravatar.cc/150?u=user_202" alt="Liam Gallagher" class="rounded-circle mb-3" width="100" height="100" />
-                        <h5 class="card-title fw-bold mb-1">Liam Gallagher</h5>
+                        <img src="https://i.pinimg.com/736x/39/11/ff/3911fff2e111dedc10b328ed56966d07.jpg" alt="Liam Gallagher" class="rounded-circle mb-3" width="100" height="100" />
+                        <h5 class="card-title fw-bold mb-1">Lê Kha</h5>
                         <p class="text-primary fw-semibold mb-2">Chuyên gia cộng đồng & Chải lông</p>
                         <p class="card-text text-muted small">Gương mặt thân thiện của cộng đồng chúng tôi và người phụ trách mọi thứ liên quan đến chải lông.</p>
                     </div>
@@ -108,8 +108,8 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 text-center h-100 shadow-sm hover-lift">
                     <div class="card-body p-4">
-                        <img src="https://i.pravatar.cc/150?u=user_203" alt="Mia Chen" class="rounded-circle mb-3" width="100" height="100" />
-                        <h5 class="card-title fw-bold mb-1">Mia Chen</h5>
+                        <img src="https://i.pinimg.com/736x/0d/a8/a5/0da8a5d709f7103e61a9f98950a7580f.jpg" alt="Mia Chen" class="rounded-circle mb-3" width="100" height="100" />
+                        <h5 class="card-title fw-bold mb-1">Kiều Vy</h5>
                         <p class="text-primary fw-semibold mb-2">Người quản lý nội dung</p>
                         <p class="card-text text-muted small">Mang những câu chuyện về mèo hay nhất đến ánh đèn sân khấu và giữ nội dung của chúng tôi luôn mới mẻ và truyền cảm hứng.</p>
                     </div>
@@ -119,8 +119,8 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 text-center h-100 shadow-sm hover-lift">
                     <div class="card-body p-4">
-                        <img src="https://i.pravatar.cc/150?u=user_204" alt="Oscar Nguyen" class="rounded-circle mb-3" width="100" height="100" />
-                        <h5 class="card-title fw-bold mb-1">Oscar Nguyen</h5>
+                        <img src="https://i.pinimg.com/736x/24/7d/89/247d897adab8b544edba41bc72559334.jpg" alt="Oscar Nguyen" class="rounded-circle mb-3" width="100" height="100" />
+                        <h5 class="card-title fw-bold mb-1">Hoàng Lân</h5>
                         <p class="text-primary fw-semibold mb-2">Trưởng nhóm kỹ thuật</p>
                         <p class="card-text text-muted small">Đảm bảo CatBase hoạt động trơn tru và an toàn cho tất cả người dùng, mỗi ngày.</p>
                     </div>
@@ -130,8 +130,8 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 text-center h-100 shadow-sm hover-lift">
                     <div class="card-body p-4">
-                        <img src="https://i.pravatar.cc/150?u=user_205" alt="Sophie Tran" class="rounded-circle mb-3" width="100" height="100" />
-                        <h5 class="card-title fw-bold mb-1">Sophie Tran</h5>
+                        <img src="https://i.pinimg.com/736x/5e/a6/21/5ea621f7595a39bc00e20f0d627c2c36.jpg" alt="Sophie Tran" class="rounded-circle mb-3" width="100" height="100" />
+                        <h5 class="card-title fw-bold mb-1">Gia Khiêm</h5>
                         <p class="text-primary fw-semibold mb-2">Quản lý cộng đồng</p>
                         <p class="card-text text-muted small">Kết nối các thành viên, tổ chức sự kiện và xây dựng một môi trường thân thiện cho tất cả.</p>
                     </div>
